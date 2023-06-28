@@ -1,0 +1,30 @@
+Containers
+  - São processos isolados no sistema operacional (namespaces), onde emulam uma máquina com os requisitos para determinada aplicação
+  - CGroups: Criado pela Google, com ele conseguimos limitar a quantidade de recursos que um container poderá consumir
+  - File System (OFS - Overlay File System): Ao alterar minha aplicação e gerar uma nova imagem da minha aplicação que possuí N dependências, essas dependências que não foram alteradas mas foram baixadas serão 'reutilizadas'. (Melhor entendimento na sessão de imagens)
+
+Imagens
+  - É um snapshot, o estado atual da minha aplicação com todas as dependências necessárias
+  - Uma imagem é construída em camadas, ou seja, é uma arvore com os requisitos para rodar sua aplicação
+  - Ao gerar uma imagem com muitas dependências (Ubuntu, Node, etc.) será necessário baixar essas dependências. Porém, as outras imagens que necessitam dessas mesmas dependências irão utilizar as já baixadas.
+
+Dockerfiles
+  - Arquivo declarativo que informa todas dependências, comando e configurações necessárias para montar sua imagem
+  - Ao rodar o build desse arquivo é gerada uma nova imagem
+
+Execução de imagens
+  - Os containers rodam uma imagem, é criado um processo para executar essa imagem
+  - São extremamente rápido devido as imagens serem imutáveis, é aquilo e acabou, não precisa realizar ações extras
+  - Dentro dos containers é criada uma camada read/write, para leitura e escrita de arquivos dentro do container, que serão resetados quando o container for finalizado
+  - Commit: Quando escrevemos dentro de um container conseguimos criar uma nova imagem a partir desse container editado, com todos os novos itens
+
+Image Registry
+  - Um repositório contendo imagens docker
+  - Ao realizar o build de uma imagem, as dependências informadas no Dockerfile serão baixadas desse repositório. PULL
+  - Também conseguimos enviar nossas imagens para esse repositório. PUSH
+
+Como funciona o Docker
+  - O Docker roda no OS por meio do Docker Host, que possuí uma API para atender as requisições. O Docker que conhecemos pelo terminal é o Docker Cliente, com ele realizamos as operações de pull, push, run, etc.
+  - Dentro do Host tem um cache, nela ficam salvas as imagens já baixada. Dessa forma, não será necessário um novo download para as próximas imagens que possuírem essas mesmas dependências
+  - Como as imagens são imutáveis como faço para persistir alguns dados em um container? Utilizando os volumes, com eles podemos compartilhar uma pasta de um container com uma pasta do nosso OS. Assim quando o container for derrubado os dados continuaram salvos para a próxima execução
+  - Os containers são processos isolados, mas quase sempre é necessário fazer um se comunicar com outro. As networks foram criados para isso, estabelecer uma comunicação entre vários containers
