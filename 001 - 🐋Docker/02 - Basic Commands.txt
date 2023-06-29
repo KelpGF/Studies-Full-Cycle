@@ -49,3 +49,10 @@ docker rmi
 docker build
   -t: nome da imagem
   <Dockerfile-dir>: local onde está o Dockerfile
+
+docker logout - Remove suas credenciais do container register
+
+docker login - Realiza login em um container register
+
+docker push
+  <image_name>: enviar a imagem especificada para o container register

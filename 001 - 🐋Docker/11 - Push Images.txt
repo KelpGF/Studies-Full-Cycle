@@ -1,0 +1,11 @@
+Após realizar o build de imagem conseguimos enviá-las para um container register
+
+Caso não tenha ainda, crie uma conta no DockerHub
+Url DockerHub: https://hub.docker.com/signup
+
+Primeiro é necessário se autenticar:
+docker login
+
+Depois, podemos subir a nossa imagem com:
+docker push <image_name>:<tag>
+
