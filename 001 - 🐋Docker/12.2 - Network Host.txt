@@ -1,0 +1,11 @@
+Por default o docker também já possui uma network chamada host do tipo host
+
+Lembrando que a rede host é aquela que permite sua máquina e os containers do docker se comunicarem
+
+Antes quando subimos um container com nginx precisamos dizer qual porta vamos expor a porta do container
+  docker run -p 8080:80 -dit --rm --name nginx nginx
+
+
+Se iniciarmos o container nessa rede tipo host não precisamos informar a porta
+  docker run -dit --rm --name nginx --network host nginx
+Ao fazer isso e acessar http://localhost/ teremos a tela do nginx sem expor nenhuma porta
