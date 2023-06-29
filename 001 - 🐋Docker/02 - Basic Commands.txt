@@ -2,11 +2,12 @@ Ler a doc do Docker para mais informações
 
 docker run
   Executa alguma imagem
-  --rm: remove o container
   -i: modo iterativo
   -t: permite comando no container
   -p: informa qual porta do seu computador irá expor qual porta do seu container
   -d: desvincula meu terminal ao processo (container)
+  --rm: remove o container
+  --name: o nome que deseja dar para o container
 
 docker ps
   Lista os containers: por default trás somente os que estão rodando
@@ -21,3 +22,8 @@ docker stop
 docker rm
   Finaliza um container, deleta
   -f: força a remoção para containers UP
+
+docker exec
+  Executa um comando dentro do meu container
+  -i: modo iterativo
+  -t: permite comando no container

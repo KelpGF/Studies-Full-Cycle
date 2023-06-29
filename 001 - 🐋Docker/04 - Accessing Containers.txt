@@ -1,0 +1,10 @@
+Para executar algum comando em um container UP utilizamos o docker exec
+
+docker exec container_name ls
+
+Isso vai listar todas as pastas dentro do container
+
+
+Porém, como um container é um processo que simula o OS eu posso querer acessar e executar alguns comando.
+Para isso podemos fazer docker exec container_name -it bash
+Assim acessamos o container de forma iterativa no terminal bash
