@@ -1,0 +1,11 @@
+Ler a doc do Docker para mais informações
+
+docker run
+  Executa alguma imagem
+  -rm: remove o container
+  -i: modo iterativo
+  -t: permite comando no container
+
+docker ps
+  Lista os containers: por default trás somente os que estão rodando
+  -a: lista todos os containers, rodando ou não
