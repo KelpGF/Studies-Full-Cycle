@@ -44,3 +44,7 @@ docker images
 
 docker rmi
   <image>: Deleta uma imagem 
+
+docker build
+  -t: nome da imagem
+  <Dockerfile-dir>: local onde está o Dockerfile

@@ -1,0 +1,18 @@
+Um docker file é uma receita que você informa todos os ingredientes necessário para o que você quer
+
+Exemplo: Quero uma imagem com nginx e vim já instalado
+
+```
+FROM nginx:latest
+
+RUN apt update
+RUN apt install vim -y
+```
+
+Prontinho, agora basta gerar a nossa imagem
+
+docker build -t kevin16/nginx-with-vim:latest .
+
+Quando executar esse imagem já teremos o vim instalado, diferente da imagem oficial do nginx
+
+docker run --rm kevin16/nginx-with-vim:latest -it bash
