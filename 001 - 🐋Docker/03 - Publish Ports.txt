@@ -1,0 +1,11 @@
+Um container pode possuir uma porta, porém ela não é acessível para nós pois somos o host (Docker Host) e não estamos na rede do Docker
+Um outro container conseguiria acessar as porta de outro container
+
+docker run nginx
+O container possuí a porta 80 mas não temos acesso
+
+
+Redirecionamento de Portas
+  Para acessar a porta de um container o docker nos permite realizar um redirecionamento, ou seja, expor a porta desse container em alguma de nossas portas
+  - docker run -p 8080:80 nginx
+  Com isso dizemos ao Docker que a porta 80 do container nginx será exposta na porta 8080 da minha máquina
