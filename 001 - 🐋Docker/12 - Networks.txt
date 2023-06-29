@@ -15,3 +15,12 @@ Networks
 
 - None
   O container ficará 100% isolado, sem poder se comunicar com nada
+
+
+Para criar uma network é simples
+docker network create --driver=<type> network_name
+
+Para iniciar um container e vinculá-lo a uma network pasta a flag '--network network_name'
+
+Para vincular um container já iniciado a uma network também é bem simples
+docker network connect network_name container_name

@@ -1,0 +1,11 @@
+Ao iniciar um container automaticamente o docker cria um network bridge
+
+docker run -d -it --name ubuntu1 bash
+docker run -d -it --name ubuntu2 bash
+
+docker ps podemos ver esses 2 containers up 
+docker network ls podemos ver uma rede chamada bridge, é a network padrão do docker
+docker network inspect bridge conseguimos ver quais containers estão nessa network e seus IPs
+
+Ao acessar um dos containers UP conseguimos fazer um PING para o outro por meio do IP, mas não conseguimos pelo nome
+Porém, se criarmos uma network e na hora do docker run informar ela com o '--network my-net' eu consigo fazer o PING para outro container usando seu nome

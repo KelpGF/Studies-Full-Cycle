@@ -10,6 +10,10 @@ docker run
   --mount: funciona como o -v porém com informações mais explicitas e se o diretório local não existir será lançado um erro
   --rm: remove o container
   --name: o nome que deseja dar para o container
+  --network: a rede que esse container pertencerá
+
+docker attach
+  <container-name>: acessa um container iniciado com -d (desattach) e o derruba no final
 
 docker ps
   Lista os containers: por default trás somente os que estão rodando
@@ -36,6 +40,18 @@ docker volume
   ls: lista os volumes
   inspect <volume-name>: dados específicos de um volume
   rm <volume-name>: apaga um volume
+  prune: apaga todos os volumes não utilizados
+
+docker network
+  ls: lista as networks
+  inspect <network-name>: dados específicos de uma network
+  prune: apaga todas as networks não utilizada
+  create: cria uma network
+    --driver: o tipo da network
+    <network_name>: o nome da rede
+  connect: conecta um container a uma network
+    <network_name>: nome da network
+    <container_name>: nome do container que será adicionado na network informada antes
 
 docker pull
   <image>: baixa a respectiva imagem para nosso computador
