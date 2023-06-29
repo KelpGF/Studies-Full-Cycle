@@ -22,7 +22,7 @@ docker stop
   Derruba um container UP
 
 docker rm
-  Finaliza um container, deleta
+  <container>: Finaliza um container, deleta
   -f: força a remoção para containers UP
 
 docker exec
@@ -35,3 +35,12 @@ docker volume
   ls: lista os volumes
   inspect <volume-name>: dados específicos de um volume
   rm <volume-name>: apaga um volume
+
+docker pull
+  <image>: baixa a respectiva imagem para nosso computador
+
+docker images
+  ls: lista as imagens
+
+docker rmi
+  <image>: Deleta uma imagem 

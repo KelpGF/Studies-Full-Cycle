@@ -1,0 +1,5 @@
+DockerHub - Container registry default
+
+É o repositório de imagens docker. Quando buscamos alguma imagem, como a nginx, nosso docker local buscar essa imagem no hub e baixa para Nós
+
+As imagens possuem um nome e uma tag, no DockerHub as tags especificam o que está contido na imagem: OS, linguagem de programação, etc 
