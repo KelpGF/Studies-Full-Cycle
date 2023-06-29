@@ -24,3 +24,9 @@ Para iniciar um container e vinculá-lo a uma network pasta a flag '--network ne
 
 Para vincular um container já iniciado a uma network também é bem simples
 docker network connect network_name container_name
+
+Quando estamos dentro de um container e precisamos acessar algum aplicações rodando no Docker Host (nossa máquina) podemos utiliza o DNS
+  host.docker.internal
+Ex.: Tenho um servidor PHP na porta 8000 da minha máquina e preciso que meu container acesse ele
+  http://host.docker.internal:8000
+Assim meu container tem acesso a minha máquina
