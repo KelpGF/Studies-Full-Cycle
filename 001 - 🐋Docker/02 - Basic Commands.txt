@@ -14,6 +14,7 @@ docker run
 docker ps
   Lista os containers: por default trás somente os que estão rodando
   -a: lista todos os containers, rodando ou não
+  -q: lista apenas os IDs do container
 
 docker start
   Sobe um container existente
