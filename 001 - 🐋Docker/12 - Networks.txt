@@ -1,0 +1,17 @@
+Networks
+  - São redes criadas para possibilitar que aplicações se comuniquem entre si
+
+- Bridge
+  Permite a comunicação entre container
+
+- Host
+  Essa rede permitir a comunicação entre container e o Docker Host (nosso computador) sem precisar expor a porta do container, permitindo assim aplicações fora do docker terem acesso a aplicações dentro do docker, e vice versa
+
+- Overlay
+  Permite a comunicação entre containers de Dockers em máquinas distintas.
+  Ex.: Docker Swarm, onde são criadas várias máquinas em um cluster e seus containers são criados em Swarm Mode, sendo os containers criados em máquinas distintas. Para os containers de máquinas diferentes poderem se comunicar é necessário um Network Overlay
+
+- Maclan
+
+- None
+  O container ficará 100% isolado, sem poder se comunicar com nada
