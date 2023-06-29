@@ -11,3 +11,13 @@ docker run
 docker ps
   Lista os containers: por default trás somente os que estão rodando
   -a: lista todos os containers, rodando ou não
+
+docker start
+  Sobe um container existente
+
+docker stop
+  Derruba um container UP
+
+docker rm
+  Finaliza um container, deleta
+  -f: força a remoção para containers UP
