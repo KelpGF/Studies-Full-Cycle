@@ -1,0 +1,21 @@
+ENTRYPOINT e CMD são passos a ser executados no Dockerfile
+
+
+ENTRYPOINT
+- Comando FIXO a ser executado quando o container com a imagem for iniciado.
+
+CMD
+- Comando VARIÁVEL a ser executado quando o container com a imagem for iniciado. Esse comando pode ser e é substituído quando informamos qual comando queremos executar
+  Ex: docker run image_name: será executado o comando informado no CMD do Dockerfile
+  Ex2: docker run image_name echo "Oi": o comando informado no Dockerfile será substituído pelo comando informado no run, que é o echo "Oi"
+
+
+Os dois podem ser utilizados juntos. O CMD pode ser utilizado para complementar o ENTRYPOINT, será como parâmetros para meu ENTRYPOINT
+```
+ENTRYPOINT ["echo", "Hello "]
+CMD ["World"]
+```
+Quando o comando docker run image_name será exibido 'Hello World'
+Quando o comando docker run image_name Kelv será exibido 'Hello Kelv'
+
+
