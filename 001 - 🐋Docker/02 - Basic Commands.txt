@@ -29,3 +29,9 @@ docker exec
   Executa um comando dentro do meu container
   -i: modo iterativo
   -t: permite comando no container
+
+docker volume
+  create <volume-name>: cria um volume
+  ls: lista os volumes
+  inspect <volume-name>: dados específicos de um volume
+  rm <volume-name>: apaga um volume

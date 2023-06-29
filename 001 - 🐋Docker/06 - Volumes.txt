@@ -1,0 +1,9 @@
+Os volumes são utilizados quando queremos persistir nossos dados no virtual machine do Docker e ganhar mais performance no desenvolvimento
+Ou seja, um volume é um diretório criado dentro do nosso Docker Host para persistir dados utilizados em container
+Nós podemos criar volumes e informar para um ou mais container utiliza-los
+
+docker volume create nginx_volume
+docker run -d --rm -p 8080:80 --name nginx --mount type=volume,source=nginx_volume,target=/app nginx
+docker run -d --rm -p 8080:80 --name nginx2 -v nginx_volume:/app nginx
+
+Ao acessar um desse containers e criar um arquivo na pasta app, quando acessar o outro container o arquivo estará lá
