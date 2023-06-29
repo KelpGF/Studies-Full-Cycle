@@ -1,0 +1,10 @@
+Bind Mounts
+- Com o Docker podemos informar que um container ira compartilhar os seus arquivos com um diretório de nossa máquina. Assim quando o container for derrubado os dados continuem salvos 
+Significa que estamos vamos montar uma pasta do nosso computador para dentro do container
+
+docker run -d -p 8080:80 --name nginx -v ~/dev/estudos/Studies-Full-Cycle/nginx/:/usr/share/nginx/html nginx
+docker run -d -p 8080:80 --name nginx --mount type=bind,source=~/dev/estudos/Studies-Full-Cycle/nginx/,target=/usr/share/nginx/html nginx
+
+Ao criar um arquivo index.html dentro desse diretório do meu computador ele será espelhado dentro do container
+
+Logo, ao derrubar o container e subir novamente todas alterações que fiz no index.html continuaram existindo

@@ -6,6 +6,8 @@ docker run
   -t: permite comando no container
   -p: informa qual porta do seu computador irá expor qual porta do seu container
   -d: desvincula meu terminal ao processo (container)
+  -v: informa qual diretório do seu computador irá manter os dados de algum diretório do container. Se o diretório local não existir ele será criado
+  --mount: funciona como o -v porém com informações mais explicitas e se o diretório local não existir será lançado um erro
   --rm: remove o container
   --name: o nome que deseja dar para o container
 
