@@ -31,9 +31,13 @@ docker rm
   -f: força a remoção para containers UP
 
 docker exec
-  Executa um comando dentro do meu container
   -i: modo iterativo
   -t: permite comando no container
+  <container_name>: Executa um comando dentro do meu container
+
+docker logs
+  <container_name>: exibe os logs de um container_name
+  --tail <number>: exibe os últimos logs do container, a quantidade especificada
 
 docker volume
   create <volume-name>: cria um volume
