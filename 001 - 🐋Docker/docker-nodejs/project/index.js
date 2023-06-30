@@ -1,14 +1,6 @@
 const http = require('http');
 const mysql = require('mysql');
 
-console.log({
-  database: process.env.DB_MYSQL_DATABASE || 'test',
-  host: process.env.DB_MYSQL_HOST || 'localhost',
-  port: process.env.DB_MYSQL_PORT || '3306',
-  user: process.env.DB_MYSQL_USER || 'root',
-  password: process.env.DB_MYSQL_PASSWORD || 'root'
-})
-
 const connection = mysql.createConnection({
   database: process.env.DB_MYSQL_DATABASE || 'test',
   host: process.env.DB_MYSQL_HOST || 'localhost',

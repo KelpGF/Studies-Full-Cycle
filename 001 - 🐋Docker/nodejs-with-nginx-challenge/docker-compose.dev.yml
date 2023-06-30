@@ -1,0 +1,58 @@
+version: '3'
+
+services:
+  proxy:
+    build:
+      context: ./proxy
+      dockerfile: Dockerfile
+    container_name: nodejs-challenge-proxy
+    tty: true
+    ports:
+      - "80:80"
+    networks:
+      - nodejs-challenge
+    depends_on:
+      - api
+
+  api:
+    build:
+      context: ./project
+      dockerfile: Dockerfile
+    container_name: nodejs-challenge-api
+    tty: true
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app
+    depends_on:
+      - db
+    environment:
+      API_PORT: 3000
+      DB_MYSQL_DBNAME: nodejschallenge
+      DB_MYSQL_HOST: nodejs-challenge-db
+      DB_MYSQL_PORT: 3306
+      DB_MYSQL_USER: root
+      DB_MYSQL_PASS: root
+    networks:
+      - nodejs-challenge
+
+  db:
+    image: mysql:5.7
+    command: --innodb-use-native-aio=0
+    container_name: nodejs-challenge-db
+    restart: always
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: nodejschallenge
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./db:/var/lib/mysql
+      # - ./scripts:/usr/
+    networks:
+      - nodejs-challenge
+
+networks:
+  nodejs-challenge:
+    driver: bridge
