@@ -69,6 +69,7 @@ docker rmi
 docker build
   -t: nome da imagem
   <Dockerfile-dir>: local onde está o Dockerfile
+  -f: nome do Dockerfile
 
 docker logout - Remove suas credenciais do container register
 
