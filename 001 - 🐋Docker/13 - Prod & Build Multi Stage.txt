@@ -1,0 +1,14 @@
+Com o Docker normalmente trabalhamos com dois Dockerfiles
+
+Dockerfile
+Dockerfile.prod
+
+Dockerfile é utilizado para desenvolvimento, com dependências que ajudam o desenvolvedor
+
+Porém não precisamos disso para produção, então ai que entra o Dockerfile.prod, nele temos apenas os passos essenciais para a aplicação funcionar
+
+No Dockerfile.prod também é comum encontramos algo chamado Build Multi Stage, que significa você criar passos no seu Dockerfile para ficar mais organizado além de manter apenas os arquivos e dependências do último passo.
+
+Assim temos uma imagem menor e com menos vulnerabilidades
+
+Dentro da pasta `docker-laravel` temos exemplos de como são utilizados esse dois Dockerfiles
