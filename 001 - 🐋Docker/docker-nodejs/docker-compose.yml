@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  api-node:
+    build:
+      context: project
+      dockerfile: Dockerfile
+    container_name: node
+    tty: true
+    volumes:
+      - ./project:/usr/src/app
+    environment:
+      DB_MYSQL_DATABASE: nodedb
+      DB_MYSQL_HOST: mysql
+      DB_MYSQL_PORT: 3306
+      DB_MYSQL_USER: root
+      DB_MYSQL_PASSWORD: 123
+    depends_on: # Espera o conteiner do mysql subir para subir o conteiner do node
+      - db-mysql
+    networks:
+      - nodenet
+    ports:
+      - 3000:3000
+
+  db-mysql:
+    image: mysql:5.7
+    command: --innodb-use-native-aio=0
+    container_name: mysql
+    restart: always # Caso o conteiner pare, ele reinicia automaticamente
+    tty: true # Permite que o usuário interaja com o conteiner
+    volumes:
+      - ./db:/var/lib/mysql # Mapeia o volume do conteiner para a pasta mysql
+    environment:
+      MYSQL_DATABASE: nodedb
+      MYSQL_ROOT_PASSWORD: 123
+    networks:
+      - nodenet
+    ports:
+      - 3306:3306
+
+networks:
+  nodenet:
+    driver: bridge

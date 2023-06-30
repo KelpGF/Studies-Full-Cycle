@@ -84,4 +84,5 @@ docker compose
     --build: realizar um novo build da imagem especificada
   ls: lista as infra estruturas UP pelo docker compose
   ps: lista os serviços UP desse compose
-  down: derruba os serviços
+  down: derruba todos os serviços
+  stop <service_name>: derruba os serviços selecionados
