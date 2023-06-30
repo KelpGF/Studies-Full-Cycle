@@ -77,3 +77,11 @@ docker login - Realiza login em um container register
 
 docker push
   <image_name>: enviar a imagem especificada para o container register
+
+docker compose
+  up: iniciar os serviços
+    -d: desvincula meu terminal dos processos (desattach)
+    --build: realizar um novo build da imagem especificada
+  ls: lista as infra estruturas UP pelo docker compose
+  ps: lista os serviços UP desse compose
+  down: derruba os serviços

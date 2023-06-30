@@ -1,0 +1,35 @@
+É uma ferramenta complementar ao Docker que baseado em um arquivo yml ele sobre todas aplicação que você desejar com um ÚNICO comando
+  docker compose up
+
+Um exemplo simples do arquivo docker-compose.yml
+```
+version: '3'
+
+services:
+  laravel:
+    image: kelv/laravel
+    container_name: laravel
+    networks:
+      - lara-net
+
+  nginx:
+    image: kelv/nginx
+    container_name: nginx
+    ports:
+      - "8080:80"
+    networks:
+      - lara-net
+
+networks:
+  lara-net:
+    driver: bridge
+```
+
+Para subir é simples: docker compose up
+E para finalizar: docker compose down
+
+Por padrão o Docker Compose utiliza as imagens que já existem, caso exista
+Ex.: Tenho uma imagem personalizada do node criada a partir do meu Dockerfile. Quando eu subir um serviço e informar esse Dockerfile ele ira pegar essa imagem já pronta
+
+Caso você tenha atualizado o seu Dockerfile e queira que seus serviços sejam gerado com ele é apenas: docker compose up --build
+Ele realiza o build e gera uma nova imagem
