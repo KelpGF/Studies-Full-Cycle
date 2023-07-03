@@ -19,11 +19,10 @@ services:
       context: ./project
       dockerfile: Dockerfile
     container_name: nodejs-challenge-api
+    entrypoint: dockerize -wait tcp://db:3306 -timeout 20s sh ./.docker/entrypoint.sh
     tty: true
-    ports:
-      - "3000:3000"
     volumes:
-      - .:/usr/src/app
+      - ./project:/usr/src/app
     depends_on:
       - db
     environment:
@@ -49,7 +48,6 @@ services:
       MYSQL_ROOT_PASSWORD: root
     volumes:
       - ./db:/var/lib/mysql
-      # - ./scripts:/usr/
     networks:
       - nodejs-challenge
 

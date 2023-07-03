@@ -40,9 +40,6 @@ services:
     environment:
       MYSQL_DATABASE: nodejschallenge
       MYSQL_ROOT_PASSWORD: root
-    volumes:
-      - ./db:/var/lib/mysql
-      - ./scripts:/scripts
     networks:
       - nodejs-challenge
 
