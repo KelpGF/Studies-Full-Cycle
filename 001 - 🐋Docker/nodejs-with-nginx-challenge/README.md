@@ -10,5 +10,5 @@
 ### Run
 
 ```sh
-docker compose up -d --build && sleep 10 && docker exec nodejs-challenge-db sh /scripts/migrations.sh
+docker compose up
 ```
