@@ -9,7 +9,14 @@ const mysqlDbConfig = {
 }
 
 /** @type { mysql.Connection } */
-let connection = null
+let connection = mysql.createConnection(mysqlDbConfig)
+
+connection.connect(async (error) => {
+  if (error) return console.error(error)
+
+  const query = "CREATE TABLE IF NOT EXISTS people (name VARCHAR(255))";
+  connection.query(query)
+})
 
 function getConnection() {
   if (!connection) connection = mysql.createConnection(mysqlDbConfig)
@@ -20,12 +27,8 @@ function getConnection() {
 async function executeQuery(query) {
   return await new Promise((resolve, reject) => {
     getConnection().query(query, (error, results) => {
-      if (error) {
-        console.error(error)
-        reject(error)
-      } else {
-        resolve(results)
-      }
+      if (error) reject(error)
+      else resolve(results)
     })
   })
 }
