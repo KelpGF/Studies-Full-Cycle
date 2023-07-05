@@ -1,0 +1,5 @@
+Conhecendo Arquitetura de Software conseguimos ter uma visão completa sobre todos componentes, vai de como um classe vai se comunicar com outras até a comunicação entra diferentes serviços, conhecendo todo fluxo de alguma ação do sistema
+
+Ao estudar esse tema, você terá que mergulhar em diversos padrões de projetos e desenvolvimento, boas práticas, etc. pois um arquiteto de software têm que saber qual opção escolher de acordo com o contexto. Você tem que possuir um leque enorme de padrões e conseguir escolher o melhor e adequá-lo para seu projeto
+
+Com todo esse conhecimento você consegue confiança para tomar decisões. Geralmente terceirizamos o trabalho de escolher qual melhor padrão utilizar pra alguém mais experiente. Tendo conhecimentos sobre arquitetura de software você será mais confiante para tomar essa decisão ou para participar de conversa para decidir como o software será projetado
