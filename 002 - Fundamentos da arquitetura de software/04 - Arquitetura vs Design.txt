@@ -1,0 +1,11 @@
+UM PONTO BEM POLÊMICO
+
+Existem pessoas que dizem que Arquitetura de Software e Design de Software são a mesma coisa, mas gostei do ponto de vista ensinado no curso.
+
+
+Arquitetura de Software e Design de Software são diferentes
+  Arquitetura de Software: Escopo mais global
+  Design de Software: Escopo mais local
+
+Arquitetura de Software toma decisões de mais alto nível: qual tecnologia vamos utiliza para isso? Como implantar? Comunicações, etc, tudo em prol de garantir a qualidade e o cumprimentos dos requisitos
+Já o Design de Software seria para um escopo mais local. Essa classe deve possuir esse método privado apenas para ficar mais limpo, preciso refatorar isso por que está quase ilegível. São as decisões que impactam apenas um componente ou um local de mais baixo nível
