@@ -68,8 +68,8 @@ docker rmi
 
 docker build
   -t: nome da imagem
+  -f: nome do arquivo Dockerfile
   <Dockerfile-dir>: local onde está o Dockerfile
-  -f: nome do Dockerfile
 
 docker logout - Remove suas credenciais do container register
 
@@ -79,6 +79,7 @@ docker push
   <image_name>: enviar a imagem especificada para o container register
 
 docker compose
+  -f: nome do arquivo docker-compose
   up: iniciar os serviços
     -d: desvincula meu terminal dos processos (desattach)
     --build: realizar um novo build da imagem especificada
