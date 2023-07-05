@@ -1,0 +1,14 @@
+A sustentabilidade significa que um software deve ser criado pensado já no longo prazo e no seu potencial evolutivo, pois:
+
+• Desenvolver software é caro
+  Criar um software gasta tempo, dinheiro e outros recursos
+• Software resolve uma "dor"
+  Essa "dor" deve continuar sendo sanada com a evolução da empresa
+• Software precisa se pagar ao longo do tempo
+  Softwares bem desenvolvidos geram menos custos, seja de hospedagem, manutenção, etc., quanto menor o custo mais rápido ele vai retornar lucros que vão cobrir o gasto de sua produção e para mantê-lo
+• Acompanhar a evolução do negócio
+  Se o software não evoluir juntamente com a evolução da empresa pode chegar a um ponto de que não é mais possível criar nada sem quebrar algo ou ter que alterar vários pontos
+• Quanto mais tempo o software ficar no ar, mais retorno gera
+  Um software bem desenvolvido e que sirva seu propósito pelo o maior tempo possível é o software ideal
+• A solução precisa ser arquitetada
+  Um software tem que ser projetado pensando na sua disponibilidade, escalabilidade, manutenibilidade, novas implementações. Quanto melhor arquitetado menos custos,  mais simples de manter e de melhorar
