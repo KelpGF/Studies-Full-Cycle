@@ -1,0 +1,36 @@
+Os Requisitos Arquiteturais trazem clareza na hora de produzir o software.
+Para formar os requisitos é necessário muita conversa com as mais variadas áreas da empresa para entender todas as normas, dores, recursos e dados que estarão envolvidos
+
+Com eles temos as 'Regras do Jogo' em várias partes, citadas abaixo com alguns exemplos
+
+• Performance
+  - O tempo de resposta deve ser no máx de Xms
+  - Os dados devem ser mantidos em cache para maior performance
+  - Deve ser possível rodas X processos com tal configuração
+
+• Armazenamento de dados
+  - Os dados criados na Europa devem ficar em uma zona de disponibilidade Europeia
+  - Qual banco de dados utilizar
+
+• Escalabilidade
+  - Escalabilidade horizontal ou vertical
+  - Como será a distribuição da carga
+
+• Segurança
+  - Como meu software vai manter os dados seguros
+  - Tipos de comunicação
+  - Criptografias
+
+• Legal
+  - Como meu software vai cumprir a legislação dos países que está disponível 
+
+• Auditória
+  - Quais logs serão salvos
+  - Por quanto tempo será mantido um logs
+  - Do que será gerado logs
+
+• Marketing (as vezes)
+  - Meios para aguentar campanhas
+  - Disponibilidade de acordo com a demanda
+
+Com todos esses pontos discutidos e decididos evitamos ruídos e problemas com as outras áreas da empresa
