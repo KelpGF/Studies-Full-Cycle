@@ -2,9 +2,15 @@ Os principais ponto da Arquitetura de Software
 
 • Estruturação
   • Fácil evolução, componentização para atender os objetivos de negócio
+
 • Componentização
+  • O software ter diversos componentes que possam ser reutilizados
+  • Sabe o que deve ser componentizado 
+
 • Relacionamento entre sistemas
   • Comunicação interna e externa
+  • Qual tipo de comunicação utilizar
+
 • Governança: Torna o software livre de um 'dono'. Qualquer pessoas consegue compreender seus funcionamento sem necessariamente tê-lo criado
   • Regras
   • Processos

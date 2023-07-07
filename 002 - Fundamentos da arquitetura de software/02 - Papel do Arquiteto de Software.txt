@@ -1,9 +1,9 @@
 Um Arquiteto de Software é o responsável por transformar os requisitos solicitados em padrões arquiteturais
 Por ser o responsável pela arquitetura, ele deve conhecer e compreender bem os principais conceitos e modelos arquiteturais
-Devido a isso, ele se torna a ponte entre os devs e os experts de domínio da aplicação solicitada. Com isso ele te a visão do que o negócio precisa e consegue aplicar os melhores padrões para essa situação
+Devido a isso, ele se torna a ponte entre os devs e os experts de domínio da aplicação solicitada. Com isso ele tem a visão do que o negócio precisa e consegue aplicar os melhores padrões para essa situação
 
 Ele também se encontra bem baixo nível, na parte técnica para reforçar as boas práticas de desenvolvimento, code review e apoiar todo o time principalmente em momentos de crise
 
-Quando uma empresa não possuí um arquiteto de software, normalmente essa responsabilidade cai para os mais experientes, como os devs seniors ou os tech leads
+Quando uma empresa não possui um arquiteto de software, normalmente essa responsabilidade cai para os mais experientes, como os devs seniors ou os tech leads
 
 Ou então as empresas possuem um departamento de arquitetura de software, que composto por Devs que têm um visão global dos projetos e da arquitetura da empresa, além de auxiliarem os times com os padrões, reaproveitamento, organização, isso relacionado a questões arquiteturais 

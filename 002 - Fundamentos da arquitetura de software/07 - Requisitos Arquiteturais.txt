@@ -22,7 +22,8 @@ Com eles temos as 'Regras do Jogo' em várias partes, citadas abaixo com alguns 
   - Criptografias
 
 • Legal
-  - Como meu software vai cumprir a legislação dos países que está disponível 
+  - Como meu software vai cumprir a legislação dos países que está disponível
+  - O software deve estar de acordo com o contrato fornecido ao cliente
 
 • Auditória
   - Quais logs serão salvos
