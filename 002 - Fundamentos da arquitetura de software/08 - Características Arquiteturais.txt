@@ -1,0 +1,75 @@
+Características Arquiteturais
+São os aspectos do software, sendo obtidos de forma intencional ou não
+
+- Operacionais
+  • Disponibilidade
+    -> Budget de indisponibilidade = Limite máximo de tempo (anual, mensal) que meu software pode ficar fora do ar
+    -> Multi-cloud ou multi-regions é necessário?
+  • Recuperação de desastres
+    -> O que fazer durante o desastre?
+    -> O que fazer após o desastre?
+  • Performance
+    -> Quantas requisições por segundo deve suportar?
+    -> Mais escrita ou leitura?
+  • Recuperação (backup)
+    -> Os backup são testados? Para ter a certeza de que funcionarão quando necessário
+    -> Salvá-los em varias nuvens é viável?
+  • Confiabilidade e Segurança
+    -> O que acontece se alguma rota for extremamente requisitada? (DDoS)
+    -> O que acontece se alguém ficar tentando acessar muitas vezes com credenciais inválidas (Brute Force)
+  • Robustes
+    -> Meu software está robusto o suficiente pra ser escalado?
+  • Escalabilidade
+    -> Minha aplicação consegue ser escalada horizontalmente ou apenas verticalmente?
+
+- Estruturais
+  • Configurável
+    -> Eu consigo subir minha aplicação em outros ambiente sem ser necessário alterar o código?
+    -> Consigo trocar, por exemplo, qual Gateway de pagamento utilizar? Sendo que já possuo vários configurados mas tem um por padrão e os outros são para caso esse falhe
+  • Extensibilidade
+    -> Meu software consegue crescer de forma simples? Ex.: Adicionado novos meios de pagamentos, novos tipos de notificações
+  • Fácil instalação
+    -> Consigo configurar um ambiente facilmente para subir meu software? 
+  • Reuso de componentes
+    -> Meus componentes internos são reutilizáveis?
+    -> Na questão dos micros-serviços, vários projetos criando funções semelhantes para o mesmo objetivo... Seria melhor criar um lib para utilizar em ambos ou manter os dois?
+  • Internacionalização
+    -> Layout conseguirá se adequar a diferentes linguagens e diferentes culturas?
+    -> O que na regra de negócio irá mudar? Moeda? Valores? Gateways de pagamento?
+  • Fácil manutenção
+    -> TESTES: Um aplicação sem testes NUNCA será de fácil manutenção
+    -> Consigo adicionar novas feats e corrigir bugs de forma simples?
+  • Portabilidade (diversos bancos de dados)
+    -> Na minha aplicação consigo mudar o banco de dados sem mudar ela toda? E minha stack de Observabilidade, consigo trocar também?
+    -> Consigo adicionar stacks (bancos, observabilidade)?
+  • Fácil suporte (logs, debugging)
+    -> Observabilidade
+    -> Conseguir debugar minha aplicação de forma a identificar problemas facilmente?
+    -> Identifico os erros antes dos meus clientes?
+    -> O que e quando loggar
+    -> Padrão dos logs
+
+- Cross-Cutting (ponto mais gerais que afetam sua aplicação)
+  • Acessibilidade
+    -> PCD deve conseguir utilizar o software
+  • Processo de retenção e recuperação de dados
+    -> Quanto tempo guardar?
+    -> Quanto tempo onde guardar?
+    -> Dados quentes e frios (storages)
+  • Autenticação e Autorização
+    -> Como autenticar ou verificar se determinada requisição está autorizada (principalmente no mundo distribuído)
+    -> API Gateway
+  • Legal
+    -> Leis globais e locais
+  • Privacidade
+    -> Separar dados sensíveis para bancos e serviços isolados (?)
+    -> Evitar ao máximo que os dados dos usuários cheguem em qualquer pessoa, seja funcionário ou não
+  • Segurança
+    -> Garantir desde antes a requisição chegar no software
+    -> Border Firewall
+    -> Seguir as boas práticas
+  • Usabilidade
+    -> Meu sistema é intuitivo? De fácil uso com o mínimo de treinamento possível
+    -> NÃO É APENAS FRONT-END
+    -> Minha API é documentada
+    -> Meu projeto possuí um README com detalhes de seu funcionamento
