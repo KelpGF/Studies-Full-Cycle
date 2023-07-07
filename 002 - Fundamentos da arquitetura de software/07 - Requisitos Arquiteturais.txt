@@ -1,5 +1,5 @@
 Os Requisitos Arquiteturais trazem clareza na hora de produzir o software.
-Para formar os requisitos é necessário muita conversa com as mais variadas áreas da empresa para entender todas as normas, dores, recursos e dados que estarão envolvidos
+Para formar os requisitos é necessário muita conversa com as mais variadas áreas da empresa para entender todas as normas, dores, recursos e dados que estarão envolvidos pois eles são as regras que ditam o como o software deverá funcionar
 
 Com eles temos as 'Regras do Jogo' em várias partes, citadas abaixo com alguns exemplos
 

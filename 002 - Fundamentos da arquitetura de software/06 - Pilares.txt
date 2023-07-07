@@ -1,5 +1,5 @@
-Os principais ponto da Arquitetura de Software
-
+Os principais pontos a serem abordados e defendidos na Arquitetura de Software
+ 
 • Estruturação
   • Fácil evolução, componentização para atender os objetivos de negócio
 
