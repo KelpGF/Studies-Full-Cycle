@@ -1,0 +1,2 @@
+"Uma classe deve estar aberta a extensão e fechada para modificações"
+A frase acima pode ser entendida como: Se você precisa adicionar uma nova funcionalidade ao seu software, que já possuí algumas funcionalidades semelhantes, porém para isso é necessário alterar a classe principal com novas condições e métodos, quer dizer que o OCP está não está sendo praticado

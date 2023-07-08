@@ -1,0 +1,1 @@
+Nessa classe sempre que for preciso adicionar um novo tipo de video ela será modificada, ferindo o OCP
