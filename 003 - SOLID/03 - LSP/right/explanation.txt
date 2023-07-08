@@ -1,0 +1,1 @@
+A class Movie deve ser alterada para possuir apenas o comportamento que todos os filmes possuem. Filmes com ações extras devem extender de outra classe que também extend de Movie
