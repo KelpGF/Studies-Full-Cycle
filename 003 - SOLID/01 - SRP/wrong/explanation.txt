@@ -1,0 +1,9 @@
+Essa classe possuí diversas atribuições
+  - Estabelecer a conexão com o DB
+  - Métodos get e set que provavelmente deveriam ser de uma classe anêmica
+  - Execução de queries no DB
+
+Isso fere o SRP pois eu vou precisar mexer nessa classe quando:
+  - Alterar a conexão com o banco
+  - Novas propriedades forem adicionadas ao curso
+  - As queries precisarem ser alteradas

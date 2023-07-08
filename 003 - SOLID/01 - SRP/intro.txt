@@ -1,0 +1,4 @@
+Um classe ou um método DEVE fazer apenas uma coisa
+
+Pense: "Minha classe ela tem mais de um motivo que pode ocasionar em alteração nela?"
+Se a resposta for sim, ela não obedece o SRP, ou seja, ela possuí mais de uma responsabilidade
