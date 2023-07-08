@@ -1,0 +1,1 @@
+A classe Movie está altamente acoplada a classe DramaCategory. Sempre que estamos criando um instâncias de uma classe ou recebendo classes concretas então criando um alto nível de acoplamento entre as classes.

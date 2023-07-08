@@ -1,0 +1,3 @@
+Um classe deve depender de abstrações (interfaces) e não de implementações (classes concretas)
+
+ou seja, as dependências serão invertidas
