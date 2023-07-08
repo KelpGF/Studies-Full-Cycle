@@ -1,0 +1,3 @@
+Agora sempre um novo tipo de vídeo for adicionado a nossa classe principal não será modificada, pois ela está aberta a novas implementações da interface video
+
+Basta criar uma nova classe a partir da Video e passar no método
