@@ -1,0 +1,1 @@
+O filme 'ModernTimes' é um filme sem som, logo aumentar o volume geraria um erro. Ele não poderia ser utilizado no lugar da class PAI sem ocasionar um exceção

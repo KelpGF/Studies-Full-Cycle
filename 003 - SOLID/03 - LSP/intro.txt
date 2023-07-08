@@ -1,0 +1,1 @@
+Uma subclasse instanciada de uma class PAI deve poder ser utilizada em todos os lugares que a classe PAI é utilizada
