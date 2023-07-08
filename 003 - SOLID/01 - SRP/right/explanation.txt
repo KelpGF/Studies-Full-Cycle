@@ -1,0 +1,1 @@
+Nesse exemplo temos classes com responsabilidades únicas, que possuem apenas um único motivo para serem alteradas

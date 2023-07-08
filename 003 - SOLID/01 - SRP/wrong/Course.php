@@ -1,6 +1,6 @@
 <?php
 
-class Couse
+class Course
 {
   private $name;
   private $category;
