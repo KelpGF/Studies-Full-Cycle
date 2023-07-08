@@ -1,0 +1,3 @@
+As dependências devem ser passadas na hora de instanciar uma classe ou por meio de métodos set.
+
+Minha classe deixa de depender de uma outra classe concreta, invertendo as dependências 
