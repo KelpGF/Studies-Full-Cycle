@@ -1,0 +1,3 @@
+Quando uma classe implementa uma interface que não irá utilizar devemos remover essa implementação
+
+Quando uma classe implementa uma interface mas não irá utilizar todos os seus métodos e atributos, essa interface deve ser segredada em outras a fim de que as classes possam implementar somente as que vão realmente ser utilizadas
