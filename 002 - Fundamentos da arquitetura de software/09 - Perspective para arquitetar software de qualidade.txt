@@ -1,0 +1,8 @@
+São os pontos que devemos analisar quando o software já está "pronto", para saber se ele terá sucesso quando for ao ar 
+
+• Performance
+  - O quão ágil seu software é
+• Escalabilidade
+  - Meu software consegue ser escalado horizontalmente e verticalmente?
+• Resiliência
+  - Todo software está sujeito a falha, resiliência é a capacidade de ter soluções para mitigar as perdas durantes essas falhas
