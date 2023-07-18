@@ -1,0 +1,14 @@
+A performance pode ser medida pelo desempenho da sua aplicação teve para completar algum workload
+
+(Performance X Escalabilidade)
+
+Para medir a performance de um software temos (principalmente):
+  • Latência ou "response time"
+    - Tempo entre o pedido de um cliente e a obtenção da resposta
+    - Medida em milliseconds (normalmente)
+    - Quando menor, melhor
+    - É impactada pelos processos da aplicação, rede e chamadas externas
+  • Throughput
+    - Quantidade de requisições simultâneas que o software suporta 
+    - Quando maior, melhor
+    - Diretamente ligado a latência

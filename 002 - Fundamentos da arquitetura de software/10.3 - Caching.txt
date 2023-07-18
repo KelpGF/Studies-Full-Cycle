@@ -1,0 +1,25 @@
+Caching
+Retorna resultados já processados sem necessitar de um novo processamento
+
+Principais tipos:
+• Cache na borda / Edge computing
+• Dados estáticos
+• Páginas web
+• Funções internas
+• Evita reprocessamento de algoritmos pesados
+• Acesso ao banco de dados
+• Objetos
+
+Caching: Exclusivo vs Compartilhado
+Exclusivo:
+  • Baixa latência
+  • Duplicado entre os nós
+  • Problemas relacionados a sessões
+Compartilhado:
+  • Maior latência
+  • Não há duplicação
+  • Sessões compartilhadas
+  • Banco de dados externo
+    • MySQL
+    • Redis
+    • Memcache

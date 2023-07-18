@@ -1,0 +1,7 @@
+Escalabilidade
+  • Vertical: Aumento dos recursos computacionais da máquina que comporta meu software para suportar a demanda
+  • Horizontal: Aumento da quantidade de máquinas para ter vários softwares recebendo as requisições
+
+Concorrência X Paralelismo:
+  • Concorrência: Lidar com muitas coisas ao mesmo tempo
+  • Paralelismo: Fazer muitas coisas ao mesmo tempo
