@@ -1,0 +1,13 @@
+Proxy (Procurador, alguém que fala em seu nome)
+Um usuário em uma empresa acessa determinado software. Antes do acesso ser realizado existe um proxy na frente, que serve de intermediário entre o computador do usuário e o site requisitado. Com ele podem ser feitos filtros para impedir acessos a sites malicioso ou bloqueados pela empresa.
+Um proxy pega a requisição, redireciona para o endereço seguro requisitado, recebe esse resultado e devolve ao usuário
+
+Proxy reverso
+Um DNS quando acessado leva a algum servidor. Esse servidor pode ser um Proxy Reverso, que recebe todas as solicitações e encaminha para outros servidores baseado nos dados da requisição (cabeçalho, parâmetros, etc.)
+Um proxy reverso é um servidor que fica na frente dos servidores web e encaminha as solicitações do cliente (por exemplo, navegador web) para esses servidores web.
+
+
+Soluções populares de Proxy Reverso
+• Nginx
+• HAProxy (HA = High Availability)
+• Traefik

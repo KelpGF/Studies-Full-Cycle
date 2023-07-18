@@ -1,0 +1,11 @@
+Escalando software - Descentralização
+
+Pontos a analisar pra descobrir se um software é escalável:
+  • Disco efêmero
+    Tudo salvo em disco DEVE ser descartável
+  • Servidor de aplicação vs Servidor de assets
+    O servidor que roda o software deve ser separado do servidor de assets (CSS, Scripts, Mídias)
+  • Upload / Gravação de Arquivos
+    O armazenamento de arquivos deve ser feito em outros locais (servidores a parte, buckets, etc.)
+  • Cache centralizado e compartilhado
+  • Sessões centralizadas e compartilhadas

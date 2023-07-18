@@ -1,0 +1,17 @@
+Escalabilidade
+  - A capacidade de suportar o aumento (ou diminuição) dos workloders aumentando (ou reduzindo) o custo em menor ou igual proporção
+
+Escalabilidade vs Performance
+  Performance: Foco em reduzir a latência e aumentar o throughput
+  Escalabilidade: Foco em aumentar ou diminuir o throughput adicionando ou removendo poder computacional
+
+Ou seja, se eu quero aumentar o throughput posso aumentar meu poder computacional
+
+Escala
+  Vertical
+    - Variação dos recursos computacionais (CPU, RAM, DISCO)
+    - Possui uma quantidade limite de recursos
+    - Todo o software em somente uma máquina, se a mesma cair o software fica indisponível
+  Horizontal
+    - Disponibilização de máquinas
+    - Software em várias máquinas, melhor para disponibilidade mas necessita de um load balance para melhor distribuição

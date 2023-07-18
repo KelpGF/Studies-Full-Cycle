@@ -1,0 +1,17 @@
+Como escalar banco de dados
+  • Aumentando recursos computacionais
+  • Distribuindo responsabilidades (escrita vs leitura)
+  • Shards de forma horizontal
+  • Serverless
+
+
+Em muitos casos queremos escalar no BD sem sequer pensar:
+  - "Porque estou precisando fazer isso?"
+  - "A forma que estou utilizando o BD é realmente efetiva?"
+  - "Esse banco é a melhor opção para esse processos?"
+
+Alguns pontos que devem ser analisados são a otimização de queries e índices:
+  • Trabalhe com índices de forma consciente
+  • APM (Application performance monitoring) nas queries
+  • Explain na queries
+  • CQRS (Command Query Responsibility Segregation)
