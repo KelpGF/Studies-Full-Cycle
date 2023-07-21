@@ -1,0 +1,13 @@
+Circuit breaker
+
+• Protege o sistema fazendo com que as requisições feitas para ele sejam negadas. Ex: 500
+  Ao perceber que o software está falhando o circuito é aberto, impedindo a entrada de novas requisições
+
+• Circuito fechado = Requisições chegam normalmente
+
+• Circuito aberto = Requisições não chegam ao sistema. Erro instantâneo ao client
+  Dessa maneira os clients não iram esperar, não será gerado o efeito dominó citado anteriormente 
+
+• Meio aberto = Permite uma quantidade limitada de requisições para verificação se o sistema tem condições de voltar ao ar integralmente
+  A cada intervalo de tempo, 2 segundos por exemplo, o circuito é fechado. Caso o sistema não suporte o circuito será aberto
+  Depois de 2 segundo é fechado novamente e assim continua até normalizar. Quando normalizado o circuito volta a ser fechado

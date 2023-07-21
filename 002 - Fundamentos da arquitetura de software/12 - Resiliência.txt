@@ -1,0 +1,7 @@
+Resiliência
+É o poder de ser adaptar a quando não esperado acontece
+
+• Ter estratégias de resiliência nos possibilita minimizar os riscos de perda de dados e transações importantes para o negócio.
+• Resiliência é um conjunto de estratégias adotadas intencionalmente para a adaptação de um sistema quando uma falha ocorre.
+
+- Se seu software tem o processo que depende de terceiros, mas se esse terceiro estiver indisponível você vai perder essa requisição?

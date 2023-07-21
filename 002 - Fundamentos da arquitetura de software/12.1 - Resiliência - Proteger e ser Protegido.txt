@@ -1,0 +1,14 @@
+Proteger e ser Protegido
+
+• Um sistema em uma arquitetura distribuída precisa adotar mecanismos de autopreservação para garantir ao máximo sua operação com qualidade.
+  Preservar seu software para quando os outros precisarem e preservar os outros softwares pra quando o seu precisar
+
+• Um sistema precisa não pode ser "egoísta" ao ponto de realizar mais requisições em um sistema que está falhando.
+  Quando um sistema está fora do ar, você continuar enviando requisições vai ajudar ele a voltar?
+
+• Um sistema lento no ar muitas vezes é pior do que um sistema fora do ar. (Efeito dominó)
+  Vamos supor que temos 3 sistemas: A, B, C, em que A chama B que depois chama C
+  Porém o sistema C está lento e o B depende dele, logo o B fica esperando. Mas o A também depende do B que está demorando devido ao C.
+  No fim o sistema A continua recebendo requisições sem terminar as que já possui, começando assim a comprometer a performance de TODOS os sistemas
+
+Em geral os software devem ser capaz de perceber que está falhando e alertar os outros, e também de perceber que os outros sistemas estão falhando e parar de requisitar eles

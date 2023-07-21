@@ -1,0 +1,18 @@
+Service Mesh (Malha de serviços)
+  Conseguimos controlar e entender tudo que acontecer na nossa rede utilizando isso
+
+
+• Controla o tráfego de rede
+  Podemos adicionar proxy a frente de cada serviço.
+  Quando um sistema A tenta falar com o sistema B na verdade ele fala com o seu proxy (proxyA), proxyA que tenta falar com o sistema B
+  O sistema B também tem um proxy (proxyB) que receber esse pedido e se comunica com o sistema B, e recebe a resposta e manda pro proxyA que manda pro A 
+  Toda a comunicação de rede é feita via proxy, de maneira controlada
+
+• Evita implementações de proteção pelo próprio sistema.
+  Consigo aplicar políticas de Health check, Circuit breaker e Rate Limiting na minha própria rede
+  Não preciso mexer nos sistemas em tópicos relacionados a comunicação e network
+
+• mTLS
+  Criptografia e Segurança
+
+• Circuit breaker, retry, timeout, fault injection, etc

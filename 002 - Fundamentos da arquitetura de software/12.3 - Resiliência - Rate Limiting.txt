@@ -1,0 +1,17 @@
+Rate Limiting
+Como saber meu Rate Limiting?
+  - Testes de Estresse
+  - Vária de acordo com seu potencial computacional
+
+Vantagens:
+• Protege o sistema baseado no que ele foi projetado para suportar
+  Se meu sistema suporta até 100 requisições simultâneas, então devo permitir apenas 100 requisições simultâneas
+  Quando meu limite for ultrapassado devo bloquear as outras requisições.
+  Porém, existem casos que não podem ter requisições barradas, por isso não é tão simples
+
+• Preferência programada por tipo de client
+  Quando utilizamos Rate Limiting de forma genérica temos o problema que é:
+    Outros sistemas menos relevantes podem bater esse limite e sistemas importantes ficaram impossibilitado de utilizar esse serviço
+  O correto é limitar por client.
+    - O sistema relevante tem o Rate Limiting de 60 requisições simultâneas (normalmente ele tem 50)
+    - Os demais sistemas tem o limite de 40 requisições simultâneas

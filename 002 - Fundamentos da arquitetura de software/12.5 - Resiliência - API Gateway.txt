@@ -1,0 +1,8 @@
+API Gateway
+
+Ela é a responsável por receber todas as requisições e aplicar políticas de rede e redirecionar esses pedidos pra o sistema correto
+
+• Garante que requisições "inapropriadas" não cheguem até o sistema:
+  Ex: usuário não autenticado
+
+• Implementa políticas de Rate Limiting, Health check, etc

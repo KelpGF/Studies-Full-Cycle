@@ -1,0 +1,15 @@
+Health check
+
+• Sem sinais vitais, não é possível saber a "saúde" de um sistema
+  Preciso saber como está a saúde do sistemas para saber se posso mandar mais requisições
+  Com sinais de "não saúde" um sistema deve tomar estratégias para avisar isso aos outros, até se recuperar
+
+• Um sistema que não está saudável possui uma chance de se recuperar caso o tráfego pare de ser direcionado a ele temporariamente.
+  Quando um software começa a ficar lento mais requisições vai piorar sua saúde.
+  Conseguindo diminuir o tráfego ele consegue se recuperar, algum possuem alguns mecanismos de 'Self healing' para isso
+
+• Health check de qualidade
+  Uma requisição na rota "/", "/health" NÃO SIGNIFICA NADA
+  Não é efetivo comparar uma rota que retorna um HTML com rotas que fazem acesso a DB's, gateways...
+  O health check tem que ser pensado de uma forma em que consigo percorrer os principais tópicos do meu sistema em um tempo aceitável
+  
