@@ -1,0 +1,18 @@
+Garantias de entrega: Retry
+
+Quando o servidor que estamos requisitando não responde pois seu Rate Limiting foi ultrapassado
+Temos algumas formas de retentativa
+
+• Linear - Sem backoff
+  A cada 2 segundo, por exemplo, posso refazer minha requisição
+  Porém, se múltiplos clients tiverem fazendo o mesmo processo no mesmo tempo o servidor pode continuar sem conseguir responder esses pedidos
+
+• Exponential backoff
+  Em vez de ser linear (a cada Xms) posso ir aumentando esse tempo por tentativa
+  1seg, 2seg, 4seg, 8seg, 16seg...
+  Isso pode ajudar pois, devido o intervalo maior, o servidor pode ter se recuperado.
+  Mas ainda podemos cair na armadilha anterior
+
+• Exponential backoff - Jitter
+  Tem a mesma ideia do anterior mas é adicionado um 'ruído'. Um tempo extra aleatório entre as solicitações
+  Dessa maneira é bem menos provável que as mensagens cheguem toda simultaneamente
