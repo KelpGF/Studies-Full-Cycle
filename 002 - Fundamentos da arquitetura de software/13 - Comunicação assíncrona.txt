@@ -1,0 +1,25 @@
+Comunicação assíncrona
+
+Desde sempre temos um sistema em que quando não conseguimos processar todos os pedidos montamos uma fila, exemplos:
+  Pagar boleto
+  Supermercado
+  Comprar um ingresso
+
+E porque não utilizar na programação?
+
+Se meu sistema aguenta 50 requisições mas recebe 100 eu posso tentar processar tudo e perder uma ou outra requisição
+ou posso enfileirar as requisições e ir processando por vez
+
+Isso seria programação assíncrona, os pedidos não recebem resposta de forma instantânea (síncrona) e sim recebem a resposta depois de alguma forma (assíncrono)
+
+Vantagens de trabalhar de forma assíncrona:
+• Evita perda de dados
+  Enfileirar as requisições em algum sistema de filas e ir processando de acordo com meu Rate Limiting
+  Com isso consigo processar mais do que o suportado e também evito a perda de alguma requisição
+
+• Não há perda de dados no envio de uma transação de 0 server estiver fora
+  Com os dados salvos em uma fila, caso o sistema responsável por processar esses pedido esteja fora do ar ele poderá processar quando estiver saudável novamente
+
+• Servidor pode processar a transação em seu tempo quando estiver online
+
+• Entender com profundidade o message broker / sistema de stream
