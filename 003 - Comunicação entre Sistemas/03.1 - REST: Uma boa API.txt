@@ -1,0 +1,59 @@
+REST: Uma boa API REST
+
+• Utiliza URIS únicas para serviços e itens que expostos para esses serviços (LV 1)
+• Utiliza todos os verbos HTTP para realizar as operações em seus recursos, incluindo caching (LV 2)
+• Provê links relacionais para os recursos exemplificando o que pode ser feito (LV 3)
+
+Padrões mais conhecidos
+  - HAL
+    Hypermedia Application Language
+  - JSON
+    Não provê um padrão de hipermídia para realizar a linkagem
+  - Collection+JSON
+  - Siren
+
+Padrão HAL+JSON: Um dos melhores padrões
+  - Media type = application/hal+json
+  - Ligação de relacionamento entre dados
+  - Example: 03.1 - REST: hal json.png
+  - API se torna bem mais completa e facilita muito a vida do desenvolvedor
+
+
+HTTP Method Negotiation:
+  HTTP possui também o método OPTIONS. Esse método serve para informar quais são os métodos permitidos ou não para determinado recurso
+  
+  Exemplo de requisição:
+    OPTIONS /api/product HTTP/I .1
+    Host: fullcycle.com.br
+  Resposta pode ser:
+    HTTP/I.1 200 OK
+    Allow: GET, POST
+  Caso a requisição seja feita em outro método a resposta deve ser algo como:
+    HTTP/I.1 405 Not Allowed
+    Allow: GET, POST
+
+  Suas API's atualmente fazem isso? 👀
+  
+
+Content Negotiation:
+  Esse processo é baseado na requisição que o client faz para o server, informando como deseja enviar os dados e receber a resposta
+  O servidor deve retornar o resultado correto da requisição ou informar ao client que não consegue processar os dados informados ou retornar a resposta no formato desejado
+  
+  • Accept Negotiation
+    Client solicita a informação e o tipo de retorno pelo server baseado no media type informado por ordem de prioridade.
+    Request:
+      GET /product
+      Accept: application/json
+    Resposta pode ser o retorno dos dados ou:
+      HTTP/I.1 406 Not Acceptable
+
+  • Content-Type Negotiation
+    O client enviar um header chamado Content-Type informando o formato dos dados que estão sendo enviados
+    O servidor então deve realizar o processo com os dados recebidos ou informar que consegue processar os dados no padrão informado
+    Request:
+      POST /product HTTP/I.1
+      Accept: application/json
+      Content-Type: application/json
+      { "name": "Product 1" }
+    Resposta pode ser o retorno dos dados ou:
+      415 Unsupported Media Type

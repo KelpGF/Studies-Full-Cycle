@@ -1,0 +1,35 @@
+Padrão REST (Representational state of transfer)
+
+• Surgiu em 2000 por Roy Fielding em uma dissertação de doutorado
+• Simplicidade
+• Stateless
+  - Sem guardar estado
+  - O servidor não possui a responsabilidade de guardar sessões do usuário
+• Cacheável
+
+
+Níveis de maturidade (Richardson Maturity Model)
+  • Nível 0: The Swamp of POX
+    Requisições e transações sem padrão
+
+  • Nível 1: Utilização de resources
+    Verbo   |     URI     | Operação
+
+    GET     | /products/l | Buscar
+    POST    | /products   | Inserir
+    PUT     | /products/l | Alterar
+    DELETE  | /products/l | Remover
+  
+  • Nível 2: Verbos HTTP
+    Verbo   | Utilização
+
+    GET     | Recuperar informação
+    POST    | Inserir
+    PUT     | Alterar
+    DELETE  | Remover
+
+  • Nível 3: HATEOAS: Hypermedia as the Engine of Application State
+    - Hypermedia: um link interligado com outro link o tempo todo
+    - Informar as novas possíveis ações a partir da ação execução pela requisição
+    - Sua API se tornar mais auto explicativa e intuitiva
+    - Example: 03.1 - REST: hal json.png
