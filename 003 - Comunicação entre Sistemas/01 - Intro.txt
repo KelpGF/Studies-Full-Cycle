@@ -1,0 +1,7 @@
+Temos muitas formas de se comunicar como outros sistemas, seja de forma síncrona ou assíncrona
+
+O mais comum é utilizarmos a comunicação síncrona, que é basicamente aguardar a resposta de forma imediata
+
+Mas existem casos em que os dados requisitados não precisam ser devolvido imediatamente, sendo mais adequado a comunicação assíncrona
+
+Nesse tema veremos alguns tipos de comunicação entre sistemas

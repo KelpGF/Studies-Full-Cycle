@@ -1,0 +1,10 @@
+O mais comum é a utilização de comunicação síncrona, mas a mesma nem sempre é a mais adequada
+
+Com a comunicação assíncrona temos algo chamado "consistência eventual". Exemplo:
+  Temos um micro-serviço de produto com seu banco de dados com todas as informações dos produtos
+  Temos outro micro-serviço de checkout que tem seu banco de dados e nesse banco tem as informações ID e NOME do produto de forma duplicada
+  Dessa forma o meu serviço de checkout fica independente do de produto. Porém, ao editar o nome do produto a alteração é realizada primeiramente no banco de produto
+  Depois de um certo tempo (evento) esse dados será sincronizado no banco de checkout, mas nesse intervalo os dados estão inconsistentes
+  E daí que vem a consistência eventual, eventualmente os dados serão sincronizados
+
+Trabalhar com comunicação assíncrona é também entender que inconsistência entre informações pode ocorrer. É um valor pela independência entre os serviços
