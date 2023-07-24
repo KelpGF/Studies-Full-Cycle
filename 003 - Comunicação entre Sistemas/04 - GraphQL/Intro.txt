@@ -1,0 +1,8 @@
+É uma chamada rpc comum cliente servidor mas enviada dentro de um formado que o servidor consegue entender e trazer apenas os campos que você pediu
+Ex.: Um rota de API geralmente retorna um formado de dados
+  Buscar usuário: Nome, email, fone, cep, CPF
+Com o GraphQL dizemos que precisamos apenas do Nome e CPF, e nos é retornado apenas essas informações, permitindo maior granularidade desses dados
+
+Ele é muito com 'backend for frontend', que é ter backends (retornos) de acordo com o frontend (clients)
+Ex.: O YouTube tem várias plataformas: Web, mobile, etc.
+Porém, os dados buscados par preencher o menu ou os recomentados são diferentes do mobile pro Web, mobile geralmente exibe menos informações
