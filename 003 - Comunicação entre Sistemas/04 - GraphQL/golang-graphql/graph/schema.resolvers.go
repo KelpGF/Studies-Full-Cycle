@@ -10,14 +10,50 @@ import (
 	"golang-graph-ql/graph/model"
 )
 
-// CreateTodo is the resolver for the createTodo field.
-func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) (*model.Todo, error) {
-	panic(fmt.Errorf("not implemented: CreateTodo - createTodo"))
+// CreateCategory is the resolver for the createCategory field.
+func (r *mutationResolver) CreateCategory(ctx context.Context, input model.NewCategoryInput) (*model.Category, error) {
+	category, err := r.CategoryDB.Create(input.Name, *input.Description)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return &model.Category{
+		ID: category.ID,
+		Name: category.Name,
+		Description: &category.Description,
+	}, nil
 }
 
-// Todos is the resolver for the todos field.
-func (r *queryResolver) Todos(ctx context.Context) ([]*model.Todo, error) {
-	panic(fmt.Errorf("not implemented: Todos - todos"))
+// CreateCourse is the resolver for the createCourse field.
+func (r *mutationResolver) CreateCourse(ctx context.Context, input model.NewCourseInput) (*model.Course, error) {
+	panic(fmt.Errorf("not implemented: CreateCourse - createCourse"))
+}
+
+// Categories is the resolver for the categories field.
+func (r *queryResolver) Categories(ctx context.Context) ([]*model.Category, error) {
+	categories, err := r.CategoryDB.FindAll()
+
+	if err != nil {
+		return nil, err
+	}
+
+	var categoriesModel []*model.Category
+
+	for _, category := range categories {
+		categoriesModel = append(categoriesModel, &model.Category{
+			ID: category.ID,
+			Name: category.Name,
+			Description: &category.Description,
+		})
+	}
+
+	return categoriesModel, nil
+}
+
+// Courses is the resolver for the courses field.
+func (r *queryResolver) Courses(ctx context.Context) ([]*model.Course, error) {
+	panic(fmt.Errorf("not implemented: Courses - courses"))
 }
 
 // Mutation returns MutationResolver implementation.
