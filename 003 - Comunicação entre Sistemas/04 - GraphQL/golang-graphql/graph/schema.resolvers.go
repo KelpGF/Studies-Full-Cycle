@@ -7,7 +7,7 @@ package graph
 import (
 	"context"
 	"fmt"
-	"golang-graph-ql/graph/model"
+	"golang-graphql/graph/model"
 )
 
 // CreateCategory is the resolver for the createCategory field.

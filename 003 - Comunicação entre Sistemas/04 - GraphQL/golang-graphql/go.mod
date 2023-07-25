@@ -1,4 +1,4 @@
-module golang-graph-ql
+module golang-graphql
 
 go 1.21rc3
 

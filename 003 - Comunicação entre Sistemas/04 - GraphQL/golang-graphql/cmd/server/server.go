@@ -2,8 +2,8 @@ package main
 
 import (
 	"database/sql"
-	"golang-graph-ql/graph"
-	"golang-graph-ql/internal/database"
+	"golang-graphql/graph"
+	"golang-graphql/internal/database"
 	"log"
 	"net/http"
 	"os"

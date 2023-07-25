@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  golang-graphql:
+    build: .
+    container_name: golang-graphql
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/go/src/golang-graphql

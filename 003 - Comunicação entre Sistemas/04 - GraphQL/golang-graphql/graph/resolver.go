@@ -1,6 +1,6 @@
 package graph
 
-import "golang-graph-ql/internal/database"
+import "golang-graphql/internal/database"
 
 // This file will not be regenerated automatically.
 //

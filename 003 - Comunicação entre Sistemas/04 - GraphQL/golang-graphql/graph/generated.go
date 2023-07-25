@@ -8,7 +8,7 @@ import (
 	"embed"
 	"errors"
 	"fmt"
-	"golang-graph-ql/graph/model"
+	"golang-graphql/graph/model"
 	"strconv"
 	"sync"
 	"sync/atomic"
