@@ -74,6 +74,12 @@ autobind:
 # modelgen, the others will be allowed when binding to fields. Configure them to
 # your liking
 models:
+  Category:
+    model:
+      - golang-graphql/graph/model.Category
+  Course:
+    model:
+      - golang-graphql/graph/model.Course
   ID:
     model:
       - github.com/99designs/gqlgen/graphql.ID
