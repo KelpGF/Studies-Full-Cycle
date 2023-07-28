@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  golang-grpc:
+    build: .
+    container_name: golang-grpc
+    ports:
+      - "50051:50051"
+    volumes:
+      - .:/go/src/golang-grpc
