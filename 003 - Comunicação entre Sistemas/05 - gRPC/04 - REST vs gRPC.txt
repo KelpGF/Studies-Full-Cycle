@@ -1,0 +1,17 @@
+REST
+• Utiliza os formatos Texto / JSON para o tráfego de dados
+• A comunicação é Unidirecional: envia, espera, recebe
+• Possui uma alta latência
+• Não possui um contrato definido, aumentando as chances de erros
+• Sem suporte a streaming (Request / Response)
+• Com os método HTTP temos um design pré-definido
+• Para utilizar o modelo REST nossa aplicação depende de bibliotecas de terceiro
+
+gRPC
+• Protocol Buffers: os dados são enviados em formato binário
+• Bidirecional e Assíncrono
+• Baixa latência
+• Contrato definido (.proto), minimizando os erros
+• Suporte a streaming
+• Design é livre
+• Geração de código nativo para estabelecer a comunicação

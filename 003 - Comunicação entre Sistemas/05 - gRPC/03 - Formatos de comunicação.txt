@@ -1,0 +1,33 @@
+gRPC - API "unaryll"
+  O Client faz uma requisição
+    request: Client ⇒ Server
+  E o server retorna uma resposta
+    response: Client ⇐ Server
+
+
+gRPC - API "Server streaming"
+  O Client faz uma requisição
+    request: Client ⇒ Server
+  E o server retorna várias resposta
+    response: Client ⇇ Server
+Antes do server concluir todo o processo ele já começa a enviar partes da resposta para o Client
+Dessa maneira tudo fica mais rápido, pois o Client continua suas atividades antes mesmo o server finalizar o processamento do seu pedido
+
+
+gRPC - API "Client streaming"
+  O Client envia várias requisições
+    request: Client ⇉ Server
+  E o server retorna uma resposta
+    response: Client ⇐ Server
+Vamos ter como exemplo um client que deve ler um arquivo e enviar seus dados para o servidor
+Em ver de obter todo o conteúdo do arquivo e alocar na memória do computador, ele vai ler pedaços do arquivos e ir enviando para o servidor
+Quando ele terminar de enviar todos os pedaços para o servidor o mesmo irá finalizar seu processamento e retornar uma resposta
+
+
+gRPC - API "Bi directional streaming"
+  O Client envia várias requisições
+    request: Client ⇉ Server
+  E o server retorna várias resposta
+    response: Client ⇇ Server
+Para casos em que os Client mantém um canal aberto e o server também, sempre fluindo informações de ambos os lados
+exemplo: uma vídeo chamada, em que o client sempre envia as imagens e audios capitados e sempre recebe do server os mesmo dados das outras pessoas

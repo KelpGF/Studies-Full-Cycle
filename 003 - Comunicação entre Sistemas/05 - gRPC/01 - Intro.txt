@@ -1,0 +1,30 @@
+O que é gRPC?
+É um framework desenvolvido pela Google com o objetivo de facilitar a comunicação entre sistemas
+É baseado no RPC (Remote Procedure Call)
+Ele torna essa comunicação bem mais leve, segura, rápida e independe de linguagens de programação
+Mesmo criado pela Google, hoje ele faz parte da CNCF (Cloud Native Computing Foundation) e é mantido por ela
+
+(framework: conjunto de ferramentas e recursos)
+
+
+Em quais casos podemos utilizar gRPC?
+• Ideal para microsserviços
+  No mundo dos microsserviços a comunicação deve ser rápida, eficiente e segura. Tudo isso o gRPC provém
+• Mobile, Browsers e Backend
+  Clients também conseguem se comunicar com servers via gRPC
+• Geração das bibliotecas de forma automática
+  Algumas linguagens de programação conseguem gerar de forma automática o código necessário para a comunicação gRPC funcionar
+• Streaming bidirecional utilizando HTTP/2
+
+
+Linguagens (Suporte oficial)
+• gRPC-GO
+• gRPC-JAVA
+• gRPC-C
+  • Python
+  • Ruby
+  • Objective C
+  • PHP
+  • Node.js
+  • Dart
+  • Kotlin / JVM
