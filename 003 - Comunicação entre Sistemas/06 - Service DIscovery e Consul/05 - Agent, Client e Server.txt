@@ -1,0 +1,20 @@
+Agent, Client e Server
+
+- Agent
+  É um processo que é executado em todos os nós do cluster
+  Pode ser em Client Mode ou em Server Mode
+
+- Client
+  Registra os serviços localmente
+  Health check
+  Informa a os dados e configurações dos serviços para um Server 
+
+- Server
+  É quem gerencia os Clients
+  Recomendado pelo menos 3 Servers
+  Responsável por retornar nossas queries, seja busca DNS ou via API
+  Troca de informações entre os datacenters
+
+Dev Mode
+  Um modo de desenvolvimento que roda com servidor e é utilizado para realizar testes.
+  Não deve ser utilizado em produção pois não é escalável e registra tudo na memória local

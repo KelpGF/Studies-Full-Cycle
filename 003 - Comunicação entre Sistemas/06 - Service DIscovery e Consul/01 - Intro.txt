@@ -1,0 +1,16 @@
+Service Discovery
+
+- Descobre as máquinas disponíveis para acesso
+  As vezes temos muitas máquinas rodando a mesma aplicação. Com isso conseguimos ver quais estão disponíveis e saudáveis para serem acessadas
+
+- Segmentação de máquinas para garantir segurança
+  Informar quais máquinas terá acesso as outras
+
+- Resoluções via DNS
+  Conseguimos saber quais máquinas estão no serviço acessado pelo DNS
+
+- Health check
+  As máquina descobertas estarão sempre sendo validadas via requisição TCP, caso não respondam essa máquina será removida da lista de quem receberá o tráfego
+
+- Como saber se tenho permissão para acessar
+  É possível bloquear acesso de uma máquina a outra

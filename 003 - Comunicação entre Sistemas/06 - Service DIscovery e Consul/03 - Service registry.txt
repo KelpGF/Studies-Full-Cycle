@@ -1,0 +1,5 @@
+Consul & Service Registry Centralizado
+
+O Consul possui um Server onde as aplicação terão um Agent Consul rodando internamente que deve ser registrado no Consul Server
+
+Dessa maneira temos todas as informações dos serviços registrados no nosso Consul Server, com IP, se está com bom funcionamento, etc

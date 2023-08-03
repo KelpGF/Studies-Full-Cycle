@@ -1,0 +1,9 @@
+Hashicorp Consul
+
+- Service Discovery
+- Service Segmentation
+- Load Balancer na Borda (Layer 7)
+- Key / Value Configuration
+- Opensource / Enterprise
+
+No nosso caso, o Consul será utilizado como ferramenta para entendermos o processo de Service Discovery

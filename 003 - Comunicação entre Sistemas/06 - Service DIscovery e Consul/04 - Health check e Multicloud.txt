@@ -1,0 +1,8 @@
+Health check 
+  Ao subir um aplicação também subimos um Agent do Consul
+  Esse Agent se registra em um Consul Server
+  Ele também faz verificações localmente em um rota informada
+    Caso essa verificação falhe o Agent notifica o Server que remove esse IP dos registrados
+
+Multicloud
+  O Consul também é multicloud, conseguimos registrar e gerenciar serviços de várias clouds

@@ -1,0 +1,53 @@
+version: '3'
+
+services:
+  consulserver01:
+    image: consul:1.10
+    container_name: consulserver01
+    hostname: consulserver01
+    # entrypoint: ["consul", "agent", "-config-dir=/etc/consul.d"]
+    command: ['tail', '-f', '/dev/null']
+    volumes:
+      - ./servers/server01:/etc/consul.d
+    ports:
+      - "8500:8500"
+
+  consulserver02:
+    image: consul:1.10
+    container_name: consulserver02
+    hostname: consulserver02
+    # entrypoint: ["consul", "agent", "-config-dir=/etc/consul.d"]
+    command: ['tail', '-f', '/dev/null']
+    volumes:
+      - ./servers/server02:/etc/consul.d
+    depends_on:
+      - consulserver01
+
+  consulserver03:
+    image: consul:1.10
+    container_name: consulserver03
+    hostname: consulserver03
+    # entrypoint: ["consul", "agent", "-config-dir=/etc/consul.d"]
+    command: ['tail', '-f', '/dev/null']
+    volumes:
+      - ./servers/server03:/etc/consul.d
+    depends_on:
+      - consulserver02
+
+  consulclient01:
+    image: consul:1.10
+    container_name: consulclient01
+    hostname: consulclient01
+    command: ['tail', '-f', '/dev/null']
+    # entrypoint: ["consul", "agent", "-bind=172.22.0.2", "-data-dir=/var/lib/consul", "-config-dir=/etc/consul.d", "-retry-join=172.22.0.4", "-retry-join=172.22.0.5", "-retry-join=172.22.0.6", "-encrypt=r+MroeT9FXLwwKP5bkgYmtBMlqRamzX+bZGRcBGB3DU="]
+    volumes:
+      - ./clients/consul01:/etc/consul.d
+
+  consulclient02:
+    image: consul:1.10
+    container_name: consulclient02
+    hostname: consulclient02
+    command: ['tail', '-f', '/dev/null']
+    # entrypoint: ["consul", "agent", "-bind=172.22.0.3", "-data-dir=/var/lib/consul", "-config-dir=/etc/consul.d", "-retry-join=172.22.0.4", "-retry-join=172.22.0.5", "-retry-join=172.22.0.6", "-encrypt=r+MroeT9FXLwwKP5bkgYmtBMlqRamzX+bZGRcBGB3DU="]
+    volumes:
+      - ./clients/consul02:/etc/consul.d
