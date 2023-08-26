@@ -1,0 +1,16 @@
+Domínio vs subdomínio
+
+Domain
+  Quando falamos do domínio da aplicação pode estar abordando algo um grande e complexo
+  Mas ao analisar melhor vemos que dentro dele tem várias áreas que podem ser feitas isoladas e que se comunicam entre si
+  Essas áreas são os subdomínios que podemos dividir em 3
+
+  • Core Domain
+    - O mais importante, é onde comportamos o coração do negócio
+    - Diferencial competitivo da empresa
+  • Support Domain
+    - Apoiam o domínio
+    - Não faz parte do Core mas são essenciais para o funcionamento do mesmo
+  • Generic Domain
+    - Softwares auxiliares (internos e externos)
+    - Sem diferencial competitivo
