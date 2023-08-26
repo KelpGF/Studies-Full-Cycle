@@ -9,4 +9,4 @@ Mas para o suporte ao cliente, ticket pode ser considerado um chamado aberto por
 Quando você tem a mesma palavra mas com significados diferentes significa que provavelmente existem contextos diferentes.
 Um software que não está divido por contexto terá problemas em separar entidades com os mesmo nomes mas funcionamentos diferentes dependendo da situação
 
-Também temos os caso: Duas palavras diferentes com o mesmo significa, provavelmente também serão contextos diferentes
+Também temos os caso: Duas palavras diferentes com o mesmo significado, provavelmente também serão contextos diferentes

@@ -1,0 +1,17 @@
+Elementos Transversais
+
+As vezes contextos diferentes acabam conversando por meio de entidades e elementos que são transversais, ou seja, que estão em vários contextos mas com perspectivas diferentes
+
+Exemplo: Um cliente em uma empresa de venda de ingressos
+
+Na parte de venda temos o cliente
+Na parte de suporte também temos o mesmo cliente, porém as perspectivas desse mesmo cara é diferente
+
+Cliente em vendas possui: evento, local, ticket, vendedor
+Cliente em suporte possui: dúvida, departamento, ticket, responsável
+
+O maior erro nesse caso é pensar que tudo é a mesma coisa e é unilateral
+É muito comum nesses casos criar um classe Cliente que possui TODAS essas propriedades de todos os contextos
+Essa entidade fica gigante pois tenta atender todos os contextos
+O correto é: criar uma entidade cliente por contexto com apenas as informações necessárias
+Classes assim dificultam na hora de quebrar e reorganizar o seu sistema 
