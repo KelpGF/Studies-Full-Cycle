@@ -1,0 +1,12 @@
+Bounded Contexts
+- É uma divisão explícita dentro de um modelo de domínio
+- Para identificar um contexto podemos pensar nas palavras utilizadas por eles, a linguagem ubíqua desse contexto, pois tudo que é específico daquela área e que é resolvido por ela possui a sua própria termologia
+
+Exemplo prático: Um sistema de venda de ingressos
+
+Para a parte de venda, ticket pode ser considerado o próprio ingresso
+Mas para o suporte ao cliente, ticket pode ser considerado um chamado aberto por alguém com algum problema
+Quando você tem a mesma palavra mas com significados diferentes significa que provavelmente existem contextos diferentes.
+Um software que não está divido por contexto terá problemas em separar entidades com os mesmo nomes mas funcionamentos diferentes dependendo da situação
+
+Também temos os caso: Duas palavras diferentes com o mesmo significa, provavelmente também serão contextos diferentes
