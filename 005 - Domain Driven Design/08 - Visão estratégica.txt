@@ -1,0 +1,9 @@
+Visão estratégica
+
+Quando separamos nosso domínio em subdomínios e contextos percebemos que esses caras vão conversar entre si
+Os contextos vão se complementar, trabalhar em parceria
+Nesse ponto precisamos ter uma visão mais estratégica, para conseguir compreender como essa comunicação vai acontecer
+e como os times poderão ser organizados durante o processo de construção do software
+
+Precisamos então de uma modelagem mais estratégica, para entender os relacionamentos e funcionamentos.
+Para isso podemos criar um Context Mapping, que é o mapeamentos dos nossos contextos

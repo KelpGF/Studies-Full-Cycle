@@ -1,6 +1,7 @@
 Elementos Transversais
 
-As vezes contextos diferentes acabam conversando por meio de entidades e elementos que são transversais, ou seja, que estão em vários contextos mas com perspectivas diferentes
+As vezes contextos diferentes acabam conversando por meio de entidades e elementos que são transversais, 
+ou seja, que estão em vários contextos mas com perspectivas diferentes
 
 Exemplo: Um cliente em uma empresa de venda de ingressos
 
