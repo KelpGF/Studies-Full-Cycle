@@ -1,0 +1,25 @@
+Definições detalhadas: https://github.com/ddd-crew/context-mapping
+
+• Partnership: Contextos que se comunicam entre si e/ou possuem funcionamentos semelhantes
+
+• Shared Kernel:
+  - Núcleo compartilhado entre contextos e sistema que necessitam das mesmas funcionalidades
+  - SDK/Libs
+  - Ponto de Atenção: Alterar algum comportamento implicará em várias funcionalidades
+
+• Customer-Supplier Development:
+  - DownStream -> Upstream
+  - O Fornecedor (ou Upstream) dita como ele deverá ser utilizado
+  - O Cliente (ou DownStream) deverá se adaptar para utilizar o serviço
+
+• Conformist: Se conformar com o jeito que software externos, e necessários, funcionam
+
+• Anticorruption-layer (ACL): Camada de adaptação de interfaces para não tornar o software dependente de outros
+
+• Open host service
+
+• Published language
+
+• Separate ways: Contextos delimitados que não se comunicam
+
+• Big Ball of Mud
