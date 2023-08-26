@@ -1,0 +1,9 @@
+Problema vs Solução
+
+• Problema
+  Visão geral do domínio e suas complexidades
+  Conseguimos extrair os subdomínios e seus problemas
+
+• Solução
+  Fazemos a análise do que extraímos do problema e realizamos a modelagem do domínio
+  Com isso vamos identificar os contextos delimitados, que é onde iremos atuar
