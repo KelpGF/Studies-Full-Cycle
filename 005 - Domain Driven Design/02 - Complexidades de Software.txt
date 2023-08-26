@@ -1,0 +1,25 @@
+Softwares complexos
+
+• DDD é / deve ser aplicado para casos de projetos de softwares complexos
+  - Quando o coração do meu negócio é algo simples não é preciso adicionar todo esse estudo e trabalho
+• Grandes projetos possuem muitas áreas, muitas regras de negócio, muitas pessoas com diferentes visões em diferentes contextos
+  - Uma mesma palavra pode ter significados diferentes dependendo da área da empresa
+  - Organizar os contextos do negócio é algo complexo
+• Não há como não utilizar técnicas avançadas em projetos de alta complexidade
+  - Um software grande geralmente já possui muitos pontos a serem abordados:
+    - politicas
+    - regras
+    - pessoas
+    - processos
+    - software externos
+    - software internos que devem ser integrados
+  - Se faz necessário muito conhecimento do negócio e de técnicas avançadas para fazer todos esses pontos funcionarem corretamente
+• O que torna um software complexo são os contexto e interpretação da regra de negócio
+  - A comunicação é algo problemático pois feita de forma ineficiente resulta em conclusões inválidas
+  - Se tiramos uma conclusão incorreta sobre algo não teremos o entendimento correto o problema
+  - Sem compreender corretamente o problema, o software será construído da forma errada
+  - A maiorias dos problemas em um software é dados pela regra de negócio, e não pelas tecnologias
+• Pessoas
+  - Sempre que temos pessoas envolvidas as coisas se tornam complexas
+  - Extrair uma informação de alguém para o contexto que precisamos é algo difícil
+  - Nem sempre as pessoas nas mesmas posições iram concordar
