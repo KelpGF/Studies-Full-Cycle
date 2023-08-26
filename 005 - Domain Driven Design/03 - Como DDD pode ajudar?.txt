@@ -1,0 +1,20 @@
+Como DDD pode ajudar?
+
+• Entender com profundidade o domínio e subdomínios da aplicação
+  Domínio: é o que está interligado com a função principal do que vamos desenvolver
+  Subdomínios: Quando entendemos o nosso domínio conseguimos ver que ele possuí vários tópicos que podem ser abordados separadamente, esses são os subdomínios
+
+• Linguagem universal (ubíqua) entre os envolvidos
+  Em uma empresa a palavra 'cliente' pode possuir significados diferentes entre setores
+  Ao passar isso para um software não podemos considerar esse 'cliente' apenas uma entidade
+  Ai que entra linguagem universal, que é fazer toda a empresa se comunique na mesma página (mesmo que isso seja impossível kkk) 
+
+• Design estratégico com Bounded Contexts
+  É necessário para identificar os domínios, subdomínios e contextos da aplicação
+
+• Design tático
+  Mapear e organizar as entidades e objetos de valor
+  Identificar os eventos do domínio 
+
+• Ter clareza do negócio
+  Compreender a complexidade do negócio para depois partir para a complexidade técnica
