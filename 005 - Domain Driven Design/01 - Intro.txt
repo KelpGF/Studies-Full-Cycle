@@ -1,0 +1,14 @@
+Domain Driven Design (DDD)
+
+O que é?
+  É um método de desenhar/modelar um software guiado pelo seu domínio (o coração da aplicação)
+  Um software possui 2 tipos de complexidade:
+    - Complexidade do negócio: os problemas relacionados a regra de negócio da aplicação
+    - Complexidade de desenvolvimento: é a complexidade adicionada por nós dev para resolver problemas do nosso software
+  DDD é saber modelar os problemas do negócio e saber separar as complexidades do seu software
+
+O livro:
+  - O DDD foi lançada em um livro de 2003, escrito por Eric Evans
+  - Já faz 20 anos e hoje ainda é um tópico de extrema importância, principalmente no mundo dos microsserviços onde devemos saber quando o contexto de cada serviço para não resultar em um sistema fragmentado. confuso e perdido
+  - Nesse livro temos a filosofia do DDD, que é a parte principal. Os patterns e estruturas de pastas são apenas consequências. Ao compreender o real sentido do DDD conseguimos enxergar a importância de entender o problema para conseguir construir um software de qualidade
+ 
