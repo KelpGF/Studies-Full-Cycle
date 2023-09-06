@@ -1,0 +1,4 @@
+Geralmente pensamos em "tipar" nossas variáveis e propriedade utilizando tipos primitivos
+Isso deixa nosso domínio pobre, preso a estruturas simples
+
+Vamos aprender como contornar isso
