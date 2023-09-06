@@ -1,0 +1,5 @@
+Entidades Anêmicas
+
+Uma entidade é algo que possui um ID, pois é único. Esse ID e imutável mas suas outras propriedades podem ser alteradas
+
+Uma entidade que apenas guarda dados (gets/setters) é uma entidade anêmica
