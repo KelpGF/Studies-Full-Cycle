@@ -1,0 +1,27 @@
+Value Objects (V.O.)
+
+"Quando você se preocupa apenas com os atributos de um elemento de um model, classifique isso como um Value Object•
+"Trate o Value Object como imutável. "
+Evans, Eric. Domain-Driven Design (p. 99). Pearson Education. Kindle Edition.
+
+Um VO é um classe que imutável, um conjunto de dados que representa algo em um sistema 
+
+Exemplo:
+  — Address
+    - Street
+    - City
+    - State
+    - Zip Code
+  Quando você se muda você não muda apenas de rua ou nº, você muda de endereço 
+  — CPF
+    - number
+    - digit
+  Um CPF possui seus números e digito verificador, além de uma própria formula e máscara
+
+O ponto é: conseguir modelar o software de uma forma tão expressiva que seja possível entender cada propriedade 
+Começar a utilizar mais VO em vez de tipos primitivos é uma forma de tornar seu software mais expressivo
+
+Regras de um VO:
+- Deve estar sempre se auto validando
+- Ele não é único, não necessita de um ID
+- É imutável
