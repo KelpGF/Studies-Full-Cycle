@@ -1,0 +1,8 @@
+Regras de negócio
+
+Quando temos um entidade devemos pensar: "Em quais situações seus valores serão alterados?".
+Essa situações muito provavelmente são regras de negócio
+
+Em vez de criar os gets/setters padrões, criar métodos mais expressivos, e que podem ou não realizar a mesma ação, definem melhor as regras de negócio de sua entidade
+Esses métodos, por sua vez, devem conter as validações e lançar exception caso sejam fornecidos dados incorretos
+A validação por si só não é nada, mas a validação na entidade é garantir que o estado atual da mesma esteja sempre correto
