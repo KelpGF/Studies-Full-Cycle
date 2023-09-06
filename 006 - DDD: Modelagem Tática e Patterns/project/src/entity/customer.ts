@@ -1,7 +1,9 @@
+import Address from "./address";
+
 class Customer {
   private _id: string;
   private _name: string;
-  private _address: string = "";
+  private _address: Address;
   private _active: boolean = false;
 
   constructor(id: string, name: string) {
@@ -21,6 +23,11 @@ class Customer {
 
   changeName(name: string) {
     this._name = name;
+    this.validate();
+  }
+
+  changeAddress(address: Address) {
+    this._address = address;
     this.validate();
   }
 
