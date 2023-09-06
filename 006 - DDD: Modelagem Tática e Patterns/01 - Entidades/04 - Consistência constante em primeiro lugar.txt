@@ -1,0 +1,3 @@
+Uma entidade deve SEMPRE e OBRIGATORIAMENTE representar o estado correto e atual daquele elemento
+
+Um objeto criado deve possuir dados consistentes 100% das vezes
