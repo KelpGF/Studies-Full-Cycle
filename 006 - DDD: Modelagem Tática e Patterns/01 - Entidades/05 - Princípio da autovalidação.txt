@@ -1,0 +1,3 @@
+Uma Entidade DEVE SEMPRE se auto-validar.
+
+Se isso não acontecer essa entidade pode ficar inconsistente devidos a processo externos
