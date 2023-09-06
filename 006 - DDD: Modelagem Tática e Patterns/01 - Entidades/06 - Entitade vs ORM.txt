@@ -1,0 +1,13 @@
+Devido aos ORMs utilizarem a nomenclatura 'entity' para os modelos de persistência de dados muitas vezes queremos fazer o 2 em 1, criar uma só entidade para o negócio e para o ORM
+
+Isso é incorreto, o melhor caso é criar 2 entidades, uma voltada para cada vertente
+
+Complexidade de negócio (é o foco do DDD)
+- Domain — Regras internas
+- - Entity
+- - - customer.ts (regra de negócio)
+
+Complexidade acidental
+- Infra — Mundo externo
+- - Entity / Model
+- - - customer.ts (get, set)
