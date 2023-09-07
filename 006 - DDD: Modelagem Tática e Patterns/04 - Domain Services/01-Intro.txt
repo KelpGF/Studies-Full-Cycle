@@ -1,0 +1,27 @@
+Domain Services
+
+"Um serviço de domínio é uma operação sem estado que cumpre uma tarefa específica do domínio. Muitas vezes, a melhor indicação de que você deve criar um Serviço no modelo de domínio é quando a operação que você precisa executar parece não se encaixar como um método em um Agregado ou um Objeto de Valor."
+Vernon, Vaughn. Implementing Domain-Driven Design. Pearson Education. Kindle Edition.
+
+Domain Services
+"Quando um processo ou transformação significativa no domínio não for uma
+responsabilidade natural de uma ENTIDADE ou OBJETO DE VALOR, adicione
+uma operação ao modelo como uma interface autônoma declarada como um
+SERVIÇO. Defina a interface em baseada na linguagem do modelo de domínio e
+certifique-se de que o nome da operação faça parte do UBIQUITOUS
+LANGUAGE. Torne o SERVIÇO sem estado."
+Evans, Eric. Domain-Driven Design (p. 106). Pearson Education. Kindle Edition.
+
+Quando precisamos realizar operações que modifique o domínio e não se encaixe como responsabilidade de entidades ou objetos de valor essa operação devem pertencer a um Serviço de Domínio
+
+Ponto a considerar para criar um Domain Service:
+  • Uma entidade pode realizar uma ação que vai afetar todas as entidades?
+  • Como realizar uma operação em lote?
+  • Como calcular algo cuja as informações constam em mais de uma entidade?
+
+Cuidados:
+• Quando houver muitos Domain Services em seu projeto, TALVEZ, isso pode indicar que seus agregados estão anêmicos.
+  Muitos métodos em serviços de domínio pode indicar que varias ações que são responsabilidades das Entidades estão sendo executado por serviços
+
+• Domain Services são Stateless
+  Serviços de Domínio não possuem variáveis, seus método geralmente são estáticos pois não precisam salvar ou recuperar estados
