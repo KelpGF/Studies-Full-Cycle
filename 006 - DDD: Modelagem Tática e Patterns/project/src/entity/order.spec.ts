@@ -15,12 +15,12 @@ describe("Order Entity", () => {
   })
 
   it ("should calculate total", () => {
-    const item = new OrderItem("i1", "123", 10)
+    const item = new OrderItem(10, 2)
     const order = new Order("o1", "c1", [item])
-    expect(order.total()).toBe(10)
+    expect(order.total()).toBe(20)
 
-    const item2 = new OrderItem("i2", "321", 20)
+    const item2 = new OrderItem(20, 2)
     const order2 = new Order("o2", "c2", [item, item2])
-    expect(order2.total()).toBe(30)
+    expect(order2.total()).toBe(60)
   })
 })
