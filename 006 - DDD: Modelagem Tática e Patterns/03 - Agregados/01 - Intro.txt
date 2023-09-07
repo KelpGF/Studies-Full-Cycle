@@ -1,0 +1,8 @@
+Aggregate
+
+"Um agregado é um conjunto de objetos associados que tratamos como uma unidade para propósito de mudança de dados"
+Evans, Eric. Domain-Driven Design (p. 126). Pearson Education. Kindle Edition.
+
+Um agregado é a união de vários elementos que estão fortemente interligado, onde um necessita inteiramente do outro e possuem um objeto principal (Root)
+
+Quando temos entidades que se comunicam mas não são estão dentro do mesmo agregado a sua relação se dar passando apenas o ID, se não a comunicação é a passagem da classe diretamente
