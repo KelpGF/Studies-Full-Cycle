@@ -1,0 +1,1 @@
+Os testes de todas as entidades de um agregado são geralmente feitos no root, pois as demais entidades não podem existir sozinhas
