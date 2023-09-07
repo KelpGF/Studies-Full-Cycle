@@ -1,6 +1,6 @@
 import Address from "./address";
 
-class Customer {
+export default class Customer {
   private _id: string;
   private _name: string;
   private _address: Address;
@@ -19,6 +19,10 @@ class Customer {
     if (!this._name) {
       throw new Error("Name is required");
     }
+  }
+
+  get id() {
+    return this._id;
   }
 
   changeName(name: string) {
