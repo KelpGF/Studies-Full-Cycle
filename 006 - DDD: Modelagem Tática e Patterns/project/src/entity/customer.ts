@@ -25,6 +25,14 @@ export default class Customer {
     return this._id;
   }
 
+  get name() {
+    return this._name;
+  }
+
+  isActive() {
+    return this._active;
+  }
+
   changeName(name: string) {
     this._name = name;
     this.validate();
