@@ -11,5 +11,9 @@
   },
   "scripts": {
     "test": "./node_modules/.bin/tsc --noEmit && ./node_modules/.bin/jest"
+  },
+  "dependencies": {
+    "@types/uuid": "^9.0.3",
+    "uuid": "^9.0.0"
   }
 }
