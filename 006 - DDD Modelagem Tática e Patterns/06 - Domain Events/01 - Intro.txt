@@ -1,0 +1,21 @@
+Domain Events
+
+"Use um evento de domínio para capturar uma ocorrência de algo que aconteceu no domínio."
+Vernon, Vaughn. Implementing Domain-Driven Design. Pearson Education. Kindle Edition.
+
+"A essência de um evento de domínio é que você o usa para capturar coisas que podem desencadear uma mudança no estado do aplicativo que você está desenvolvendo. Esses objetos de evento são processados para causar alterações no sistema e armazenados para fornecer um AuditLog."
+Fowler, Martin. Domain Event.
+
+São utilizados quando queremos que outros contextos (Bounded Context) captem essa mudança de estado
+Ex.: Quando um pedido é gerado precisamos notificar o setor financeiro (outro contexto) para emitir a nota fiscal
+
+Componentes:
+  - Event
+  - Handler: Executa o processamento quando um evento é chamado
+  - Event Dispatcher: Responsável por armazenar e executar os handlers de um evento quando ele for disparado.
+
+Processo:
+  - Criamos um "Event Dispatcher", que vai ser o "Observador do evento"
+  - Criamos um "Evento"
+  - Criamos um (ou vários) "Handler" para o "Evento" 
+  - Registramos o Evento, junto com o Handler no Event Dispatcher
