@@ -30,6 +30,10 @@ export default class Customer {
     return this._name;
   }
 
+  get Address() {
+    return this._address;
+  }
+
   get rewardPoints() {
     return this._rewardPoints;
   }
