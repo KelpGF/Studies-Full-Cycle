@@ -1,4 +1,4 @@
-import Address from "../../../entity/address";
+import Address from "../../../customer/value-object/address";
 import CustomerAddressUpdatedEvent from "../customer-address-updated.event";
 import SendConsoleLogHandler from "./send-console-log.handler";
 
