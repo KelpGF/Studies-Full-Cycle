@@ -1,0 +1,8 @@
+Cronologia
+
+Os processo de um sistema podem ocorrer de forma paralela ou sequencial (e entre outros sistemas)
+Organizar os eventos de forma cronológica facilita o entendimento de tudo que está acontecendo no software
+
+Com isso temos:
+- Ordem de como as coisas acontece
+- Coisas acontecem em uma mesma área de forma paralela
