@@ -1,0 +1,11 @@
+Dados para tomada de decisão
+
+🟩 Post-it green
+  ✅ The data needed in order to make that decision
+  ✅ It's not important where the data is (accidental complexity)
+
+🟪 Post-it purple - Policy: "Quando algo acontecer, faça!"
+  - It's called by a trigger
+  "Quando fizer x, y deve acontecer", y is a policy
+  
+  Details: https://plataforma.fullcycle.com.br/courses/274/168/168/conteudos?capitulo=168&conteudo=7880
