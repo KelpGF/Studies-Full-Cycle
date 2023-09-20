@@ -1,0 +1,9 @@
+Event Storming
+
+O que é?
+  - Alberto Brandolini é o autor do livro Event Storming
+  - Ele explica que é uma técnica utilizadas para que possamos entender de forma mais clara o domínio e os contextos das aplicações
+  por meio dos eventos criados por elas.
+  - É uma dinâmica em grupo que normalmente ocorre no formato de workshop, envolvendo os "domain experts" e a área técnica
+
+
