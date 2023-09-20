@@ -1,0 +1,9 @@
+Entre um comando e evento de domínio temos um agregado com nossas regras de negócio
+
+Mapear agregados é complexo devido ser um conjunto de peças chaves para o sistema
+
+Ex de agregado:
+🟦Criar vídeo -> 🟧Vídeo criado
+Quem é o responsável por criar o vídeo? Será q é um agregado de vídeo? ou gêneros?
+
+Dessa forma conseguimos ver melhor quais agregados serão necessários e também observar que eles pertencem a contextos
