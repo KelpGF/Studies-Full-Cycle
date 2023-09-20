@@ -1,0 +1,14 @@
+Eventos e comandos
+  Tudo que um sistema faz gera eventos, e se compreendermos todos esse eventos temos total clareza do que nosso sistema faz
+
+Mapeamento dos Eventos
+🟧 Post-it orange
+  🔸 is a DOMAIN Event
+  🔸 verb at past tense
+  🔸 relevant for domain experts
+  🔸 big post-it is the event that ends a important process
+  🔸 Occurs by command
+🟦 Post-it orange
+  🔹 all generated events were done by commands
+  🔹 It is the operations that our system performs
+🟨 Post-it yellow - Actors that execute commands
