@@ -1,0 +1,18 @@
+Pivotal Events
+  - Eventos chaves para acessar outra área do sistema
+  - Ex.: Quando assinamos um streaming de vídeo tem o evento 'assinatura aprovada' e esse evento me permite acessar os vídeo da plataforma
+    Porém, realizar assinatura e assistir vídeos são contextos diferentes e podem ter o evento 'assinatura aprovada' como delimitador
+  - São caraterizados com uma fita amarela
+
+Bounded Contexts
+  - Quando um Pivotal Event ocorre e ele possuí muitas polices. Vendo essas polices conseguimos analisar se temos mais de um contexto
+    Dificilmente várias polices que ouvindo o mesmo evento pertencem ao mesmo contexto, ou dificilmente uma polices ocasiona vários eventos no mesmo contexto
+  - Quando temos sistemas diferentes ouvindo o mesmo eventos de domínio é muito provável q sejam de contextos diferentes
+
+Quando separamos os contextos existem partes que temos certeza que pertencem a esse contexto (está tudo claro, branco)
+Mas temos também partes mais cinzentas, que não sabemos se é realmente responsabilidade desse contexto ou se a responsabilidade é compartilhada
+E assim surgem as confusões
+
+Para essas situações confusas, problemas ou riscos, utilizamos o post-it rosa (hotspot: necessita de revisão)
+Para situações se novas ideias/oportunidades a serem avaliadas utilizamos o post-it verde claro
+Se essas situações não foram resolvidas podemos utilizar a estratégia 'arrow voting', que é apenas uma votação. Mas deve ser feita com cuidado para não causar indignações
