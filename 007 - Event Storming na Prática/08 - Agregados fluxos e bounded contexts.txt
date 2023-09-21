@@ -1,0 +1,7 @@
+Para entendimento assistir a aula: https://plataforma.fullcycle.com.br/courses/274/168/168/conteudos?capitulo=168&conteudo=7886
+
+Observações:
+  - cuidado com contextos que parecem ser um só
+    Ex.: Upload de vídeo e conversão
+      O upload está no contexto de gerenciamento de vídeo
+      Já a conversão está mais um contexto de jobs e tratamento de arquivos
