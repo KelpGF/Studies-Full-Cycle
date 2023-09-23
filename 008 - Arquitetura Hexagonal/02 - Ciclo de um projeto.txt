@@ -1,0 +1,81 @@
+Arquitetura Hexagonal - "Ports and Adapters"
+
+Clico de vida de muitos projetos
+
+Fase 1
+• Banco de dados
+• Cadastros
+• Validações
+• Servidor web
+• Controllers
+• Views
+• Autenticação
+• Upload de arquivos
+
+Fase 2
+• Regras de negócio
+• Criação de APIS
+• Consumo de APIS
+• Autorização
+• Relatórios
+• Logs
+
+Fase 3
+• Mais acessos
+• Upgrades hardware
+• Cache
+• API parceiros
+• Regras parceiros
+
+Fase 4
+• Mais acessos
+• Upgrade hardware
+• BD relatórios
+• Comandos
+• V2 da API
+
+Fase 5
+• Escala horizontal
+• Sessões
+• Uploads
+• Refatoração
+• Autoscaling
+• CI/CD
+
+Fase 6
+• GraphQL
+• Bugs constantes
+• Logs? Ops
+• Integração CRM
+• Migração para React
+
+Fase 7
+• Inconsistência CRM
+• Containers
+• CI/CD
+• Memória
+• Logs
+• Se livrar do legado
+
+Fase 8
+• Microsserviços
+• DB compartilhado
+• Problemas com
+• tracing
+• Lentidão
+• Custo elevado
+
+Fase 9
+• Kubernetes
+• CI/CD
+• Mensageria
+• Perda de mensagens
+• Consultorias
+
+Fase 10
+• Só Deus sabe
+
+Mesmo tendo bons desenvolvedores que tentam entregar o melhor, o débito técnico, falta de tempo e outros empecilhos permitem que os problemas continuem aparecendo
+A situação complica até os DEVs chegaram para o CTO e dizer que não tem como continuar, tem que refatorar tudo (ou quase tudo)
+
+Devemos pensar na Arquitetura para evitar que esse Clico aconteça
