@@ -1,0 +1,45 @@
+Principais problemas nos software "ruins"
+
+• Faltou visão de futuro
+  - Inocência: os envolvidos pensavam que era apenas um "sisteminha de cadastro" ou então "depois a gente refatora"
+    Sempre deve-se pensar "Isso pode crescer" e arquitetar de uma forma mais madura
+
+• Limites não bem definidos
+  - Adição e mesclagem de bibliotecas e frameworks sem controle
+  - Acoplação do código a coisas externas
+
+• Não pensar na troca e adição de componentes
+  - "Ah, mas ninguém troca banco de dados"
+    A questão não é trocar de banco, mas sim trocar qualquer coisa que seja complexidade acidental (técnica)
+  - Se você não consegue trocar o banco de dados significa que seu software está mal arquitetado
+
+• Escala
+  - Upload feito no próprio Servidor
+  - Cache local
+  - Sessões locais
+
+• Falta de otimizações frequentes
+  - Todo software terá débito técnico devido as urgências, que gera alguns problemas
+    Um software deve sempre ser revisado pois sempre surgem novas regras e designs
+
+• Sem preparo para mudanças
+  - Caso precise fazer um mudança brusca, como mudar o gateway de pagamento ou lib muito utilizada, é possível?
+    ACL - AntiCorrupt Layer: Essas mudanças bruscas normalmente são complexidade técnica, que devem estar totalmente separadas da regra de negócio
+
+
+Reflexões
+• Está sendo doloroso para o developer?
+  Os devs sofrem muito para conseguir entender e resolver os problemas?
+• Poderia ter sido evitado?
+  Todos os pontos negativos poderiam ter sido mitigados ou reduzidos no passado?
+• Software está se pagando?
+  Devido a tantos problemas e custos com manutenção o software está dando lucro?
+  Ter sido barato no começo (seja em tempo ou dinheiro) pode dar muito prejuízo no final (o barato que sai caro)
+• Será que a relação com o cliente está boa?
+  O cliente está gostando do resultado? Está tendo muitos problemas no software?
+• Cliente terá prejuízo com a brusca mudança arquitetural?
+  Para mudar algo vai ser muito custoso (tempo e dinheiro)? 
+• Em qual momento tudo se perdeu?
+  Quando começou deu errado? Desde o primeiro dia e a cada dia depois
+• Se você fosse novo na equipe, você julgaria os devs que fizeram tudo isso?
+  Não... Não devemos julgar um trabalho sem saber o momento e a situação em que o trabalhador se encontrava 
