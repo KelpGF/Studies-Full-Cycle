@@ -1,0 +1,13 @@
+Nós desenvolvemos softwares com o intuito de resolver um problema
+Mas nem sempre paramos para pensar que além do problema adicionamos outros pontos para ter um software funcional, como os banco de dados, tipo de comunicação, etc.
+
+Assim podemos perceber que temos 2 tipos de complexidade:
+  - De negócio: são os algoritmos essenciais para que a regra estabelecida seja sempre obedecida, é inevitável
+  - Técnica: são os algoritmos necessários para o bom funcionamento do software, mas que não possuem regra de negócio
+
+Na maioria dos casos essas complexidades são misturadas, tornando difícil trocar os algoritmos da complexidade técnica quando necessário
+
+Ao criar um código devemos pensar: ele vai resolver uma complexidade técnica ou de negócio?
+Pensando dessa forma nossos algoritmos se tornam bem mais objetivos e de melhor compreensão
+
+A Arquitetura Hexagonal prega indiretamente esse pensamento de separar essas duas complexidades
