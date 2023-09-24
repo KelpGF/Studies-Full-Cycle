@@ -1,0 +1,19 @@
+Arquitetura Hexagonal
+
+Objetivos
+• Definição de limites e proteção nas regras da aplicação
+• Componentização e desacoplamento
+  • Logs
+  • Cache
+  • Upload
+  • Banco de dados
+  • Comandos
+  • Filas
+  • HTTP / APIs / GraphQL
+• Facilidade na quebra para microsserviços
+
+
+Fundamentos
+• Dependency Inversion Principle
+  • Módulos de alto nível não devem depender de módulos de baixo nível. Ambos devem depender de abstrações
+  • Abstrações não devem depender de detalhes. Detalhes devem depender de abstrações
