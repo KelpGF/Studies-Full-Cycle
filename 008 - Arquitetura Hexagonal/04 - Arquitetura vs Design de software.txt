@@ -1,0 +1,11 @@
+Arquitetura vs Design
+
+"Atividades relacionadas à arquitetura de software são sempre de design. Entretanto, nem todas as atividades de design são sobre arquitetura. 
+O objetivo primário da arquitetura de software é garantir que os atributos de qualidade, restrições de alto nível e os objetivos do negócio, 
+sejam atendidos pelo sistema. Qualquer decisão de design que não tenha relação com este objetivo, não é decisão arquitetural. 
+Todas as decisões de design para um componente que não sejam ‘visíveis’ fora dele, geralmente também não são."
+
+Fonte: Elemar Jr. https://eximia.co/quais-sao-as-diferencas-entre-arquitetura-e-design-de-software/
+
+Arquitetura - Visão mais geral, construir o software de qualidade 
+Design - tudo relacionado a qualidade de um software de forma mais local (paradigmas, comunicação entre classes/funções, nomenclaturas)
