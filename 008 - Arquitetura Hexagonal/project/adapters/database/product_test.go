@@ -6,6 +6,7 @@ import (
 	"log"
 	"database/sql"
 	"go-hexagonal/adapters/database"
+	"go-hexagonal/application"
 )
 
 var Db *sql.DB
@@ -64,4 +65,29 @@ func TestProductDb_Get(t *testing.T) {
 	require.Equal(t, product.GetName(), "Product Test")
 	require.Equal(t, product.GetPrice(), 0.0)
 	require.Equal(t, product.GetStatus(), "disabled")
+}
+
+func TestProductDb_Save(t *testing.T) {
+	setUp()
+	defer Db.Close()
+	productDb := database.NewProductDb(Db)
+
+	product := application.NewProduct()
+	product.Name = "Product Test"
+	product.Price = 25
+
+	result, err := productDb.Save(product)
+	require.Nil(t, err)
+	require.Equal(t, result.GetName(), product.GetName())
+	require.Equal(t, result.GetPrice(), product.GetPrice())
+	require.Equal(t, result.GetStatus(), product.GetStatus())
+
+	product.Status = "enabled"
+
+	result, err = productDb.Save(product)
+
+	require.Nil(t, err)
+	require.Equal(t, result.GetName(), product.GetName())
+	require.Equal(t, result.GetPrice(), product.GetPrice())
+	require.Equal(t, result.GetStatus(), product.GetStatus())
 }
