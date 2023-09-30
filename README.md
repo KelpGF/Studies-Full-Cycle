@@ -11,3 +11,4 @@ All notes and practices from my journey at Full Cycle
 - 005 Domain Driven Design (DDD)
 - 006 DDD: Modelagem Tática e Patterns
 - 007 Event Storming
+- 008 Arquitetura Hexagonal
