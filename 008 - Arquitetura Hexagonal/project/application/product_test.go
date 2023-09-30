@@ -64,3 +64,39 @@ func TestProduct_IsValid(t *testing.T) {
 	_, err = product.IsValid()
 	require.Equal(t, "ID: 123 does not validate as uuidv4", err.Error())
 }
+
+func TestProduct_GetID(t *testing.T) {
+	product := application.Product{}
+	product.ID = uuid.NewV4().String()
+
+	id := product.GetID()
+
+	require.Equal(t, product.ID, id)
+}
+
+func TestProduct_GetName(t *testing.T) {
+	product := application.Product{}
+	product.Name = "Product Test"
+
+	name := product.GetName()
+
+	require.Equal(t, product.Name, name)
+}
+
+func TestProduct_GetStatus(t *testing.T) {
+	product := application.Product{}
+	product.Status = application.ENABLED
+
+	status := product.GetStatus()
+
+	require.Equal(t, product.Status, status)
+}
+
+func TestProduct_GetPrice(t *testing.T) {
+	product := application.Product{}
+	product.Price = 10
+
+	price := product.GetPrice()
+
+	require.Equal(t, product.Price, price)
+}
