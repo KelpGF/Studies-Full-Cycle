@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    container_name: appproduct
+    command: sh -c "go mod tidy && tail -f /dev/null"
+    ports:
+      - "9000:9000"
+    volumes:
+      - .:/go/src/
+    working_dir: /go/src/
