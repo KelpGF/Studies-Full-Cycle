@@ -1,19 +1,11 @@
+/*
+Copyright © 2023 NAME HERE <EMAIL ADDRESS>
+
+*/
 package main
 
-import (
-	"database/sql"
-	_ "github.com/mattn/go-sqlite3"
-	"go-hexagonal/adapters/database"
-	"go-hexagonal/application"
-)
+import "go-hexagonal/cmd"
 
 func main() {
-	db, _ := sql.Open("sqlite3", "db.sqlite")
-	productDbAdapter := database.NewProductDb(db)
-	productService := application.NewProductService(productDbAdapter)
-
-	product, _ := productService.Create("Product 1", 10)
-
-	productService.Enable(product)
+	cmd.Execute()
 }
-
