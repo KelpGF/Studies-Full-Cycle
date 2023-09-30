@@ -1,0 +1,28 @@
+package application_test
+
+import (
+	"testing"
+	"github.com/stretchr/testify/require"
+	"github.com/golang/mock/gomock"
+	"go-hexagonal/application"
+	mock_application "go-hexagonal/application/mocks"
+)
+
+func TestProductService_Get(t *testing.T) {
+	ctrl := gomock.NewController(t)
+	// Será executado no fim da função
+	defer ctrl.Finish()
+
+	product := mock_application.NewMockProductInterface(ctrl)
+	productPersistence := mock_application.NewMockProductPersistenceInterface(ctrl)
+	// "Quero que o método Get quando chamado, independente do parâmetro, retorne o product e nenhum erro todas as vezes
+	productPersistence.EXPECT().Get(gomock.Any()).Return(product, nil).AnyTimes()
+
+	productService := application.ProductService{
+		ProductPersistence: productPersistence,
+	}
+
+	result, err := productService.Get("abc")
+	require.Nil(t, err)
+	require.Equal(t, result, product)
+}
