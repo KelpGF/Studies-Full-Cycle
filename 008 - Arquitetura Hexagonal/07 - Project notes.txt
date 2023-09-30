@@ -1,0 +1,2 @@
+O GO não possui classes. O que fazemos é definir structs e criar método no mesmo pacote
+Os método que iniciam com letras minúsculas são private e com letras maiúsculas são public
