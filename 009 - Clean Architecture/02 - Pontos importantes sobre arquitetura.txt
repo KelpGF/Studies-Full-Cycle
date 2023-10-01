@@ -1,0 +1,14 @@
+Pontos importantes sobre arquitetura
+
+• Formato que o software terá
+  Seu design, organização
+• Divisão de componentes
+  Limites arquiteturais, baixo acoplamento
+• Comunicação entre componentes
+  Possibilitar a comunicação de várias formas (Open close principle)
+• Uma boa arquitetura vai facilitar o processo de desenvolvimento, deploy, operação e manutenção
+  Tendo um software modelado já temos o "molde" do que o desenvolvedor vai construir
+  Além disso, antes de construir devemos pensar como será o deploy, variáveis de ambiente, observabilidade, etc
+
+"The strategy behind that facilitation is to leave as many options open as possible, for as long as possible."
+C., Martin Robert. Clean Architecture (Robert C. Martin Series) (p. 136). Pearson Education. Kindle Edition.
