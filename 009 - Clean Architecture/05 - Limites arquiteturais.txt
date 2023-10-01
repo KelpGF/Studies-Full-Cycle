@@ -1,0 +1,6 @@
+Limites arquiteturais
+
+Tudo que não impacta diretamente nas regras de negócio deve estar em um limite arquitetural diferente.
+Ex: Não será o frontend, banco de dados que mudarão as regras de negócio da aplicação.
+
+Definir abstrações para criar um limite e uma porta de entrada
