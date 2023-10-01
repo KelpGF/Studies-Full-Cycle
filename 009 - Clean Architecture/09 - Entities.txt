@@ -1,0 +1,8 @@
+Entities | Enterprise Business Rules
+
+• Entities da Clean Architecture <> Entities do DDD
+  Clean Architecture define entity como camada de regras de negócio
+  DDD define entity como algo único no domínio
+• Não há definição explicita de como criar as entities
+• Normalmente utilizamos táticas do DDD
+  Podemos pensar que: Entities (Clean) = Agregados + Domain Services (DDD)
