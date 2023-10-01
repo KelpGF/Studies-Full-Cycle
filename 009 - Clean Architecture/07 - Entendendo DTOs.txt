@@ -1,0 +1,12 @@
+DTO (Data Transfer Object)
+• Trafegar dados entre os limites arquiteturais
+  São os dados enviados por parâmetro ou retornado como resultado
+• Objeto anêmico, sem comportamento
+  Servem apenas para conter os dados necessários
+• Contém dados (Input ou Output)
+• NÃO possui regras de negócio, NÃO possui comportamento e NÃO faz nada!
+
+Exemplo:
+    API --> CONTROLLER --> USE CASE --> ENTITY
+• Controller cria um DTO com os dados recebidos e envia para o Use Case
+• Use Case executa seu fluxo, pega o resultado, cria um DTO para output e retorna para o Controller
