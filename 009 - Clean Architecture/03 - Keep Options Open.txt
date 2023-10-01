@@ -1,0 +1,15 @@
+Objetivos de uma boa arquitetura
+
+O objetivo principal da arquitetura é dar suporte ao ciclo de vida do sistema. Uma boa arquitetura torna o sistema fácil de entender, fácil de desenvolver, fácil de
+manter e fácil de implantar. O objetivo final é minimizar o custo de vida útil do sistema e maximizar a produtividade do programador.
+C., Martin Robert. Clean Architecture (Robert C. Martin Series) (p. 137). Pearson Education. Kindle Edition.
+
+Keep Options Open
+Regras vs Detalhes
+• Regras de negócio trazem o real valor para o software
+  Não perder tempo com detalhe
+• Detalhes ajudam a suportar as regras
+  São "complexidade acidental" que criamos para fazer as regra de negócio funcionar
+• Detalhes não devem impactar nas regras de negócio
+  Quando isso ocorre significa que camadas foram rompidas
+  Frameworks, banco de dados, apis, não devem impactar as regras
