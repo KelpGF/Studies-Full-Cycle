@@ -1,0 +1,19 @@
+Use Cases
+
+• Intenção
+  - Cada ação é uma intenção, cada intenção é um caso de uso.
+• Clareza de cada comportamento do software
+  - É como se o software gritasse "EU FAÇO ISSO" (screaming architecture)
+• Detalhes não devem impactar nas regras de negócio
+  - Postergar ao máximo decisões que são a parte
+
+Use Cases - SRP
+• Temos a tendência de "reaproveitar" use cases por serem muito parecidos.
+  Ex: Alterar vs Inserir. Ambos consultam se o registro existe, persistem dados. MAS, são Use Cases diferentes. Por que?
+    Porque são intenções/ações diferentes
+• SRP (Single Responsibility Principle) Mudam por razões diferentes
+  Quando existe mais de 1 um motivo para alterar o código o SRP foi quebrado
+
+Duplicação real vs acidental
+  DRY vs SRP
+  Pensar: "Essa duplicação no futuro 'deixará de existir'? Ou seja, pode seguir um caminho diferente da outra?" Se sim, então não faz mal deixar duplicado
