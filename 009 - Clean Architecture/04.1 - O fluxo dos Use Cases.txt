@@ -1,0 +1,9 @@
+Use Cases contam uma história
+  História que seria o processo de determinada ação
+  Ele é o orquestrador do fluxo para realizar determinada ação
+  É o responsável pro acessar as regras de negócio para gerar um processo lógico de acordo com a necessidade da empresa
+  Vai ditar o que meu software faz
+
+As regras de software são uma coisas e casos de uso são outras
+Os casos de uso se enquadram mais na camada de aplicação pois dita como o software deve trabalhar,
+enquanto as regras ficam na entidade encontrada na camada de domínio que é o coração do meu software
