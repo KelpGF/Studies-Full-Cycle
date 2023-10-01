@@ -1,0 +1,12 @@
+Presenters
+
+• Objetos de transformação
+• Adequa o DTO de output no formato correto para entregar o resultado
+  Um sistema por ter diversos formatos de entrega: ex: XML, JSON, Protobuf, GraphQL, CLI, etc.
+  Ele pega o dado informado e converte (serializa) para o tipo desejado
+
+Example:
+Input = new CategoryInputDTO("name");
+output = CreateCategoryUseCase(input);
+jsonResult = CategoryPresenter(output).toJson();
+xm1Result = CategoryPresenter(output).toXML();
