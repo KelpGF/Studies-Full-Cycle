@@ -1,0 +1,9 @@
+Clean Architecture
+
+• Termo criado por Robert C. Martin (Uncle Bob) em 2012 e tornou-se um livro
+• Buzz word
+• Proteção do domínio da aplicação
+  Podemos dizer que a Clean é uma variação da Hexagonal, só que mais detalhes
+• Baixo acoplamento entre as camadas
+• Orientada a casos de uso
+  Tudo roda em torno dos casos de usos
