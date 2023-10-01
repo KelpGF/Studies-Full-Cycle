@@ -1,0 +1,6 @@
+Input vs Output
+• No final do dia, tudo se resume a um Input que retorna um Output
+  Ex: Criar um pedido (dados do pedido = input)
+    Pedido criado(dados de retorno do pedido)
+• Simplifique seu raciocínio ao criar um software sempre pensando em Input e Output
+  Toda camada precisa receber os dados (input) e retornar dados (output) 
