@@ -10,7 +10,7 @@
     "typescript": "^5.2.2"
   },
   "scripts": {
-    "test": "npx tsc --noEmit && npx jest"
+    "test": "npx tsc --noEmit && npx jest --silent ./src"
   },
   "dependencies": {
     "@types/uuid": "^9.0.3",
