@@ -21,7 +21,8 @@ const mockSut = () => {
 
 describe('Unit Test Find Product UseCase', () => {
   it ('should find a product', async () => {
-    const output = await mockSut().sut.execute({
+    const { sut, repository } = mockSut()
+    const output = await sut.execute({
       id: '1'
     })
 
@@ -32,6 +33,7 @@ describe('Unit Test Find Product UseCase', () => {
     }
 
     expect(output).toEqual(outputExpected)
+    expect(repository.findById).toBeCalledWith('1')
   })
 
   it ('should throw an error when product not found', async () => {

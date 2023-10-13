@@ -1,18 +1,18 @@
 import CreateProductUseCase from "./create.product.usecase"
 
-const mockRepository = () => ({
+const mockRepository = {
   findById: jest.fn(),
   create: jest.fn(),
   update: jest.fn(),
   findAll: jest.fn(),
-})
+}
 
 const mockInput = () => ({
   name: 'p1',
   price: 10
 })
 
-const mockSut = () => new CreateProductUseCase(mockRepository())
+const mockSut = () => new CreateProductUseCase(mockRepository)
 
 describe('Unit Test Create Product UseCase', () => {
   it ('should create a product', async () => {
@@ -27,6 +27,7 @@ describe('Unit Test Create Product UseCase', () => {
     }
 
     expect(output).toEqual(outputExpected)
+    expect(mockRepository.create).toBeCalledWith(expect.objectContaining(outputExpected))
   })
 
   it ('should throw an error when the name is empty', async () => {
