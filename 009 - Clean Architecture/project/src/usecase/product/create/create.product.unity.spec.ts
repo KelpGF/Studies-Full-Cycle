@@ -16,7 +16,6 @@ const mockSut = () => new CreateProductUseCase(mockRepository())
 
 describe('Unit Test Create Product UseCase', () => {
   it ('should create a product', async () => {
-    const productRepository = mockRepository();
     const input = mockInput();
 
     const output = await mockSut().execute(input)
@@ -31,7 +30,6 @@ describe('Unit Test Create Product UseCase', () => {
   })
 
   it ('should throw an error when the name is empty', async () => {
-    const productRepository = mockRepository();
     const input = mockInput();
     input.name = ''
 
@@ -39,9 +37,7 @@ describe('Unit Test Create Product UseCase', () => {
   })
 
   it ('should throw an error when the price is less than 0', async () => {
-    const productRepository = mockRepository();
     const input = mockInput();
-
     input.price = -1
 
     await expect(mockSut().execute(input)).rejects.toThrowError('Price is required')

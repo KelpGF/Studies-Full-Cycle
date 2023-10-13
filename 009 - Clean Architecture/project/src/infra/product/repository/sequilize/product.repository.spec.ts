@@ -31,7 +31,7 @@ describe('ProductRepository', () => {
     const productCreated = await ProductModel.findOne({ where: { id: '1' } })
 
     expect(productCreated.toJSON()).toStrictEqual({
-      id: +product.id,
+      id: product.id,
       name: product.name,
       price: product.price
     })
@@ -51,7 +51,7 @@ describe('ProductRepository', () => {
     const productUpdated = await ProductModel.findOne({ where: { id: '1' } })
 
     expect(productUpdated.toJSON()).toStrictEqual({
-      id: +product.id,
+      id: product.id,
       name: product.name,
       price: product.price
     })
