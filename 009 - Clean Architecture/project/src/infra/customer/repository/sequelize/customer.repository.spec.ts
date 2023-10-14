@@ -33,7 +33,7 @@ describe('CustomerRepository', () => {
     const customerModel = await CustomerModel.findOne({ where: { id: '1' } })
 
     expect(customerModel.toJSON()).toStrictEqual({
-      id: +customer.id,
+      id: customer.id,
       name: customer.name,
       street: customer.Address.street,
       number: customer.Address.number,
@@ -60,7 +60,7 @@ describe('CustomerRepository', () => {
     const customerUpdated = await CustomerModel.findOne({ where: { id: '1' } })
 
     expect(customerUpdated.toJSON()).toStrictEqual({
-      id: +customer.id,
+      id: customer.id,
       name: customer.name,
       street: customer.Address.street,
       number: customer.Address.number,
