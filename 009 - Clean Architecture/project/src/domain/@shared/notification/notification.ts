@@ -21,4 +21,8 @@ export default class Notification {
 
     return message
   }
+
+  hasErrors(): boolean {
+    return this._errors.length > 0
+  }
 }

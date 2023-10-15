@@ -30,4 +30,18 @@ describe("Notification Unit Test", () => {
 
     expect(notification.messages()).toBe('customer: invalid id,customer: invalid name,order: invalid id,')
   })
+
+  it("should check if has errors", () => {
+    const notification = new Notification()
+
+    expect(notification.hasErrors()).toBeFalsy()
+
+    const error1 = {
+      context: 'customer',
+      message: 'invalid id'
+    }
+    notification.addError(error1)
+
+    expect(notification.hasErrors()).toBeTruthy()
+  })
 });
