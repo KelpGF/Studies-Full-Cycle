@@ -1,0 +1,11 @@
+Notification Pattern
+  Pegando o exemplo de nosso customer, temos método validate que verificar se os campos id, name e os campos do address estão preenchido
+  Vamos imaginar que executo o caso de uso passando todos esses dados inválidos. Irei receber o erro "Id is required"
+  Informei apenas o ID e envio os dados novamente. Recebo agora o erro "Name is required"
+  Com isso podemos concluir que a experiência não está muito interessante, visto que não consigo saber de cara quais campos são obrigatórios
+
+  O Notification Pattern é utilizado para isso. Em vez de retornar a primeira mensagem logo de cara, deixe continuar e acumular as mensagens para só depois enviar todas de uma vez
+
+
+Exception: Ocorre quando algo de errado ocorre no software 
+Validações são mesmo Exceptions? Ou é algum mais corriqueiro, um comportamento natural e intencional do software?
