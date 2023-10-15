@@ -12,10 +12,6 @@ export default class Customer extends Entity {
     super(id);
     this._name = name;
     this.validate();
-
-    if (this._notification.hasErrors()) {
-      throw new NotificationError(this._notification.errors());
-    }
   }
 
   validate() {
@@ -30,6 +26,10 @@ export default class Customer extends Entity {
         context: "customer",
         message: "Name is required",
       });
+    }
+
+    if (this._notification.hasErrors()) {
+      throw new NotificationError(this._notification.errors());
     }
   }
 
