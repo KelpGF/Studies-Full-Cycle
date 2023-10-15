@@ -2,15 +2,15 @@ import Product from "./product";
 
 describe("Product Entity", () => {
   it("should throw an error when id is empty", () => {
-    expect(() => new Product("", "Product Name", 10)).toThrow("Id is required");
+    expect(() => new Product("", "Product Name", 10)).toThrow("product: Id is required");
   })
 
   it("should throw an error when name is empty", () => {
-    expect(() => new Product("123", "", 10)).toThrow("Name is required");
+    expect(() => new Product("123", "", 10)).toThrow("product: Name is required");
   })
 
   it("should throw an error when price is less than zero", () => {
-    expect(() => new Product("123", "", -1)).toThrow("Name is required");
+    expect(() => new Product("123", "", -1)).toThrow("product: Name is required");
   })
 
   it ("should change name", () => {
@@ -20,7 +20,7 @@ describe("Product Entity", () => {
   })
 
   it ("should throw when change name to a empty name", () => {
-    expect(() => new Product("123", "Product Name", 10).changeName("")).toThrow("Name is required");
+    expect(() => new Product("123", "Product Name", 10).changeName("")).toThrow("product: Name is required");
   })
 
   it ("should change price", () => {
@@ -30,6 +30,6 @@ describe("Product Entity", () => {
   })
 
   it ("should throw when change price to a invalid name", () => {
-    expect(() => new Product("123", "Product Name", 10).changePrice(-1)).toThrow("Price is required");
+    expect(() => new Product("123", "Product Name", 10).changePrice(-1)).toThrow("product: Price must be positive");
   })
 });

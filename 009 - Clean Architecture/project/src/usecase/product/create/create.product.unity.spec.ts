@@ -34,13 +34,13 @@ describe('Unit Test Create Product UseCase', () => {
     const input = mockInput();
     input.name = ''
 
-    await expect(mockSut().execute(input)).rejects.toThrowError('Name is required')
+    await expect(mockSut().execute(input)).rejects.toThrowError('product: Name is required')
   })
 
   it ('should throw an error when the price is less than 0', async () => {
     const input = mockInput();
     input.price = -1
 
-    await expect(mockSut().execute(input)).rejects.toThrowError('Price is required')
+    await expect(mockSut().execute(input)).rejects.toThrowError('product: Price must be positive')
   })
 })
