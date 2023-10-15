@@ -44,4 +44,28 @@ describe("Notification Unit Test", () => {
 
     expect(notification.hasErrors()).toBeTruthy()
   })
+
+  it("should get all errors props", () => {
+    const notification = new Notification()
+
+    const error1 = {
+      context: 'customer',
+      message: 'invalid id'
+    }
+    notification.addError(error1)
+
+    const error2 = {
+      context: 'customer',
+      message: 'invalid name'
+    }
+    notification.addError(error2)
+
+    const error3 = {
+      context: 'order',
+      message: 'invalid id'
+    }
+    notification.addError(error3)
+
+    expect(notification.errors()).toEqual([error1, error2, error3])
+  })
 });

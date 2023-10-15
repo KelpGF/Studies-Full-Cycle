@@ -1,4 +1,5 @@
 import Entity from "../../@shared/entity/entity.abstract";
+import NotificationError from "../../@shared/notification/notification.error";
 import Address from "../value-object/address";
 
 export default class Customer extends Entity {
@@ -13,7 +14,7 @@ export default class Customer extends Entity {
     this.validate();
 
     if (this._notification.hasErrors()) {
-      throw new Error(this._notification.messages());
+      throw new NotificationError(this._notification.errors());
     }
   }
 
