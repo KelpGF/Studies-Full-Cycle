@@ -10,7 +10,11 @@ describe("Product Entity", () => {
   })
 
   it("should throw an error when price is less than zero", () => {
-    expect(() => new Product("123", "", -1)).toThrow("product: Name is required");
+    expect(() => new Product("123", "P1", -1)).toThrow("product: Price must be positive");
+  })
+
+  it ("should throw error when id, name and price is invalid", () => {
+    expect(() => new Product("", "", -1)).toThrowError("product: Id is required, product: Name is required, product: Price must be positive")
   })
 
   it ("should change name", () => {
