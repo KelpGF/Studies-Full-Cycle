@@ -73,5 +73,30 @@ describe('Customer E2E', () => {
     expect(response.body[1].id).toBeTruthy();
     expect(response.body[1].name).toBe('Gomes Kelps');
     expect(response.body[1].address.street).toBe('street 2');
+
+    const listResponseXML = await request(app).get('/customers').set('Accept', 'application/xml').send()
+
+    expect(listResponseXML.status).toBe(200);
+    expect(listResponseXML.text).toContain(`<?xml version="1.0" encoding="UTF-8"?>`)
+    expect(listResponseXML.text).toContain(`<customers>`)
+    expect(listResponseXML.text).toContain(`<customer>`)
+    expect(listResponseXML.text).toContain(`<name>Kelps Gomes</name>`)
+    expect(listResponseXML.text).toContain(`<address>`)
+    expect(listResponseXML.text).toContain(`<street>Rua 1</street>`)
+    expect(listResponseXML.text).toContain(`<number>123</number>`)
+    expect(listResponseXML.text).toContain(`<city>Cidade 1</city>`)
+    expect(listResponseXML.text).toContain(`<zipCode>12345678</zipCode>`)
+    expect(listResponseXML.text).toContain(`</address>`)
+    expect(listResponseXML.text).toContain(`</customer>`)
+    expect(listResponseXML.text).toContain(`<customer>`)
+    expect(listResponseXML.text).toContain(`<name>Gomes Kelps</name>`)
+    expect(listResponseXML.text).toContain(`<address>`)
+    expect(listResponseXML.text).toContain(`<street>street 2</street>`)
+    expect(listResponseXML.text).toContain(`<number>321</number>`)
+    expect(listResponseXML.text).toContain(`<city>city 2</city>`)
+    expect(listResponseXML.text).toContain(`<zipCode>87654321</zipCode>`)
+    expect(listResponseXML.text).toContain(`</address>`)
+    expect(listResponseXML.text).toContain(`</customer>`)
+    expect(listResponseXML.text).toContain(`</customers>`)
   })
 });
