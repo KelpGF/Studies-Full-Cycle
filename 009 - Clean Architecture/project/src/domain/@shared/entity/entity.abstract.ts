@@ -1,4 +1,4 @@
-import Notification from "../notification/notification";
+import Notification, { NotificationErrorProps } from "../notification/notification";
 
 export default abstract class Entity {
   protected _id: string;
@@ -7,5 +7,9 @@ export default abstract class Entity {
   constructor(id: string) {
     this._id = id;
     this._notification = new Notification();
+  }
+
+  addNotificationError(notification: NotificationErrorProps): void {
+    this._notification.addError(notification);
   }
 }
