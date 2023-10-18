@@ -5,3 +5,16 @@ Com assinaturas de commits você consegue se prevenir disso, pois os commits que
 Para configurar é necessário uma chave privada (para o computador) e uma chave pública pra seu repositório (github, gitlab...)
 
 O processo é um pouco longo, mas tem uma doc do gitlab explicando: https://docs.gitlab.com/ee/user/project/repository/signed_commits/gpg.html
+
+```
+gpg --list-secret-keys --keyid-format LONG
+gpg --full-gen-key
+git config --global --list
+gpg --list-secret-keys --keyid-format LONG
+git config --global user.signingkey GPT_KEY_ID
+code ~/.zshrc << export GPG_TTY=$(tty)
+source ~/.zshrc
+git config --global commit.gpgsign true
+git config --global tag.gpgsign true
+gpg --armor --export GPT_KEY_ID | copy and add in repository
+```
