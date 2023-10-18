@@ -1,0 +1,7 @@
+Quando configuramos o git adicionamos o "config global" informando nosso nome e email
+Mas podemos passar qualquer nome e qualquer email. Isso possibilita que alguém se passe por você, seja na sua empresa ou projetos open source.
+
+Com assinaturas de commits você consegue se prevenir disso, pois os commits que partirem de você estarão assinados
+Para configurar é necessário uma chave privada (para o computador) e uma chave pública pra seu repositório (github, gitlab...)
+
+O processo é um pouco longo, mas tem uma doc do gitlab explicando: https://docs.gitlab.com/ee/user/project/repository/signed_commits/gpg.html
