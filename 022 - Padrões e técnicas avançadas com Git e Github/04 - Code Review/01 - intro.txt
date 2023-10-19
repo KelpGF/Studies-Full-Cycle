@@ -1,0 +1,6 @@
+Nas PR podemos adicionar pessoas para serem os Reviewers, para analisar e validarem minha PR
+
+O reviewer é o responsável por verificar se as mudanças na PR estão ok.
+Ele consegue adicionar comentários ou então realizar reviews. E, se tudo ok, ele pode aprovar e realizar o merge dessa PR
+
+Os envolvidos no PR são notificados quando alguma alteração é feita. Seja um pedido de alteração, um approve ou o merge

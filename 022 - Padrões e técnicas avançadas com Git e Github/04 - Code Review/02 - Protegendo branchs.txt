@@ -1,0 +1,5 @@
+Os PRs já garantem que apenas pessoas autorizadas enviem commits para branchs protegidas.
+Mas qualquer pessoa com autorização pode realizar o merge dessa PR sem necessariamente ter feito o code review
+
+Conseguimos configurar nas branchs protegidas que será permitidos apenas PR com pelo menos X approvers.
+Significa que a PR tem que ter sido aprovada por pelo menos X reviewers para a branch protegida
