@@ -1,0 +1,7 @@
+Em vez de realizar o merge diretamente na branch, abrimos uma solicitação e quando aprovada será feito merge.
+
+Essa solicitação é chamada (no GitHub) de Pull Request (PR).
+Nele escolhemos a branch que desejamos enviar e para qual queremos enviar, além de ter uma seção para detalhamento do que é esse PR
+Também podemos vez todos os commits e mudanças da nossa branch para a branch alvo
+
+Apenas usuários com roles específicas podem aprovar um pull request. Isso aumenta o controle do que está sendo enviado e para qual branch

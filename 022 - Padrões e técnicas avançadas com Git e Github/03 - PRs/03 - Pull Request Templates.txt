@@ -1,0 +1,10 @@
+Muitas vezes o PR não são detalhados corretamente. Possuem poucas informações (se possuírem) ou as informações não são as necessárias
+
+Existe a possibilidade de adicionar templates aos PR, assim no momento em que for criado a pessoa já terá um modelo que a guiará em relação de qual informação colocar e onde colocar
+
+Esse template vai depender muito de cada equipe, mas o importante e ter um modelo que auxilie nesse processo de criação de PRs
+
+E como adicionamos esse template no nosso repositório (github)?
+ - Criamos uma pasta .github
+ - Nessa pasta criamos o arquivo PULL_REQUEST_TEMPLATE.md
+Ex. de template: https://embeddedartistry.com/blog/2017/08/04/a-github-pull-request-template-for-your-projects/
