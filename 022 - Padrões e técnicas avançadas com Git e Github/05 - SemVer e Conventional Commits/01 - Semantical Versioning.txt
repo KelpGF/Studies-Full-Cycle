@@ -1,0 +1,28 @@
+SemVer - Semantical Versioning
+
+É um padrão de versionamento
+Você já deve ter visto que quando algum sistema tem uma atualização é informada versão:
+  - 1.20.3
+  - 2.0.19
+O SemVer foi criado para dar um sentido a esses números. Padronizar o versionamento do seu software
+
+Documentação: https://semver.org/lang/pt-BR/
+
+Ideia principal: versão 2.1.4
+(2) - MAJOR: Versão principal do software que mantém uma API pública disponível
+(1) - MINOR: Adição de novas funcionalidades, mas mantendo a compatibilidade com a API pública
+(4) - PATCH: Correção de bugs e ajustes, mas mantendo a compatibilidade com a API pública
+
+Inicio de um projeto
+  Alterar somente MINOR e PATCH
+  MAJOR = 0: API Instável. Pode mudar a qualquer momento
+  MAJOR > 0: API Estável. Pode mudar, mas com regras definidas
+
+Versões de pré lançamento
+  MAJOR.MINOR.PATCH-IDENTIFIER
+  - alpha: 1.0.0-alpha.1
+  - beta: 1.0.0-beta.1
+  - rc: 1.0.0-rc.1 (rc = release candidate)
+
+  Níveis de precedência:
+  - 1.0.0-alpha.1 < 1.0.0-alpha.2 < 1.0.0-beta.1 < 1.0.0-beta.2 < 1.0.0-rc.1 < 1.0.0
