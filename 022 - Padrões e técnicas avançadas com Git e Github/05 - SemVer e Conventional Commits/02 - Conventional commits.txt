@@ -1,0 +1,32 @@
+Conventional commits
+Projeto: https://www.conventionalcommits.org/pt-br/v1.0.0/
+
+Quando estamos iniciando com git as mensagens dos nossos commits não lá as melhores kkkkk
+Eu mesmo já commitei com mensagens como "teste", "agora vai", "fé" e por ai vai kkkkk
+Mas isso é uma péssima prática, pois quando estamos trabalhando em equipe, ou até mesmo sozinho, mas em um projeto grande, fica muito difícil de entender o que foi feito em cada commit.
+
+Por isso existe o Conventional Commits, que é um padrão para mensagens de commit.
+Ele define um conjunto de regras para criar um histórico de commit explícito e padronizado, o que facilita a criação de ferramentas automatizadas e também na questão do SemVer.
+Com ele conseguimos identificar o tipo de alteração que foi feita no código, se foi uma alteração radical, correção de bug, e também saber o escopo, etc.
+
+O padrão é o seguinte:
+<tipo>[escopo opcional]: <descrição>
+[corpo opcional]
+[rodapé(s) opcional]
+
+
+Ferramentas auxiliares:
+  VS Extension: https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits
+    Para auxiliar na criação das mensagens de commit
+  Commitlint: https://commitlint.js.org/#/
+    Para validar as mensagem do commit a ser adicionado
+  Commitsar: https://commitsar.aevea.ee/
+    Para validar as mensagens do histórico de commits
+    Comandos:
+      - Docker: `docker run --rm --name="commitsar" -w /src -v "$(pwd)":/src aevea/commitsar commitsar .`
+  Commitizen: https://github.com/commitizen/cz-cli
+    Para auxiliar na criação das mensagens de commit
+    Comandos:
+      - `npm install -g commitizen`
+      - `commitizen init cz-conventional-changelog --save-dev --save-exact`
+      - `git cz`
