@@ -7,11 +7,14 @@ on:
 
 jobs:
   check-application:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go-version: ['1.19', '1.20']
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-go@v2
         with:
-          go-version: 1.19
+          go-version: ${{ matrix.go-version }}
       - run: go test
       - run: go run math.go
