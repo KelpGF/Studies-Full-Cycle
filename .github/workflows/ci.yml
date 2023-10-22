@@ -1,8 +1,9 @@
 name: ci-golang-workflow
 
 on:
-  push:
-    branches: [feat/23-project, feat/develop-23-project]
+  pull-request:
+    branches:
+      - feat/develop-23-project
 
 jobs:
   check-application:
