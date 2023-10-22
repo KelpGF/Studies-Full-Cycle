@@ -1,0 +1,33 @@
+Continuous Integration (CI)
+
+"É o processo de integrar modificações do codebase de forma contínua e automatizada,
+evitando assim erros humanos de verificação, garantindo mais agilidade e segurança no
+processo de desenvolvimento de um software."
+- Wesley Willians
+
+Vamos pegar um exemplo da vida real:
+  Muitas empresas possuem coberturas de testes, padrões de código e de commits, e sempre que um modificação for feita deve ser realizado
+o coverage da aplicação, o lint de código e a validação do formato das mensagens dos commits. Imagina isso ser feito manualmente por alguém em TODA modificação.
+Além de muito cansativo e custoso temos o fator humano que aumenta a change de falhas nesse processo.
+O CI é justamente fazer todo esse processo de forma automatizada.
+
+Principais processos:
+• Execução de testes
+• Linter
+• Verificações de qualidade de código
+• Verificações de segurança
+• Geração de artefatos prontos para o processo de deploy (docker images, zip)
+• Identificação da próxima versão a ser gerada no software
+• Geração de tags e releases
+
+Status check
+  Garantir que um PR não seja mergeado antes de passar pelo CI ou Code Review
+
+Ferramentas populares
+• Jenkins
+• Github Actions
+• Circle Cl
+• AWS Code Build
+• Azure DevOps
+• Google Cloud Build
+• GitLab Pipelines / CI
