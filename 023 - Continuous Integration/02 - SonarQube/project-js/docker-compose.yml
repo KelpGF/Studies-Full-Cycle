@@ -1,0 +1,51 @@
+version: '3.7'
+
+networks:
+  js-fc-23:
+    driver: bridge
+
+volumes:
+  sonarqube-fc-23:
+    driver: local
+
+services:
+  js-fc-23:
+    image: js-fc-23
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: js-fc-23
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    networks:
+      - js-fc-23
+    depends_on:
+      - sonarqube
+
+  sonarqube:
+    image: sonarqube
+    container_name: sonarqube-js-fc-23
+    environment:
+      SONAR_ES_BOOTSTRAP_CHECKS_DISABLE: true
+    ports:
+      - "9000:9000"
+    networks:
+      - js-fc-23
+    volumes:
+      - sonarqube-fc-23:/opt/sonarqube/data
+
+  sonarscanner:
+    image: sonarsource/sonar-scanner-cli
+    container_name: sonarscanner-js-fc-23
+    volumes:
+      - .:/usr/src
+    environment:
+      SONAR_HOST_URL: "http://sonarqube:9000"
+      SONAR_SCANNER_OPTS: "-Dsonar.projectKey=fc-23-js"
+      SONAR_TOKEN: "sqp_38f34b58c61f3707032f5c7c2eaf37f55cb0a6a0"
+    networks:
+      - js-fc-23
+    depends_on:
+      - sonarqube
