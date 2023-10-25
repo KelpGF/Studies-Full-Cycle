@@ -1,0 +1,51 @@
+version: '3.7'
+
+networks:
+  go-fc-23:
+    driver: bridge
+
+volumes:
+  sonarqube-fc-23:
+    driver: local
+
+services:
+  go-fc-23:
+    image: go-fc-23
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: go-fc-23
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    networks:
+      - go-fc-23
+    depends_on:
+      - sonarqube
+
+  sonarqube:
+    image: sonarqube
+    container_name: sonarqube-fc-23
+    environment:
+      SONAR_ES_BOOTSTRAP_CHECKS_DISABLE: true
+    ports:
+      - "9000:9000"
+    networks:
+      - go-fc-23
+    volumes:
+      - sonarqube-fc-23:/opt/sonarqube/data
+
+  sonarscanner:
+    image: sonarsource/sonar-scanner-cli
+    container_name: sonarscanner-fc-23
+    volumes:
+      - .:/usr/src
+    environment:
+      SONAR_HOST_URL: "http://sonarqube:9000"
+      SONAR_SCANNER_OPTS: "-Dsonar.projectKey=fc-23-go"
+      SONAR_TOKEN: "sqp_64e21beabf9cc6d2219abe91187d96b719660e9b"
+    networks:
+      - go-fc-23
+    depends_on:
+      - sonarqube
