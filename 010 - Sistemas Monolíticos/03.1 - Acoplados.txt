@@ -1,0 +1,39 @@
+Sistemas monolíticos acoplados
+
+Vamos pensar em longo prazo com "User"
+
+User: Dados que ele estará vinculado
+• Dados pessoais
+• Endereços
+• Cartões de crédito
+• Tickets de suporte
+• Compras
+• Carrinho abandonado
+• Devoluções
+• Financiamento
+• Indicações
+• Reclamações
+• Email mkt
+• Campanhas
+• Favoritos
+• Lista de casamento
+• Histórico de login
+• Lista de preferência de emails
+• Avaliação de produtos
+• CRM
+• Propostas
+• Lances / Leilão
+• Cartão de Pontos
+
+
+Grande parte desses pontos surgiram apenas com a evolução do negócio
+Todos os pontos possuem relação com o User e foram sendo adicionados a ele aos poucos
+Quando você menos espera sua entidade User está enorme e tudo está embolado e bagunçado
+
+Principais problemas com essa abordagem
+• Não existe contexto
+• Entidades que se relacionam
+• Não há divisão. Tudo faz parte de tudo. Tudo grudado em tudo.
+• Efeitos colaterais indesejados
+  Código de difícil leitura
+  Funcionalidades altamente ligadas. Mudar um local quebra outro totalmente diferente

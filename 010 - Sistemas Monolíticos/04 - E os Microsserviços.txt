@@ -1,0 +1,14 @@
+E os Microsserviços
+Se é para segregar tanto, não é melhor já trabalhar com microsserviços?
+
+Sistemas monolíticos modulares
+• Um único deploy
+• Única operação
+• Observabilidade simplificada
+• Sistemas se comunicando internamente
+• Única linguagem. Menos governança.
+• É a melhor opção para quando se está iniciando um sistema
+
+Não é porque meus módulos e contextos estão definidos que devo partir para microsserviços. Isso não é tão simples.
+
+Sempre devemos ter cuidados para não simplificar o que é complexo, e nem o contrário

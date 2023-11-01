@@ -1,0 +1,15 @@
+Tipos de sistemas monolíticos
+• "Single process"
+   Software Único ---connect---> Database
+  Simples assim, um único sistema que se conecta a um banco
+• Monolitos distribuídos
+• Black box
+
+Newman, Sam. Monolith to Microservices (p. 21). O'Reilly Media. Kindle Edition.
+
+
+Single process: Principais tipos
+- Alto acoplamento
+  Uma coisa depende diretamente da outra, não consigo modificar/tirar algo sem precisar alterar outro
+- Modular
+- Modular com bancos de dados segregados

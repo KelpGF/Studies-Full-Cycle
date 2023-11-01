@@ -1,0 +1,12 @@
+Em sistemas monolíticos nossos módulos possuem a complexidade de negócio mas ainda precisam se comunicar com o mundo externo
+Nesse caso devemos tentar utilizar o máximo do framework. Ter cuidado para não abusar mas também não ser 100% purista
+
+E na maioria dos monolíticos, além do framework e dependências também temos um 'Shared Kernel'
+
+Shared Kernel | Núcleo compartilhado
+- Algo que todos os módulos utilizam mas não faz parte de framework de terceiros
+- "Seedwork", é pequeno de mais para um framework mas ainda é um conjunto de bibliotecas integradas
+- Problemas
+  Um mudanças vai impactar vários módulos
+  Qual time fará as manutenções?
+  Deve ter políticas clara referente as atualizações para mitigar os riscos e possibilitar sua atualização

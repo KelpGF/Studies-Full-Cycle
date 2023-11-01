@@ -1,0 +1,17 @@
+Sistemas monolíticos modulares com bancos segregados
+
+Banco de dados é algo que gera acoplamento
+Vamos imaginar que temos nosso monolítico modularizado, mas o banco de dados possuem apenas um schema User com tudo
+Um certo dia o Zezin do contexto de vendas estava alterando os campos do User e mudou algum campo do contexto de pagamentos
+Devido a isso, o contexto de pagamentos começou a quebrar por conta do banco
+
+Uma solução seria criar banco de dados separados por módulos.
+Temos assim um grande monolítico com várias funções isoladas e que se comunica com vários bancos
+Vantagens:
+  - Um módulo com uma carga muito grande não irá implicar no outros módulos, visto que apenas o seu banco está sendo muito requisitado
+  - Alterações feitas no banco de dados irão impactar somente o seu módulo
+  - Maior segurança para trabalhar
+Desvantagens:
+  - Duplicidade de dados entre os bancos
+  - Consistência eventual
+

@@ -1,0 +1,17 @@
+Quando utilizar monolíticos pode ser uma boa
+
+• Novos projetos onde o modelo de negócio não está claro
+  Quando se está criando novos negócios/sistemas temos muitas incertezas, que geram muitas mudanças
+• Instabilidade no core do negócio
+  No inicio, a regra de negócio ainda está se consolidando. Imagina você construir algo incerto entre 10, 20 ou mais microsserviços?
+  Nesse caso é bem melhor ter tudo no mesmo lugar, não precisa se preocupar com a comunicação, latência, etc.
+• Evitar complexidade no processo de deploy
+  Apenas uma esteira de CI/CD, apenas um projeto para observabilidade, ...
+• Evitar complexidade na operação
+  Realizar uma operação é trabalhoso
+  Realizar uma operação em um ambiente distribuído é muito mais trabalhoso
+
+Quando criamos algo do zero e já com um nível de granularidade muito grande, muitas vezes teremos grandes problemas 
+
+
+Artigo: https://martinfowler.com/bliki/MonolithFirst.html

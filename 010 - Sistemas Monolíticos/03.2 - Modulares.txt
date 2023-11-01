@@ -1,0 +1,21 @@
+Sistemas monolíticos modulares
+
+Para evitar os problemas dos monolíticos acoplado podemos adotar o DDD como um ponto de partida
+  Definição de Contextos
+  - Catálogo: User
+  - Carrinho: User
+  - Checkout: User
+  - Pagamentos: Cliente
+  - Suporte ao cliente: Cliente
+  - Marketing: Lead
+  - Programa de pontos: Beneficiário
+  - Lista de casamento: Convidado
+
+Cada contexto pode ser um módulo do nosso sistema
+    | Module A | Module B | Module C | ... | ====connect====>> database
+O tornando um Monolítico Modular
+  • Módulos quebrados em "bounded contexts"
+  • Conversam através de contratos e facades
+  • Entidades podem ser "duplicadas" tendo apenas os atributos necessários
+  • Equipes especializadas por módulos
+  • Alta coesão: O que muda junto, permanece junto.

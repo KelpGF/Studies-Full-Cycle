@@ -1,0 +1,21 @@
+Sistemas Monolíticos
+• Aplicações "tradicionais"
+  O modo inicial que aprendemos a desenvolver um sistema
+• Tudo no mesmo lugar
+  Todas funcionalidades no mesmo projeto
+• Uma única unidade de deploy
+  Se para subir um alteração na parte de vendas tenho que fazer deploy de outras parte, isso significa que é um Monolítico
+
+
+Polêmicas: Pontos que a maioria das pessoas pensam que definem um que é um sistema monolítico
+• Aplicações da década passada
+• Ultrapassada
+• Não escalam
+• Impedem o crescimento do negócio
+• Alto acoplamento
+
+E grande parte desses pontos são FALSOS!
+
+
+Sistemas Monolíticos é outro tipo de arquitetura que, como os outros tipos, possuem suas próprias vantagens e desvantagens.
+Não são necessariamente bons ou ruins, tudo depende da sua necessidade 
