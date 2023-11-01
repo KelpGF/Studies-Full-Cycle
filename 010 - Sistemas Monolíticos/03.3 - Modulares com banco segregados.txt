@@ -14,4 +14,4 @@ Vantagens:
 Desvantagens:
   - Duplicidade de dados entre os bancos
   - Consistência eventual
-
+  - Maior complexidade

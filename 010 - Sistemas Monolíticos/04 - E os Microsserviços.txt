@@ -10,5 +10,5 @@ Sistemas monolíticos modulares
 • É a melhor opção para quando se está iniciando um sistema
 
 Não é porque meus módulos e contextos estão definidos que devo partir para microsserviços. Isso não é tão simples.
-
+Não é porque o meus sistema é grande que devo utilizar microsserviços
 Sempre devemos ter cuidados para não simplificar o que é complexo, e nem o contrário
