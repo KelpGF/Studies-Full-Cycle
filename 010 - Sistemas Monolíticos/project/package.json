@@ -3,7 +3,7 @@
     "@swc/cli": "^0.1.55",
     "@swc/core": "^1.2.148",
     "@swc/jest": "^0.2.20",
-    "@types/jest": "^27.4.1",
+    "@types/jest": "^27.5.2",
     "@types/jstoxml": "^2.0.2",
     "@types/supertest": "^2.0.12",
     "@types/uuid": "^8.3.4",
