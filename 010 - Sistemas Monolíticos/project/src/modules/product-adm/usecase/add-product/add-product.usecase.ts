@@ -3,8 +3,9 @@ import ProductEntity from "../../domain/entity/product.entity";
 import { AddProductGateway } from "../../gateway/add-product";
 import AddProductUseCaseInput from "./add-product-usecase-input.dto";
 import AddProductUseCaseOutput from "./add-product-usecase-ouput.dto";
+import AddProductUseCaseInterface from "./add-product.usecase.interface";
 
-export default class AddProductUseCase {
+export default class AddProductUseCase implements AddProductUseCaseInterface {
   constructor(
     private readonly addProductGateway: AddProductGateway
   ) {}

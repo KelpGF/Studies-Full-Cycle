@@ -3,21 +3,14 @@ import { mockProductProps } from "../../domain/product-props.mock";
 import ProductRepository from "../../../../../src/modules/product-adm/repository/sequelize/product.repository"
 import ProductModel from "../../../../../src/modules/product-adm/repository/sequelize/product.model"
 import ProductEntity from "../../../../../src/modules/product-adm/domain/entity/product.entity";
+import { sequelizeInMemory } from "../../../../shared/database/sequelize-in-memory";
 
 describe("Product Repository Unit Test", () => {
   let sequelize: Sequelize;
   let sut: ProductRepository;
 
   beforeEach(async () => {
-    sequelize = new Sequelize({
-      dialect: "sqlite",
-      storage: ":memory:",
-      logging: false,
-      sync: { force: true },
-    });
-    sequelize.addModels([ProductModel]);
-    await sequelize.sync();
-
+    sequelize = await sequelizeInMemory([ProductModel]);
     sut = new ProductRepository();
   })
 
@@ -28,7 +21,12 @@ describe("Product Repository Unit Test", () => {
   describe('add()', () => {
     it("should create a product", async () => {
       const productProps = mockProductProps();
-      const product = new ProductEntity(productProps);
+      const product = new ProductEntity({
+        name: productProps.name,
+        description: productProps.description,
+        purchasePrice: productProps.purchasePrice,
+        stock: productProps.stock,
+      });
 
       const input = {
         product: {
