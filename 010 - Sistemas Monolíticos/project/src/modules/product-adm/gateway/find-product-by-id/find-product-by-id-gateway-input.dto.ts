@@ -1,3 +1,3 @@
-export default interface FindProductByIdGatewayInput {
+export default interface FindProductByIdGatewayInputDto {
   id: string;
 }

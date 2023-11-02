@@ -1,15 +1,15 @@
-import { AddProductGateway, AddProductGatewayInput } from '../../../../../../src/modules/product-adm/gateway/add-product';
+import { AddProductGateway, AddProductGatewayInputDto } from '../../../../../../src/modules/product-adm/gateway/add-product';
 import { SpyAbstract } from '../../../../../shared/spy/spy-abstract';
 
 
 export default class AddProductGatewaySpy
-  extends SpyAbstract<AddProductGatewayInput, void>
+  extends SpyAbstract<AddProductGatewayInputDto, void>
   implements AddProductGateway {
   constructor(output: void, error?: Error) {
     super(output, error);
   }
 
-  async add(input: AddProductGatewayInput): Promise<void> {
+  async add(input: AddProductGatewayInputDto): Promise<void> {
     return this.call(input);
   }
 }

@@ -1,4 +1,4 @@
-export default interface AddProductGatewayInput {
+export default interface AddProductGatewayInputDto {
   product: {
     id: string;
     name: string;

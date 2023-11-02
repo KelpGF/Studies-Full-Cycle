@@ -1,13 +1,13 @@
 import ProductModel from "./product.model";
-import { AddProductGateway, AddProductGatewayInput } from "../../gateway/add-product";
+import { AddProductGateway, AddProductGatewayInputDto } from "../../gateway/add-product";
 import {
-  FindProductByIdGatewayInput,
-  FindProductByIdGatewayOutput,
+  FindProductByIdGatewayInputDto,
+  FindProductByIdGatewayOutputDto,
   FindProductByIdGateway
 } from "../../gateway/find-product-by-id";
 
 export default class ProductRepository implements AddProductGateway, FindProductByIdGateway {
-  async add(input: AddProductGatewayInput): Promise<void> {
+  async add(input: AddProductGatewayInputDto): Promise<void> {
     await ProductModel.create({
       id: input.product.id,
       name: input.product.name,
@@ -19,7 +19,7 @@ export default class ProductRepository implements AddProductGateway, FindProduct
     });
   }
 
-  async findById(input: FindProductByIdGatewayInput): Promise<FindProductByIdGatewayOutput> {
+  async findById(input: FindProductByIdGatewayInputDto): Promise<FindProductByIdGatewayOutputDto> {
     const result = await ProductModel.findOne({ where: { id: input.id } });
 
     if (!result) return { data: null };

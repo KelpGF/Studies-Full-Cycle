@@ -1,4 +1,4 @@
 import AddProductGateway from "./add-product.gateway";
-import AddProductGatewayInput from "./add-product-gateway-input.dto";
+import AddProductGatewayInputDto from "./add-product-gateway-input.dto";
 
-export { AddProductGateway, AddProductGatewayInput }
+export { AddProductGateway, AddProductGatewayInputDto }
