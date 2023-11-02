@@ -1,20 +1,14 @@
 import AddProductGatewaySpy from "./spies/add-product-repository.spy"
 
 import AddProductUseCase from "../../../../../src/modules/product-adm/usecase/add-product/add-product.usecase"
+import { mockProductProps } from "../../domain/product-props.mock"
 
 describe('Add Product Use Case Unit Test', () => {
   it('should add a product', async () => {
     const productRepository = new AddProductGatewaySpy()
     const sut = new AddProductUseCase(productRepository)
 
-    const input = {
-      product: {
-        name: 'Product 1',
-        description: 'Description 1',
-        purchasePrice: 10,
-        stock: 10,
-      }
-    }
+    const input = { product: mockProductProps() }
     const output = await sut.execute(input)
 
     expect(productRepository.timesCalled()).toBe(1)

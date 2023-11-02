@@ -7,5 +7,5 @@ export default interface FindProductByIdGatewayOutput {
     stock: number;
     createdAt: Date;
     updatedAt: Date;
-  }
+  } | null;
 }
