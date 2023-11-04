@@ -1,5 +1,5 @@
 export default interface FindProductByIdGatewayOutputDto {
-  data: {
+  product: {
     id: string;
     name: string;
     description: string;

@@ -1,5 +1,4 @@
-import AddProductGatewaySpy from "./spies/add-product-repository.spy"
-
+import AddProductGatewaySpy from "./spies/add-product.repository.spy"
 import AddProductUseCase from "../../../../../src/modules/product-adm/usecase/add-product/add-product.usecase"
 import { mockProductProps } from "../../domain/product-props.mock"
 

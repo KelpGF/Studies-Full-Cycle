@@ -65,11 +65,11 @@ describe("Product Repository Unit Test", () => {
       const input = { id: "1" };
       const output = await sut.findById(input);
 
-      expect(output.data?.id).toBe("1");
-      expect(output.data?.name).toBe("name");
-      expect(output.data?.description).toBe("description");
-      expect(output.data?.purchasePrice).toBe(1);
-      expect(output.data?.stock).toBe(1);
+      expect(output.product?.id).toBe("1");
+      expect(output.product?.name).toBe("name");
+      expect(output.product?.description).toBe("description");
+      expect(output.product?.purchasePrice).toBe(1);
+      expect(output.product?.stock).toBe(1);
     });
   })
 })

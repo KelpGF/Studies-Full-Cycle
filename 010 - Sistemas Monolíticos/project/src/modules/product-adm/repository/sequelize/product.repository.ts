@@ -22,10 +22,10 @@ export default class ProductRepository implements AddProductGateway, FindProduct
   async findById(input: FindProductByIdGatewayInputDto): Promise<FindProductByIdGatewayOutputDto> {
     const result = await ProductModel.findOne({ where: { id: input.id } });
 
-    if (!result) return { data: null };
+    if (!result) return { product: null };
 
     return {
-      data: {
+      product: {
         id: result.id,
         name: result.name,
         description: result.description,

@@ -1,15 +1,15 @@
-import UseCaseInterface from "../../shared/usecase/usecase.interface";
 import AddProductUseCaseInterface from "../usecase/add-product/add-product.usecase.interface";
+import { FindProductByIUseCaseInterface } from "../usecase/find-product-by-id";
 import ProductAdmFacadeInterface, { AddProductFacadeInputDto, CheckStockFacadeInputDto, CheckStockFacadeOutputDto } from "./product-adm.facade.interface";
 
 export interface ProductAdmFacadeDependencies {
   addProductUseCase: AddProductUseCaseInterface;
-  findProductByIdUseCase: UseCaseInterface;
+  findProductByIdUseCase: FindProductByIUseCaseInterface;
 }
 
 export default class ProductAdmFacade implements ProductAdmFacadeInterface {
   private addProductUseCase: AddProductUseCaseInterface;
-  private findProductByIdUseCase: UseCaseInterface<any, CheckStockFacadeOutputDto>;
+  private findProductByIdUseCase: FindProductByIUseCaseInterface;
 
   constructor(productAdmFacadeDependencies: ProductAdmFacadeDependencies) {
     this.addProductUseCase = productAdmFacadeDependencies.addProductUseCase;
@@ -21,6 +21,8 @@ export default class ProductAdmFacade implements ProductAdmFacadeInterface {
   }
 
   async checkStock(input: CheckStockFacadeInputDto): Promise<CheckStockFacadeOutputDto> {
-    return this.findProductByIdUseCase.execute(input);
+    const result = await this.findProductByIdUseCase.execute(input);
+    if (!result) return null;
+    return { productId: result.productId, stock: result.stock }
   }
 }
