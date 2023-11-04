@@ -1,15 +1,15 @@
 import AddProductUseCaseInterface from "../usecase/add-product/add-product.usecase.interface";
-import { FindProductByIUseCaseInterface } from "../usecase/find-product-by-id";
+import { FindProductByIdUseCaseInterface } from "../usecase/find-product-by-id";
 import ProductAdmFacadeInterface, { AddProductFacadeInputDto, CheckStockFacadeInputDto, CheckStockFacadeOutputDto } from "./product-adm.facade.interface";
 
 export interface ProductAdmFacadeDependencies {
   addProductUseCase: AddProductUseCaseInterface;
-  findProductByIdUseCase: FindProductByIUseCaseInterface;
+  findProductByIdUseCase: FindProductByIdUseCaseInterface;
 }
 
 export default class ProductAdmFacade implements ProductAdmFacadeInterface {
   private addProductUseCase: AddProductUseCaseInterface;
-  private findProductByIdUseCase: FindProductByIUseCaseInterface;
+  private findProductByIdUseCase: FindProductByIdUseCaseInterface;
 
   constructor(productAdmFacadeDependencies: ProductAdmFacadeDependencies) {
     this.addProductUseCase = productAdmFacadeDependencies.addProductUseCase;

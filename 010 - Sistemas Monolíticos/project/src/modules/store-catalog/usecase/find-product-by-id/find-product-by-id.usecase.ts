@@ -11,6 +11,11 @@ export default class FindProductByIdUseCase implements FindProductByIdUseCaseInt
 
     if (!result) return null
 
-    return { productId: result.product.id, stock: result.product.stock };
+    return {
+      id: result.product.id,
+      name: result.product.name,
+      description: result.product.description,
+      salesPrice: result.product.salesPrice,
+    };
   }
 }
