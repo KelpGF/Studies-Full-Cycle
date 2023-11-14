@@ -1,4 +1,4 @@
-import ClientGateway from "../../gatewat/client.gateway";
+import ClientGateway from "../../gateway/client.gateway";
 import { FindByIdInputDto, FindByIdOutputDto } from "./find-by-id.usecase.dto";
 import FindClientByIdUseCaseInterface from "./find-by-id.usecase.interface";
 

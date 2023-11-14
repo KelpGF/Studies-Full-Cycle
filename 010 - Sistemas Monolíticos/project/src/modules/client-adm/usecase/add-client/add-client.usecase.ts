@@ -1,6 +1,6 @@
 import IdVo from "../../../shared/domain/value-object/id.vo";
 import ClientEntity from "../../domain/entity/client.entity";
-import ClientGateway from "../../gatewat/client.gateway";
+import ClientGateway from "../../gateway/client.gateway";
 import { AddClientInputDto, AddClientOutputDto } from "./add-client.usecase.dto";
 import AddClientUseCaseInterface from "./add-client.usecase.interface";
 

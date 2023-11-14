@@ -1,4 +1,4 @@
-import ClientGateway from "../../gatewat/client.gateway";
+import ClientGateway from "../../gateway/client.gateway";
 import { ClientModel } from "./client.model";
 
 export default class ClientRepository implements ClientGateway {
