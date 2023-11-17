@@ -1,4 +1,4 @@
-import { Sequelize } from "sequelize"
+import { Sequelize } from "sequelize-typescript"
 import { sequelizeInMemory } from "../../../../../tests/shared/database/sequelize-in-memory";
 import InvoiceRepository from "./invoice.repository";
 import { InvoiceModel } from "./invoice.model";

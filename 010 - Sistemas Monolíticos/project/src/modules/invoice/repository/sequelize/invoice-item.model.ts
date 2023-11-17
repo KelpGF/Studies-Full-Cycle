@@ -8,14 +8,14 @@ import { InvoiceModel } from "./invoice.model";
 export class InvoiceItemModel extends Model {
 	@PrimaryKey
 	@Column({ allowNull: false })
-  id: string
+  declare public id: string
 
   @ForeignKey(() => InvoiceModel)
-  invoiceId: string
+  declare public invoiceId: string
 
 	@Column({ allowNull: false })
-  name: string
+  declare public  name: string
 
 	@Column({ allowNull: false })
-  price: number
+  declare public price: number
 }

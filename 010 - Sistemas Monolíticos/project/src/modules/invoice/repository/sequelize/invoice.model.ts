@@ -8,38 +8,38 @@ import { InvoiceItemModel } from './invoice-item.model';
 export class InvoiceModel extends Model {
 	@PrimaryKey
 	@Column({ allowNull: false })
-	id: string;
+	declare public id: string;
 
 	@Column({ allowNull: false })
-	name: string;
+	declare public name: string;
 
 	@Column({ allowNull: false })
-	document: string;
+	declare public document: string;
 
 	@Column({ allowNull: false })
-	street: string;
+	declare public street: string;
 
 	@Column({ allowNull: false })
-	number: string;
+	declare public number: string;
 
 	@Column({ allowNull: false })
-	complement: string;
+	declare public complement: string;
 
 	@Column({ allowNull: false })
-	city: string;
+	declare public city: string;
 
 	@Column({ allowNull: false })
-	state: string;
+	declare public state: string;
 
 	@Column({ allowNull: false })
-	zipCode: string;
+	declare public zipCode: string;
 
 	@Column({ allowNull: false })
-	total: number;
+	declare public total: number;
 
   @Column({ allowNull: false })
-  createdAt: Date;
+  declare public createdAt: Date;
 
   @HasMany(() => InvoiceItemModel)
-  items: InvoiceItemModel[]
+  declare public items: InvoiceItemModel[]
 }

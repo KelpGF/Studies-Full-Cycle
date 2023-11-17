@@ -1,4 +1,4 @@
-import { Sequelize } from "sequelize";
+import { Sequelize } from "sequelize-typescript";
 import StoreCatalogFacadeFactory from '../../../../src/modules/store-catalog/factory/store-catalog-facade.factory';
 import { sequelizeInMemory } from "../../../shared/database/sequelize-in-memory";
 import ProductModel from "../../../../src/modules/store-catalog/repository/sequelize/product.model";

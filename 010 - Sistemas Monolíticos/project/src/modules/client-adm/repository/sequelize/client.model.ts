@@ -7,20 +7,20 @@ import { Column, Model, PrimaryKey, Table } from "sequelize-typescript";
 export class ClientModel extends Model {
   @PrimaryKey
   @Column({ allowNull: false })
-  id: string;
+  declare public id: string;
 
   @Column({ allowNull: false })
-  name: string;
+  declare public name: string;
 
   @Column({ allowNull: false })
-  email: string;
+  declare public email: string;
 
   @Column({ allowNull: false })
-  address: string;
+  declare public address: string;
 
   @Column({ allowNull: false })
-  createdAt: Date;
+  declare public createdAt: Date;
 
   @Column({ allowNull: false })
-  updatedAt: Date;
+  declare public updatedAt: Date;
 }

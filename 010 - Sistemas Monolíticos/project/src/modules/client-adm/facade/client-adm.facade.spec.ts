@@ -1,4 +1,4 @@
-import { Sequelize } from "sequelize"
+import { Sequelize } from "sequelize-typescript"
 import { sequelizeInMemory } from "../../../../tests/shared/database/sequelize-in-memory";
 import { ClientModel } from "../repository/sequelize/client.model";
 import ClientAdmFacadeFactory from "../factory/client-adm.facade.factory";
