@@ -12,19 +12,29 @@ describe('AddClientUsecase', () => {
     const client = {
       name: 'any_name',
       email: 'any_email',
-      address: 'any_address',
+      document: 'any_document',
+      city: 'any_city',
+      state: 'any_state',
+      zipCode: 'any_zipCode',
+      street: 'any_street',
+      number: 'any_number',
+      complement: 'any_complement',
     };
     const output = await usecase.execute(client);
     expect(repository.add).toHaveBeenCalledWith({
-      name: client.name,
-      email: client.email,
-      address: client.address,
+      ...client,
       id: expect.any(String),
     });
     expect(output.id).toBeDefined();
     expect(output.name).toBe(client.name);
     expect(output.email).toBe(client.email);
-    expect(output.address).toBe(client.address);
+    expect(output.document).toBe(client.document);
+    expect(output.city).toBe(client.city);
+    expect(output.state).toBe(client.state);
+    expect(output.zipCode).toBe(client.zipCode);
+    expect(output.street).toBe(client.street);
+    expect(output.number).toBe(client.number);
+    expect(output.complement).toBe(client.complement);
     expect(output.createdAt).toBeDefined();
     expect(output.updatedAt).toBeDefined();
   })

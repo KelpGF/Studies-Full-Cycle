@@ -20,8 +20,14 @@ describe('ClientRepository', () => {
     const clientProps = {      
       id: 'any_id',
       name: 'any_name',
+      document: 'any_document',
       email: 'any_email',
-      address: 'any_address',
+      city: 'any_city',
+      state: 'any_state',
+      zipCode: 'any_zipCode',
+      street: 'any_street',
+      number: 'any_number',
+      complement: 'any_complement',
       createdAt: new Date(),
       updatedAt: new Date()
     }
@@ -32,8 +38,14 @@ describe('ClientRepository', () => {
     expect(clientFound).toEqual({
       id: clientProps.id,
       name: clientProps.name,
+      document: clientProps.document,
       email: clientProps.email,
-      address: clientProps.address,
+      city: clientProps.city,
+      state: clientProps.state,
+      zipCode: clientProps.zipCode,
+      street: clientProps.street,
+      number: clientProps.number,
+      complement: clientProps.complement,
       createdAt: clientProps.createdAt,
       updatedAt: clientProps.updatedAt
     })
@@ -44,7 +56,13 @@ describe('ClientRepository', () => {
       id: 'any_id',
       name: 'any_name',
       email: 'any_email',
-      address: 'any_address',
+      city: 'any_city',
+      state: 'any_state',
+      zipCode: 'any_zipCode',
+      street: 'any_street',
+      number: 'any_number',
+      complement: 'any_complement',
+      document: 'any_document',
     });
 
     const clientFound = await ClientModel.findByPk('any_id');
@@ -52,7 +70,13 @@ describe('ClientRepository', () => {
     expect(clientFound.id).toEqual('any_id');
     expect(clientFound.name).toEqual('any_name');
     expect(clientFound.email).toEqual('any_email');
-    expect(clientFound.address).toEqual('any_address');
+    expect(clientFound.city).toEqual('any_city');
+    expect(clientFound.state).toEqual('any_state');
+    expect(clientFound.zipCode).toEqual('any_zipCode');
+    expect(clientFound.street).toEqual('any_street');
+    expect(clientFound.number).toEqual('any_number');
+    expect(clientFound.complement).toEqual('any_complement');
+    expect(clientFound.document).toEqual('any_document');
     expect(clientFound.createdAt).toBeTruthy();
     expect(clientFound.updatedAt).toBeTruthy();
   })

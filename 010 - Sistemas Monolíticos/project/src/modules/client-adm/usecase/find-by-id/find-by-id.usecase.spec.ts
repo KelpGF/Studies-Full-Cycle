@@ -7,7 +7,13 @@ const clientMock = new ClientEntity({
   id: mockId,
   name: 'any_name',
   email: 'any_email',
-  address: 'any_address',
+  document: 'any_document',
+  city: 'any_city',
+  state: 'any_state',
+  zipCode: 'any_zipCode',
+  street: 'any_street',
+  number: 'any_number',
+  complement: 'any_complement',
 })
 
 const mockRepository = () => ({
@@ -16,7 +22,13 @@ const mockRepository = () => ({
     id: clientMock.id.value,
     name: clientMock.name,
     email: clientMock.email,
-    address: clientMock.address,
+    document: clientMock.document,
+    street: clientMock.street,
+    number: clientMock.number,
+    complement: clientMock.complement,
+    city: clientMock.city,
+    state: clientMock.state,
+    zipCode: clientMock.zipCode,
     createdAt: clientMock.createdAt,
     updatedAt: clientMock.updatedAt
   }),
@@ -38,7 +50,13 @@ describe('AddClientUsecase', () => {
       id: clientMock.id.value,
       name: clientMock.name,
       email: clientMock.email,
-      address: clientMock.address,
+      document: clientMock.document,
+      street: clientMock.street,
+      number: clientMock.number,
+      complement: clientMock.complement,
+      city: clientMock.city,
+      state: clientMock.state,
+      zipCode: clientMock.zipCode,
       createdAt: clientMock.createdAt,
       updatedAt: clientMock.updatedAt
     })

@@ -20,7 +20,13 @@ describe('ClientRepository', () => {
       id: 'any_id',
       name: 'any_name',
       email: 'any_email',
-      address: 'any_address',
+      document: 'any_document',
+      city: 'any_city',
+      state: 'any_state',
+      zipCode: 'any_zipCode',
+      street: 'any_street',
+      number: 'any_number',
+      complement: 'any_complement',
       createdAt: new Date(),
       updatedAt: new Date()
     });
@@ -30,7 +36,13 @@ describe('ClientRepository', () => {
     expect(output.id).toBe('any_id');
     expect(output.name).toBe('any_name');
     expect(output.email).toBe('any_email');
-    expect(output.address).toBe('any_address');
+    expect(output.document).toBe('any_document');
+    expect(output.city).toBe('any_city');
+    expect(output.state).toBe('any_state');
+    expect(output.zipCode).toBe('any_zipCode');
+    expect(output.street).toBe('any_street');
+    expect(output.number).toBe('any_number');
+    expect(output.complement).toBe('any_complement');
     expect(output.createdAt).toBeTruthy();
     expect(output.updatedAt).toBeTruthy();
   })
@@ -41,7 +53,13 @@ describe('ClientRepository', () => {
       id: 'any_id',
       name: 'any_name',
       email: 'any_email',
-      address: 'any_address',
+      document: 'any_document',
+      city: 'any_city',
+      state: 'any_state',
+      zipCode: 'any_zipCode',
+      street: 'any_street',
+      number: 'any_number',
+      complement: 'any_complement',
     }
 
     await sut.add(input);
@@ -51,7 +69,12 @@ describe('ClientRepository', () => {
     expect(clientModel.id).toBe('any_id');
     expect(clientModel.name).toBe('any_name');
     expect(clientModel.email).toBe('any_email');
-    expect(clientModel.address).toBe('any_address');
+    expect(clientModel.city).toBe('any_city');
+    expect(clientModel.state).toBe('any_state');
+    expect(clientModel.zipCode).toBe('any_zipCode');
+    expect(clientModel.street).toBe('any_street');
+    expect(clientModel.number).toBe('any_number');
+    expect(clientModel.complement).toBe('any_complement');
     expect(clientModel.createdAt).toBeTruthy();
     expect(clientModel.updatedAt).toBeTruthy();
   })
