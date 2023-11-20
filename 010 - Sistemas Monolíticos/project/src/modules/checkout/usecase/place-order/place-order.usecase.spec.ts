@@ -10,7 +10,13 @@ describe('PlaceOrderUseCase unit test', () => {
 					id: id,
 					name: 'any_client_name',
 					email: 'any_client_email',
-					address: 'any_client_address',
+					document: 'any_client_document',
+					city: 'any_city',
+					state: 'any_state',
+					zipCode: 'any_zipCode',
+					street: 'any_street',
+					number: 'any_number',
+					complement: 'any_complement',
 					createdAt: new Date('2021-01-01T00:00:00.000Z'),
 					updatedAt: new Date('2021-01-01T00:00:00.000Z'),
 				}),
@@ -39,9 +45,55 @@ describe('PlaceOrderUseCase unit test', () => {
 			),
 			findAllProducts: jest.fn(),
 		};
-		const sut = new PlaceOrderUseCase(mockClientAdmFacadeStub, mockProductAdmFacadeStub, mockStoreCatalogFacadeStub);
+		const mockProcessPaymentFacadeStub = {
+			processPayment: jest.fn(async () => ({
+				transactionId: 'any_transaction_id',
+				orderId: 'any_order_id',
+				amount: 100,
+				status: 'approved',
+				createdAt: new Date(),
+				updatedAt: new Date(),
+			})),
+		};
+		const mockInvoiceFacadeInterface = {
+			generateInvoice: jest.fn().mockResolvedValue({
+				id: 'any_invoice_id',
+				name: 'any_client_name',
+				document: 'any_client_document',
+				street: 'any_street',
+				number: 'any_number',
+				complement: 'any_complement',
+				city: 'any_city',
+				state: 'any_state',
+				zipCode: 'any_zipCode',
+				items: [{ id: 'any_product_id', name: 'any_product_name', price: 10 }],
+			}),
+			findInvoiceById: jest.fn(),
+		};
 
-		return { sut, mockClientAdmFacadeStub, mockProductAdmFacadeStub, mockStoreCatalogFacadeStub };
+		const mockCheckoutRepository = {
+			addOrder: jest.fn(),
+			findOrderById: jest.fn(),
+		};
+
+		const sut = new PlaceOrderUseCase(
+			mockClientAdmFacadeStub,
+			mockProductAdmFacadeStub,
+			mockStoreCatalogFacadeStub,
+			mockProcessPaymentFacadeStub,
+			mockInvoiceFacadeInterface,
+			mockCheckoutRepository,
+		);
+
+		return {
+			sut,
+			mockClientAdmFacadeStub,
+			mockProductAdmFacadeStub,
+			mockStoreCatalogFacadeStub,
+			mockProcessPaymentFacadeStub,
+			mockInvoiceFacadeInterface,
+			mockCheckoutRepository,
+		};
 	};
 
 	const makeInput = () => ({
@@ -50,6 +102,17 @@ describe('PlaceOrderUseCase unit test', () => {
 	});
 
 	describe('execute', () => {
+		const mockDate = new Date('2023-11-18T15:33:46.739Z');
+
+		beforeAll(() => {
+			jest.useFakeTimers('modern');
+			jest.setSystemTime(mockDate);
+		});
+
+		afterAll(() => {
+			jest.useRealTimers();
+		});
+
 		it('should throw error if client not found', async () => {
 			const { sut, mockClientAdmFacadeStub } = makeSut();
 			mockClientAdmFacadeStub.findById.mockResolvedValueOnce(null);
@@ -58,6 +121,8 @@ describe('PlaceOrderUseCase unit test', () => {
 			const promise = sut.execute(input);
 
 			await expect(promise).rejects.toThrowError('Client not found');
+			expect(mockClientAdmFacadeStub.findById).toHaveBeenCalledTimes(1);
+			expect(mockClientAdmFacadeStub.findById).toHaveBeenCalledWith({ id: input.clientId });
 		});
 
 		it('should throw a error when products are not valid', async () => {
@@ -72,6 +137,61 @@ describe('PlaceOrderUseCase unit test', () => {
 
 			await expect(promise).rejects.toThrowError('Products are not valid');
 			expect(validateProductsSpy).toHaveBeenCalledTimes(1);
+			expect(validateProductsSpy).toHaveBeenCalledWith(input.products);
+		});
+
+		it('should throw if getProduct throws', async () => {
+			const { sut } = makeSut();
+			const input = makeInput();
+			const getProductSpy = jest.spyOn(sut, 'getProduct');
+			getProductSpy.mockRejectedValueOnce(new Error('Product any_product_id not found'));
+
+			const promise = sut.execute(input);
+
+			await expect(promise).rejects.toThrowError('Product any_product_id not found');
+			expect(getProductSpy).toHaveBeenCalledTimes(1);
+			expect(getProductSpy).toHaveBeenCalledWith('any_product_id');
+		});
+
+		describe('Place order', () => {
+			it('should not be approved', async () => {
+				const { sut, mockCheckoutRepository, mockInvoiceFacadeInterface, mockProcessPaymentFacadeStub } = makeSut();
+				const input = makeInput();
+				input.products.push({ id: 'any_product_id2' });
+				mockProcessPaymentFacadeStub.processPayment.mockResolvedValueOnce({
+					transactionId: 'any_transaction_id',
+					orderId: 'any_order_id',
+					amount: 20,
+					status: 'declined',
+					createdAt: new Date(),
+					updatedAt: new Date(),
+				});
+				const output = await sut.execute(input);
+
+				expect(output.invoiceId).toBeNull();
+				expect(output.total).toBe(20);
+				expect(output.products).toStrictEqual([{ id: 'any_product_id' }, { id: 'any_product_id2' }]);
+				expect(mockProcessPaymentFacadeStub.processPayment).toHaveBeenCalledTimes(1);
+				expect(mockProcessPaymentFacadeStub.processPayment).toHaveBeenCalledWith({
+					orderId: expect.any(String),
+					amount: 20,
+				});
+				expect(mockCheckoutRepository.addOrder).toHaveBeenCalledTimes(1);
+				expect(mockInvoiceFacadeInterface.generateInvoice).toHaveBeenCalledTimes(0);
+			});
+
+			it('should be approved', async () => {
+				const { sut } = makeSut();
+				const input = makeInput();
+
+				const output = await sut.execute(input);
+
+				expect(output.invoiceId).toBe('any_invoice_id');
+				expect(output.total).toBe(10);
+				expect(output.products).toStrictEqual([{ id: 'any_product_id' }]);
+				expect(output.status).toBe('approved');
+				expect(output.id).toBeDefined();
+			});
 		});
 	});
 
@@ -173,12 +293,14 @@ describe('PlaceOrderUseCase unit test', () => {
 
 			expect(findProductByIdSpy).toHaveBeenCalledTimes(1);
 			expect(findProductByIdSpy).toHaveBeenCalledWith({ productId: 'any_product_id' });
-			expect(output).toEqual(new ProductEntity({
-        id: new IdVo('any_product_id'),
-        name: 'any_product_name',
-        description: 'any_product_description',
-        salesPrice: 10,
-      }));
+			expect(output).toEqual(
+				new ProductEntity({
+					id: new IdVo('any_product_id'),
+					name: 'any_product_name',
+					description: 'any_product_description',
+					salesPrice: 10,
+				}),
+			);
 		});
 	});
 });
