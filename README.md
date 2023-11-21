@@ -12,3 +12,5 @@ All notes and practices from my journey at Full Cycle
 - 006 DDD: Modelagem Tática e Patterns
 - 007 Event Storming
 - 008 Arquitetura Hexagonal
+- 009 Clean Architecture
+- 010 Sistemas Monolíticos
