@@ -1,0 +1,24 @@
+Quais as principais diferenças entre sistemas monolíticos e microsserviços?
+
+Objetivo / Domínio bem definidos
+  - Microsserviços possuem um contexto / funcionalidade bem específico
+  - Já os Monolíticos possuem todo o contexto e funcionalidade
+
+Linguagem de programação
+  - Microsserviços podem ser feitos cada um com uma linguagem diferente
+    ~ Podemos escolher uma linguagem melhor para executar determinada aplicação
+    ~ Mas sem o devido cuidado, o ecossistema pode ser formado por N linguagens diferentes e assim necessitará de pessoas com conhecimentos nessas linguagens
+  - Monolíticos são feitos com uma tecnologia
+    ~ Todo o time precisa saber apenas uma tecnologia
+    ~ Mas podem surgir problemas que sejam complexos para resolver na tecnologia utilizada no monolítico
+
+Deploy
+  - Microsserviços é menos perigoso pois apenas uma pequena parcela do todo está sendo alterada
+  - Monolítico toda a aplicação é atualizada, tendo mais riscos do software inteiro ficar fora do ar caso algum problema ocorra
+
+Organização das equipes
+  - Microsserviços: Uma equipe por microsserviço
+  - Monolítico: A equipe alterando toda no mesmo projeto
+
+Projetos novos ou sem domínio bem definido
+  Monolíticos é bem mais simples para esses casos

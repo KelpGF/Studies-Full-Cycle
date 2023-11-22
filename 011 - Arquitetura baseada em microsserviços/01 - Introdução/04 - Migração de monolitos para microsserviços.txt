@@ -1,0 +1,12 @@
+Migração de monólitos para microsserviços
+
+- Separação de contextos (DDD)
+- Evite o excesso de granularidade (os "nanosserviços")
+- Verifique dependências (monolítico distribuído, o pior dos mundos)
+- Planeje o processo de migração dos bancos de dados
+- Não temer dados duplicados
+- Eventos gerados
+- Consistência eventual
+- CI/CD/Testes/Ambientes
+- Comece pelas beiradas (separar em microsserviços os domínios auxiliares ou com menor influência)
+- Padrão estrangulamento (ir migrando aos poucos até o monolítico se tornar obsoleto)

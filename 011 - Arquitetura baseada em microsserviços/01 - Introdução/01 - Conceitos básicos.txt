@@ -1,0 +1,7 @@
+Microsserviços
+
+São aplicações comuns com objetivos bem definidos que fazem parte de um ecossistema e se comunicam o tempo todo
+  Ter objetivos bem definidos não significa que deve ser uma aplicação extremamente minúscula que executa somente uma/duas operações
+  Lembrando que uma aplicação ser pequena ou não depende muito. O que temos hoje como microsserviços por futuramente ser quebrado em outros microsserviços
+
+Os microsserviços devem ser independentes e autônomos. Devem executar sua função mesmo que todo o resto do ecossistema esteja fora do ar

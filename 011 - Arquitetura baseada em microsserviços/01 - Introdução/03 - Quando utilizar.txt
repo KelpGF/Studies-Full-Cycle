@@ -1,0 +1,18 @@
+Quando utilizar...
+
+Microsserviços
+  - Auxilia na definição de times
+  - Já possuir contextos bem definidos
+  - Uma certa maturidade no processo de CD 
+  - Time tecnicamente maduro
+  - Necessário escalar apenas uma parte do sistema
+  - Poder utilizar tecnologias específicas em partes pontuais
+
+
+Monolítico
+  - POC
+  - Projetos onde não conhecemos o domínio (projetos novos ou mal desenhados)
+  - Governança simplificada sobre tecnologia
+  - Facilidade no treinamento e contratação de Dev
+  - Tudo está no mesmo lugar, então é tudo mais simples
+  - Compartilhamento claro de libs (shared kernel)
