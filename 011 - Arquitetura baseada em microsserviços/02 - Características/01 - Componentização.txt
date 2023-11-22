@@ -1,0 +1,9 @@
+Componentização via Serviços
+
+"A component is a unit of software thats is independently replaceable and upgradeable"
+
+"We define libraries as components that are linked into a program and called using in-memory function calls, while services are out-of-process components who communicate with a mechanism such as a web service request, or remote procedure call."
+
+"Service are independently deployable"
+
+- Martin Fowler

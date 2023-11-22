@@ -1,0 +1,7 @@
+Design evolutivo
+
+Design evolutivo é poder mudar e evoluir uma parte do sistema sem que seja necessário mudar em outros pontos
+
+Se para mudar algum comportamento ou adicionar uma nova feature é preciso alterar vários locais é bom rever se esses serviços não deveriam estar juntos
+
+Lembrando, serviços com um acoplamento muito grande entre si é um monolítico distribuído monolítico, o pior dos mundos

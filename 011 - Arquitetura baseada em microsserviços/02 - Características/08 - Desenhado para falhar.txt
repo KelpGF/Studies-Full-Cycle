@@ -1,0 +1,11 @@
+Desenhado para falhar
+
+Na maioria das vezes os serviços são criados pensando somente no caminho feliz, como:
+  1 - Criar um endpoint http, tratar os dados e enviar esse dados via gRCP para outros serviço
+  2 - Escutar tópico 'x' do meu sistema de filas e fazer ação 'y'
+
+Mas não paramos pra pensar no pode dar errado
+  1 - O serviço do terceiro está indisponível ou lento, vou perder a requisição?
+  2 - O sistema de fila caiu, e agora?
+
+Todo software vai falhar algum dia, e é por isso que eles devem ser desenhados para conseguir se virar nessas situações para evitar o máximo de prejuízo

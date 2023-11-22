@@ -1,0 +1,9 @@
+Governança descentralizada
+
+Muitas empresas possuem regras e padrões que devem ser seguidos ao desenvolver um software. Ou seja, possuem um Governança
+
+Mas no mundo dos microsserviços cada projeto é diferente do outro. É praticamente impossível que uma regra/solução seja a ideal para todos os casos
+
+Nesse caso, uma governança descentralizada é uma melhor opção.
+Não importam as tecnologias utilizadas desde que tenhamos documentados qual é a governança do projeto.
+E no nível mais técnico, o importante é que as aplicação tenham contratos bem definidos e que tenhamos acesso a esse contratos. Assim conseguimos manter uma comunicação entre os serviços independente de linguagem (Consumer Driven Contracts)

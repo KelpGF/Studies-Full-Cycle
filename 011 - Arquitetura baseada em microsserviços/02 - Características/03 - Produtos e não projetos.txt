@@ -1,0 +1,5 @@
+Produtos e não projetos
+
+Ao criar um software devemos tratá-lo como um produto, no qual um time específico vai cuidar até o fim e mantê-lo funcionando
+
+Se tratar um software como projeto em que qualquer pessoa mexer vai virar uma bagunça

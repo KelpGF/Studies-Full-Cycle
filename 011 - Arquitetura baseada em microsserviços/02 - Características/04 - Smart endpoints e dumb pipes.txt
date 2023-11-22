@@ -1,0 +1,13 @@
+Smart endpoints e dumb pipes
+
+A comunicação entre os serviços deve ser feita sem que a mensagens sofram alterações
+
+Quando um serviço envia uma mensagem, ela deve chegar no outra serviço exatamente igual
+
+Antigamente era comum o uso de Enterprise Service Bus (ESB), que recebia uma solicitação, realizava tratamentos e redirecionava o destino real
+O problema é que esses ESB muitas vezes faziam conversões, formatações e as vezes aplicavam regras de negócio nos dados. Tonando todo seu ecossistema acoplado ao ESB
+
+O correto é: Os microsserviço terem suas regras de negócio e as mesmas serem disponibilizadas de alguma forma, http, gRPC, etc
+E quando um serviço se comunicar com o outro, a mensagem deve chegar exatamente da forma que foi enviada
+
+Resumidamente: A comunicação entre os microsserviços deve ser feita da forma mais pura possível, sem nenhum intermediário que possa alterar a mensagem original

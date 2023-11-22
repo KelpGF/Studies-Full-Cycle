@@ -1,0 +1,8 @@
+Automação de infraestrutura
+
+Quando temos um monolítico, o processo de deploy, testes, checagens não é que ficam mais simples.
+Sendo somente uma aplicação é menos custoso fazer isso manualmente
+
+Mas quando trabalhamos com microsserviços isso é inviável. É de extrema importância possuir um processo automatizado de CI/CD
+
+Sem essa infra automatizada, a empresa não está pronta para utilizar microsserviços pois seriam um fardo enorme para manter esse serviços

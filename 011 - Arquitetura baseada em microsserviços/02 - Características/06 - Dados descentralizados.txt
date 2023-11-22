@@ -1,0 +1,10 @@
+Dados descentralizados
+
+No mundo dos microsserviços, ter somente um banco de dados pode ser um problema, devido:
+  - Possíveis alterações na modelagem do banco
+  - Um grande fluxo, temporário ou não, de leitura e/ou escrita
+
+Essas situações irão afetar os serviços que se conectam a esse banco de dados
+
+Descentralizando os dados, que significa ter vários bancos de dados de acordo com a necessidade dos serviços, evitamos que todo meu ecossistema sofra caso tenha alguma problema que deveria afetar somente alguns pontos.
+Mas claro que temos algumas desvantagens, como o gerenciamento de muitos bancos de dados, muita duplicidade e a consistência eventual

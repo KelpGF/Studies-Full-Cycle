@@ -1,4 +1,4 @@
-Migração de monólitos para microsserviços
+Migração de monolítico para microsserviços
 
 - Separação de contextos (DDD)
 - Evite o excesso de granularidade (os "nanosserviços")

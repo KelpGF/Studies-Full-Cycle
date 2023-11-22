@@ -1,0 +1,9 @@
+Organização através das áreas de negócio
+
+Antigamente (mas nem tanto assim), os eram criados conforme a estrutura da empresa
+Se ela possuí um setor de UI, um de Dev e um de Banco de Dados, cada setor vai fazer tudo do sistema.
+Ex. O setor de UI iria fazer todos os componentes front end de todo o software da empresa  
+
+Os microsserviços trazem uma divisão diferente:
+  Times restritos e multifuncionais. Compostos por pessoas com capacidade em todos tópicos necessários. UI/UX, Database, etc.
+  Cada time trata de um microsserviço
