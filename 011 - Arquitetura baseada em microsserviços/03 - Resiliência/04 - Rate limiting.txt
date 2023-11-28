@@ -1,0 +1,15 @@
+Rate limiting
+
+São regras que limitam (geral ou por alguma condição) a quantidade de requisições que meu sistema pode receber
+
+• Protege o sistema baseado no que ele foi projetado para suportar
+  Quando projetamos um sistema devemos ter os parâmetro que conseguimos garantir qualidade.
+  Acima dessa escala a qualidade é perdida, então não deve ser permitido ultrapassar essas métricas
+
+• Preferência programada por tipo de client
+  Normalmente é utilizado regras genéricas, como: máx de 100 requisições por segundo
+  Mas podemos aplicar regras do jeito que preferirmos, ex:
+    - Um cliente nada estratégico utilizando 90% do meu rate limite
+    - Um cliente com alto valor que não consegue utilizar a API direito pois está sempre topada
+  Podemos criar grupos de regras para permitir que esses clientes importantes tenha direito a 70% das requisições, por exemplo
+m

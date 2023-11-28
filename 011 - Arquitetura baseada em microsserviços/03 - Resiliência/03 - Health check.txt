@@ -1,0 +1,13 @@
+Health check
+
+Verificar se nosso software está saudável
+
+• Sem sinais vitais, não é possível saber a "saúde" de um sistema
+  Mas o health check deve também validar todas as dependências do meu sistema (Banco de dados, APIs...) 
+
+• Um sistema que não está saudável possui uma chance de se recuperar caso o tráfego pare de ser direcionado a ele temporariamente.
+  Self healing: Quando meu sistema está topando, deixar de receber requisições vai permitir que meu sistema processe o que está travando e se estabilize
+
+• Health check de qualidade
+  Health check ativo: um sistema (o mesmo ou externos) fica realizando chamadas com uma certa frequências para validar a saúde
+  Health check passivo: não sabemos como está a saúde do sistema até alguém requisitar algo, e nesse processo teremos as informações da saúde do software

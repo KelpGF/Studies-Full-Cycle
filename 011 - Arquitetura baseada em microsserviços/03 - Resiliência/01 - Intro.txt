@@ -1,0 +1,14 @@
+Resiliência
+
+Princípio: Em algum momento todo sistema vai falhar...
+Mas temos que estar prontos para que quando isso ocorra o impacto seja o menor possível, mitigar os problemas
+
+
+O que é:
+- É um conjunto de estratégias adotadas *intencionalmente* para a *adaptação* de um sistema quando uma falha ocorre.
+  É uma forma de se adaptar intencionalmente aos pontos de falhas do software e ao mesmo tempo diminuir os riscos que o negócio sofrerá
+- Ter estratégias de resiliência nos possibilita minimizar os riscos de perda de dados e transações importantes para o negócio.
+  Quanto mais resiliente um software, menor os riscos e perdas de dados e transações
+  Quando perdemos dados e tudo fica caótico quando o software falhar significa que ele não é resiliente
+
+Vamos ver algumas estratégias para tornar seu sistema mais resiliente

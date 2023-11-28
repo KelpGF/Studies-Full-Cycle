@@ -1,0 +1,12 @@
+Trabalhar de forma assíncrona
+
+Funciona da seguinte maneira:
+  As solicitações são enviadas para um message broker em vez de uma chamada direta para algum serviço
+  Dessa maneira as mensagem não são perdidas se o serviço solicitado estiver indisponível
+  E também quem precisar consumir essa mensagem fará isso sob demanda, de acordo com seu poder 
+
+As vantagens são:
+• Evita perda de dados
+• Não há perda de dados no envio de uma transação de o server estiver fora
+• Servidor pode processar a transação em seu tempo quando estiver online
+• Entender com profundidade o message broker / sistema de stream

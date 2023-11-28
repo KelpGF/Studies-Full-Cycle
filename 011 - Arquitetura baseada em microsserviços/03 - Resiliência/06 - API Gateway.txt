@@ -1,0 +1,8 @@
+API Gateway
+
+É um portão que recebe todas as requisições e redireciona para o serviço solicitado
+
+• Garante que requisições "inapropriadas" não cheguem até o sistema:
+  Ex: usuário não autenticado
+• Implementa políticas de Rate Limiting, Health check, etc
+  Bloqueia as requisições dependendo das políticas de rate limit e da saúde do sistema

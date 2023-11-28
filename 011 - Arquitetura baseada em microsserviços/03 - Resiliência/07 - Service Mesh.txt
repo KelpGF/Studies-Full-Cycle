@@ -1,0 +1,12 @@
+Service Mesh
+
+• Controla o tráfego de rede
+  Proxy entre os serviços
+
+• Evita implementações de proteção pelo próprio sistema.
+  Aplicar resiliência sem mexer nos serviços
+
+• mTLS
+  Certificados
+
+• Circuit breaker, retry, timeout, fault injection, etc

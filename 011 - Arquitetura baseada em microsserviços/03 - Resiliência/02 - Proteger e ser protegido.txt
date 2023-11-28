@@ -1,0 +1,15 @@
+Proteger e ser protegido
+
+- Um sistema em uma arquitetura distribuída precisa adotar mecanismos de autopreservação para garantir ao máximo sua operação com qualidade.
+  Qualidade:
+    - ter o mesmo comportamento independente da situação
+    - se meu sistema responde uma requisição em 20ms, quando houver 10000 requisições todas também devem ser respondidas nesse mesmo tempo
+  Se com determinada quantidade de demanda o meu sistema perder qualidade deve-se permitir somente a quantidade de pedidos dentro dos limites
+
+- Um sistema precisa não pode ser "egoísta" ao ponto de realizar mais requisições em um sistema que está falhando.
+  Quando meu sistema necessita de outro e esse outra está muito lento ou nem respondendo ficar realizando re-tentativas de forma imediata vai mudar em algo?
+  Se não está funcionando agora, aumentar a qualidade de solicitações não vai ajudar, pelo contrário.
+  Devemos ter mecanismos que identifique que os sistemas que estou solicitando está saudável ou não e agir de acordo com a resposta
+
+- Um sistema lento no ar muitas vezes é pior do que um sistema fora do ar. (Efeito dominó)
+  Todo mundo que depende desse sistema lento também ficará lento
