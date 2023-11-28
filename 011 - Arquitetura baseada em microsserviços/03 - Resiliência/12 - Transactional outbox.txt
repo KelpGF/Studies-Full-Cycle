@@ -1,0 +1,8 @@
+Transactional outbox
+
+Quando escrever uma mensagem no message broker também a salvamos em outra database,
+assim não perdemos a mensagem caso o message broker esteja fora do ar
+
+E devem ser batidas algumas questões, como:
+  - Quais tipos de mensagens salvar?
+  - Quando serão apagadas?

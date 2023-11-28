@@ -1,0 +1,11 @@
+Garantias de recebimento
+
+• Auto Ack = false e commit manual
+  Nos sistemas de mensageria, os consumidores podem marcar uma mensagem como lida assim que a recebe (auto) ou somente após o seu processamento (manual)
+  O ideia seria de forma manual para garantir que a mensagem será descartada somente se o processamento ocorrer de acordo 
+
+• Prefetch alinhado a volumetria
+  Os consumidores geralmente recebem uma quantidade de mensagens de uma vez, 10 em 10, 100 em 100, depende da configuração
+  Mas tem a questão: quantas mensagens meu software consegue processar simultaneamente?
+  Sem essa resposta posso ou está reservando poder computacional a toa ou então meu software não irá suportar todas as mensagens repetidas
+  Temos que permitir somente a quantidade que fique dentro dos limites que mantém a qualidade do nosso software

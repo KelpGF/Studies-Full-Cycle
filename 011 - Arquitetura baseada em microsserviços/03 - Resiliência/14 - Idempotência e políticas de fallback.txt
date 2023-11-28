@@ -1,0 +1,17 @@
+Microsserviços
+
+Idempotência
+  Conseguir lidar com duplicidade de mensagens
+  Ser idempotente é conseguir perceber duplicidade de eventos e conseguir descartar as mensagem repetidas
+  É extremamente necessário para evitar problemas, principalmente quando não temos a certeza da quantidade de eventos que recebemos
+
+Independência
+  O software não deve ser afetado por ações não são relacionadas a ele 
+  Ex: Banco de dados.
+  Devido a uma sobrecarga no banco por conta do modulo de catálogo o a parte de vendas começou a ter grandes gargalos
+  Seria viável ter bancos separadas?
+
+Políticas de fallback
+  Descobrir quais pontos o seu sistema é falho
+  Criar ações para quando esse ponto falhar
+  Mas sempre vai ter algo que não foi pensado e que irá acontecer

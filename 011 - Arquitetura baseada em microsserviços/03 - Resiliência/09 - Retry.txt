@@ -1,0 +1,22 @@
+Retry
+
+Quando o servidor que estamos requisitando não responder o que vamos fazer?
+O retry é uma forma de garantir que os dados que quero enviar sejam enviados por meio de re-tentativas
+
+Temos algumas formas de re-tentativas:
+
+• Linear - Sem backoff | Chamadas lineares sem backoff
+  A cada 2 segundo, por exemplo, posso refazer minha requisição caso ocorra um erro
+  Porém, se múltiplos clients tiverem fazendo o mesmo processo no mesmo tempo o servidor pode continuar sem conseguir responder esses pedidos
+  pois a demanda de requisições se mantém a mesma
+
+• Exponential backoff | Chamadas exponenciais
+  Em vez de ser linear (a cada Xms) posso ir aumentando esse tempo por tentativa
+  1seg, 2seg, 4seg, 8seg, 16seg...
+  Isso pode ajudar pois, devido o intervalo maior, o servidor pode ter se recuperado.
+  Mas ainda podemos cair na armadilha anterior
+
+• Exponential backoff - Jitter | Chamadas exponenciais com Jitter
+  Tem a mesma ideia do anterior mas é adicionado um 'ruído'. Um tempo extra aleatório entre as solicitações
+  Dessa maneira é bem menos provável que as mensagens cheguem toda simultaneamente
+  Assim é menos provável que todas as solicitações cheguem ao mesmo tempo

@@ -1,0 +1,26 @@
+Tipos de riscos:
+  - Saber que o risco existe e optar por não fazer nada para mitigar, está disposto a assumir caso ocorra
+  - Não saber que o risco existe e assim não saber pode assumir ou não caso ocorra
+
+Situações complexas
+
+• O que acontece se o message broker cair?
+  Single Point of Fail: É o ponto principal da aplicação, que caso falhe o sistema ficará comprometido
+  Se eu depender apenas do meu message broker significa que ele é meu SPoF
+
+• Haverá perda de mensagens?
+  Como meus softwares devem se comportar pra minimizar os danos?
+
+• Seu sistema ficará fora do ar?
+  AWS caiu uma zona de disponibilidade | Multi Zone
+  AWS CAIU DE VEZ | Multi Cloud
+
+• Como garantir resiliência?
+
+
+Resiliência sempre vai ter um limite, um nível, seja em como agir quando uma API cair ou o que fazer se minha cloud toda ficar fora
+Quanto mais resiliência mais esforço e mais custo
+
+A responsabilidade de definir o nível de resiliência de um software deve ser dita pelo CO ou CTO, não é dever do DEV definir o nível máximo de resiliência
+
+Mas sempre tem pontos que o DEV tem que prestar atenção, como garantia de entrega com retry e message broker

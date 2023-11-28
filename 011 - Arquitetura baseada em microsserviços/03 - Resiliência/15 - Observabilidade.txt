@@ -1,0 +1,9 @@
+Observabilidade
+
+Botar um sistema no ar sem observabilidade é ficar cego sobre o que está ocorrendo dentro dele
+
+• APM: Application Performance Monitor
+• Tracing distribuído
+• Métricas personalizadas: do sistema ou de negócio
+• Spans personalizados
+• Open Telemetry

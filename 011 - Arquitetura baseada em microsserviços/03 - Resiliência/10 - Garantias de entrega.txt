@@ -1,0 +1,26 @@
+Garantias de entrega: Kafka
+
+Introdução básica
+  Kafka é um stream de dados. Ele tem uma máquina (brokers) que recebe mensagens e salva até alguém pedir pra ele essa mensagem
+  Para salvar no Kafka temos os 'Producers', e os que pedem para receber as mensagens são os 'Consumers'
+  Temos também o conceito de cluster. Nesse caso vamos supor que temos 3 brokers Kafka. Eles juntos formam um cluster, que é gerenciado por alguém (zookeper)
+  Dessa maneira, temos um broker principal e outros 2. Caso um broker fique fora ainda temos 2 e eles se reorganizar para salvar as mensagens
+
+Trabalhando com o Kafka nos temos 3 tipos de garantias de entrega:
+acknowledge (ack)
+
+• Ack 0: Fire and forget
+  É quando o Producer envia uma mensagem para o Kafka mas não quer saber se deu certo salvar
+  É utilizado para casos que perder essa informação não gere perigo
+  É bem mais rápido
+
+• Ack 1: Leader
+  É quando o producer envia uma mensagem para o Kafka e o broker principal (leader) retorna uma mensagem confirmando o recebimento 
+  Temos um certa garantia, porém se o broker principal cair a mensagem pode ser pedido pois não temos a confirmação de que a mesma foi replicada
+
+• Ack -1: All
+  É quando o producer envia uma mensagem para o Kafka e o brokers principal retorna uma mensagem confirmando o recebimento dele e dos outros brokers
+  Tem a maior garantia pois se um brokers cair temos certeza que a mensagem está replicada nos outros
+  Mais lento
+
+Garantia de entrega é algo sério e cabe aos líderes decidirem qual nível utilizar em cada ocasião
