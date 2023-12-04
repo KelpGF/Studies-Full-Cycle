@@ -1,0 +1,55 @@
+@startuml digital wallet
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+AddRelTag("async", $lineStyle = DashedLine())
+
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+
+!include DEVICONS/react.puml
+!include DEVICONS/nodejs.puml
+!include DEVICONS/mysql.puml
+!include FONTAWESOME/users.puml
+
+title "Digital Wallet Full Cycle"
+
+Person(client_person, "Client", "Digital Wallet Client", $sprite="users")
+
+System_Ext(payment_gateway, "Payment Gateway", "Payment Processor")
+
+System_Boundary(digital_wallet, "Digital Wallet") {
+  Container(client_spa, "Client SPA", "React TS", "Digital Wallet Wab App", $sprite="react")
+
+  Container(wallet_core, "Wallet Core", "TS", "Wallet Core is responsible for the transactions", $sprite="nodejs")
+  Container(balance_microservice, "Balance Microservice", "TS", "Returns cutomer balance", $sprite="nodejs")
+  Container(statement_microservice, "Statement Microservice", "TS", "Returns cutomer statement", $sprite="nodejs")
+  Container(payment_acl, "Payment ACL", "TS", "Anticorruption Layer for Payment Gateway", $sprite="nodejs")
+
+  ContainerDb(wallet_db, "Wallet DB", "MySQL", "Principal DB for Wallet Core", $sprite="mysql")
+  Rel(wallet_core, wallet_db, "Read/Write", "MySQL Driver")
+
+  ContainerDb(balance_db, "Balance DB", "MySQL", "Balance DB", $sprite="mysql")
+  Rel(balance_microservice, balance_db, "Read/Write", "MySQL Driver")
+
+  ContainerDb(statement_db, "Statement DB", "MySQL", "Statement DB", $sprite="mysql")
+  Rel(statement_microservice, statement_db, "Read/Write", "MySQL Driver")
+
+  ContainerDb(payment_acl_db, "Payment ACL DB", "MySQL", "Payment ACL DB", $sprite="mysql")
+  Rel(payment_acl, payment_acl_db, "Read/Write", "MySQL Driver")
+
+  Rel(client_person, client_spa, "Uses", "HTTPS")
+  Rel(client_spa, wallet_core, "Uses", "JSON/HTTPS")
+  Rel(client_spa, balance_microservice, "Uses", "JSON/HTTPS")
+  Rel(client_spa, statement_microservice, "Uses", "JSON/HTTPS")
+
+  Rel(wallet_core, payment_acl, "Uses", "JSON/HTTPS")
+  Rel(payment_acl, payment_gateway, "Uses", "JSON/HTTPS")
+
+  ContainerQueue(payment_queue, "Payment Queue", "Kafka", "Payment Queue")
+
+  Rel(wallet_core, payment_queue, "Pub", "balance.new-payment", $tags="async")
+  Rel(wallet_core, payment_queue, "Pub", "statement.new-payment", $tags="async")
+  Rel(balance_microservice, payment_queue, "Sub", "balance.new-payment", $tags="async")
+  Rel(statement_microservice, payment_queue, "Sub", "statement.new-payment", $tags="async")
+}
+
+@enduml
