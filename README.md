@@ -14,3 +14,4 @@ All notes and practices from my journey at Full Cycle
 - 008 Arquitetura Hexagonal
 - 009 Clean Architecture
 - 010 Sistemas Monolíticos
+- 011 Arquitetura baseada em microsserviços
