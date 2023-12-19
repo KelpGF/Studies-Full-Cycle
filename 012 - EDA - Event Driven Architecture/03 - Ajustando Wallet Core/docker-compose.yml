@@ -1,0 +1,45 @@
+version: '3'
+
+volumes:
+  db-wallet-volume:
+    external: false
+
+services: 
+  db-mysql:
+    image: mysql:5.7
+    platform: linux/amd64
+    command: --innodb-use-native-aio=0
+    container_name: wallet-mysql
+    restart: always # Caso o conteiner pare, ele reinicia automaticamente
+    tty: true # Permite que o usuário interaja com o conteiner
+    volumes:
+      - db-wallet-volume:/var/lib/mysql # Mapeia o volume do conteiner para a pasta mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wallet
+      MYSQL_PASSWORD: root
+    networks:
+      - wallet-core
+    ports:
+      - 3306:3306
+
+  wallet-core:
+    image: golang:1.21
+    platform: linux/amd64
+    container_name: wallet-core
+    restart: always
+    tty: true
+    volumes:
+      - .:/go/src/wallet-core
+    working_dir: /go/src/wallet-core
+    command: go run cmd/walletcore/main.go
+    networks:
+      - wallet-core
+    ports:
+      - 3000:3000
+    depends_on:
+      - db-mysql
+
+networks:
+  wallet-core:
+    driver: bridge

@@ -19,7 +19,7 @@ func (a *AccountGatewayDB) GetById(id string) (*entity.Account, error) {
 	var client entity.Client
 	account.Client = &client
 
-	stmt, err := a.DB.Prepare("SELECT a.id, a.balance, a.created_at, c.id, c.name, c.email, c.created_at FROM accounts a INNER JOIN clients c ON a.client_id = c.id WHERE a.id = ?")
+	stmt, err := a.DB.Prepare("SELECT a.id, a.balance, a.created_at, c.id, c.name, c.email, c.created_at FROM accounts a INNER JOIN clients c ON a.client_id = c.id WHERE c.id = ?")
 	if err != nil {
 		return nil, err
 	}
@@ -28,6 +28,7 @@ func (a *AccountGatewayDB) GetById(id string) (*entity.Account, error) {
 	row := stmt.QueryRow(id)
 	err = row.Scan(&account.ID, &account.Balance, &account.CreatedAt, &client.ID, &client.Name, &client.Email, &client.CreatedAt)
 	if err != nil {
+		println(err.Error())
 		return nil, err
 	}
 

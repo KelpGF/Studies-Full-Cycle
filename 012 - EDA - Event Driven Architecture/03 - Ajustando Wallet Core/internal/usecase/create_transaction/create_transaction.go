@@ -3,12 +3,13 @@ package createtransaction
 import (
 	"github.com.br/kelpgf/fc-ms-wallet/internal/entity"
 	"github.com.br/kelpgf/fc-ms-wallet/internal/gateway"
+	events "github.com.br/kelpgf/fc-ms-wallet/pkg/events"
 )
 
 type CreateTransactionInputDTO struct {
-	AccountIdFrom string
-	AccountIdTo   string
-	amount        float64
+	AccountIdFrom string  `json:"account_id_from"`
+	AccountIdTo   string  `json:"account_id_to"`
+	Amount        float64 `json:"amount"`
 }
 
 type CreateTransactionOutputDTO struct {
@@ -16,14 +17,23 @@ type CreateTransactionOutputDTO struct {
 }
 
 type CreateTransactionUseCase struct {
-	TransactionGateway gateway.TransactionGateway
-	AccountGateway     gateway.AccountGateway
+	TransactionGateway      gateway.TransactionGateway
+	AccountGateway          gateway.AccountGateway
+	EventDispatcher         events.EventDispatcherInterface
+	TransactionCreatedEvent events.EventInterface
 }
 
-func NewCreateTransactionUseCase(transactionGateway gateway.TransactionGateway, accountGateway gateway.AccountGateway) *CreateTransactionUseCase {
+func NewCreateTransactionUseCase(
+	transactionGateway gateway.TransactionGateway,
+	accountGateway gateway.AccountGateway,
+	eventDispatcher events.EventDispatcherInterface,
+	transactionCreatedEvent events.EventInterface,
+) *CreateTransactionUseCase {
 	return &CreateTransactionUseCase{
-		TransactionGateway: transactionGateway,
-		AccountGateway:     accountGateway,
+		TransactionGateway:      transactionGateway,
+		AccountGateway:          accountGateway,
+		EventDispatcher:         eventDispatcher,
+		TransactionCreatedEvent: transactionCreatedEvent,
 	}
 }
 
@@ -37,7 +47,7 @@ func (uc *CreateTransactionUseCase) Execute(input *CreateTransactionInputDTO) (*
 		return nil, err
 	}
 
-	transaction, err := entity.NewTransaction(accountFrom, accountTo, input.amount)
+	transaction, err := entity.NewTransaction(accountFrom, accountTo, input.Amount)
 	if err != nil {
 		return nil, err
 	}
@@ -50,5 +60,9 @@ func (uc *CreateTransactionUseCase) Execute(input *CreateTransactionInputDTO) (*
 	output := &CreateTransactionOutputDTO{
 		ID: transaction.ID,
 	}
+
+	uc.TransactionCreatedEvent.SetPayload(output)
+	uc.EventDispatcher.Dispatch(uc.TransactionCreatedEvent)
+
 	return output, nil
 }

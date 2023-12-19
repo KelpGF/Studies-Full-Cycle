@@ -4,6 +4,8 @@ import (
 	"testing"
 
 	"github.com.br/kelpgf/fc-ms-wallet/internal/entity"
+	"github.com.br/kelpgf/fc-ms-wallet/internal/event"
+	"github.com.br/kelpgf/fc-ms-wallet/pkg/events"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 )
@@ -49,9 +51,18 @@ func TestNewCreateTransactionUseCaseExecute(t *testing.T) {
 	input := &CreateTransactionInputDTO{
 		AccountIdFrom: mockAccountFrom.ID,
 		AccountIdTo:   mockAccountTo.ID,
-		amount:        100,
+		Amount:        100,
 	}
-	uc := NewCreateTransactionUseCase(mockTransactionGateway, mockAccountGatewayMock)
+
+	dispatcher := events.NewEventDispatcher()
+	event := event.NewTransactionCreatedEvent()
+
+	uc := NewCreateTransactionUseCase(
+		mockTransactionGateway,
+		mockAccountGatewayMock,
+		dispatcher,
+		event,
+	)
 
 	output, err := uc.Execute(input)
 
