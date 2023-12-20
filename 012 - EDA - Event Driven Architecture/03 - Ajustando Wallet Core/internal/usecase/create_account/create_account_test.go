@@ -4,6 +4,7 @@ import (
 	"testing"
 
 	"github.com.br/kelpgf/fc-ms-wallet/internal/entity"
+	"github.com.br/kelpgf/fc-ms-wallet/internal/usecase/mocks"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 )
@@ -22,19 +23,6 @@ func (m *ClientGatewayMock) Save(client *entity.Client) error {
 	return args.Error(0)
 }
 
-type AccountGatewayMock struct {
-	mock.Mock
-}
-
-func (a *AccountGatewayMock) GetById(id string) (*entity.Account, error) {
-	args := a.Called(id)
-	return args.Get(0).(*entity.Account), args.Error(1)
-}
-func (a *AccountGatewayMock) Save(account *entity.Account) error {
-	args := a.Called(account)
-	return args.Error(0)
-}
-
 func TestNewCreateAccountUseCaseExecute(t *testing.T) {
 	clientMock, _ := entity.NewClient(
 		"Jonh Doe",
@@ -43,7 +31,7 @@ func TestNewCreateAccountUseCaseExecute(t *testing.T) {
 	clientGatewayMock := &ClientGatewayMock{}
 	clientGatewayMock.On("GetById", clientMock.ID).Return(clientMock, nil)
 
-	accountGatewayMock := &AccountGatewayMock{}
+	accountGatewayMock := &mocks.AccountGatewayMock{}
 	accountGatewayMock.On("Save", mock.Anything).Return(nil)
 
 	input := &CreateAccountInputDTO{

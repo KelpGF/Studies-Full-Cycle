@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"database/sql"
 	"fmt"
 
@@ -12,6 +13,7 @@ import (
 	"github.com.br/kelpgf/fc-ms-wallet/internal/web"
 	"github.com.br/kelpgf/fc-ms-wallet/internal/web/webserver"
 	"github.com.br/kelpgf/fc-ms-wallet/pkg/events"
+	"github.com.br/kelpgf/fc-ms-wallet/pkg/uow"
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -29,13 +31,20 @@ func main() {
 
 	clientRepository := database.NewClientGatewatDb(db)
 	accountRepository := database.NewAccountGatewayDB(db)
-	transactionRepository := database.NewTransactionGatewayDB(db)
+
+	ctx := context.Background()
+	uow := uow.NewUow(ctx, db)
+	uow.Register("AccountDB", func(tx *sql.Tx) interface{} {
+		return database.NewAccountGatewayDB(db)
+	})
+	uow.Register("TransactionDB", func(tx *sql.Tx) interface{} {
+		return database.NewTransactionGatewayDB(db)
+	})
 
 	createClientUseCase := createclient.NewCreateClientUseCase(clientRepository)
 	createAccountUseCase := createaccount.NewCreateAccountUseCase(accountRepository, clientRepository)
 	createTransactionUseCase := createtransaction.NewCreateTransactionUseCase(
-		transactionRepository,
-		accountRepository,
+		uow,
 		eventDispatcher,
 		transactionCreatedEvent,
 	)
