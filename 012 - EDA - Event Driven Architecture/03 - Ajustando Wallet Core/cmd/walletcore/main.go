@@ -7,13 +7,16 @@ import (
 
 	"github.com.br/kelpgf/fc-ms-wallet/internal/database"
 	"github.com.br/kelpgf/fc-ms-wallet/internal/event"
+	"github.com.br/kelpgf/fc-ms-wallet/internal/event/handler"
 	createaccount "github.com.br/kelpgf/fc-ms-wallet/internal/usecase/create_account"
 	createclient "github.com.br/kelpgf/fc-ms-wallet/internal/usecase/create_client"
 	createtransaction "github.com.br/kelpgf/fc-ms-wallet/internal/usecase/create_transaction"
 	"github.com.br/kelpgf/fc-ms-wallet/internal/web"
 	"github.com.br/kelpgf/fc-ms-wallet/internal/web/webserver"
 	"github.com.br/kelpgf/fc-ms-wallet/pkg/events"
+	"github.com.br/kelpgf/fc-ms-wallet/pkg/kafka"
 	"github.com.br/kelpgf/fc-ms-wallet/pkg/uow"
+	ckafka "github.com/confluentinc/confluent-kafka-go/kafka"
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -25,9 +28,17 @@ func main() {
 
 	defer db.Close()
 
+	configMap := ckafka.ConfigMap{
+		"bootstrap.servers": "kafka:29092",
+		"group.id":          "wallet",
+	}
+	kafkaProducer := kafka.NewKafkaProducer(&configMap)
+
 	transactionCreatedEvent := event.NewTransactionCreatedEvent()
+	balanceUpdatedEvent := event.NewBalanceUpdated()
 	eventDispatcher := events.NewEventDispatcher()
-	// eventDisitpacher.Register("TransactionCreated", handler)
+	eventDispatcher.Register("TransactionCreated", handler.NewTransactionCreatedKafkaHandler(kafkaProducer))
+	eventDispatcher.Register("BalanceUpdated", handler.NewBalanceUpdatedKafkaHandler(kafkaProducer))
 
 	clientRepository := database.NewClientGatewatDb(db)
 	accountRepository := database.NewAccountGatewayDB(db)
@@ -47,6 +58,7 @@ func main() {
 		uow,
 		eventDispatcher,
 		transactionCreatedEvent,
+		balanceUpdatedEvent,
 	)
 
 	clientHandler := web.NewWebClientHandler(createClientUseCase)
@@ -58,5 +70,6 @@ func main() {
 	webServer.AddHandler("/account", accountHandler.CreateAccount)
 	webServer.AddHandler("/transaction", transactionHandler.CreateTransaction)
 
+	fmt.Println("Server running on port 3000")
 	webServer.Start()
 }
