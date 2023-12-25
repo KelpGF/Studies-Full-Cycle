@@ -15,3 +15,4 @@ All notes and practices from my journey at Full Cycle
 - 009 Clean Architecture
 - 010 Sistemas Monolíticos
 - 011 Arquitetura baseada em microsserviços
+- 012 EDA - Event Driven Architecture
