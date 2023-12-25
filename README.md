@@ -16,3 +16,4 @@ All notes and practices from my journey at Full Cycle
 - 010 Sistemas Monolíticos
 - 011 Arquitetura baseada em microsserviços
 - 012 EDA - Event Driven Architecture
+- 013 RabbitMQ
