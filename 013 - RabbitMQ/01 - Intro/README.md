@@ -75,3 +75,21 @@ As vezes nosso fluxo de mensagem é tão grande que os consumidores não consegu
 Quando há milhões de mensagem em uma fila, por qualquer motivo, há a possibilidade de liberar a memória, jogando especificamente as mensagens da fila em questão em disco.
 
 Para isso foram criadas as Lazy Queues. Com elas as mensagens são armazenadas em disco e elas não são perdidas quando a máquina é desligada, mas isso exige alto I/O
+
+## Anotações dos testes
+
+### Múltiplos Consumers de uma mesma Queue
+
+Quando temos 2 consumidores a mensagens são distribuídas intercaladamente entre eles, ou seja, é feito um balanceamento automático das mensagens entres os consumidores
+
+Dessa forma, é impossível que todos os consumidores de uma mesma fila recebam todas as mensagens dessa fila
+
+### Múltiplos Consumers de uma mesma mensagem
+
+Para ser possível vários consumidores receberem todas as mensagens precisamos que a Exchange seja Fanout e que cada um esteja em uma fila diferente (por conta do tópico acima) e as fila obviamente devem ter feito o bind com a Exchance
+
+### Exchange Topic: Enviando para várias filas
+
+Quando enviamos uma mensagem e sua binding key da match com mais de uma binding key, essa mensagem é enviadas para todas as filas
+
+![Alt text](exchange-topic-n-queue.png)
