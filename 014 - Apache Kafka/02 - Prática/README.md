@@ -29,6 +29,12 @@ Consulta e exibe as mensagens do tópico
 - ```--from-beginning```: ler do começo
 - ```--group=x```: Adiciona a um consumer group
 
+## kafka-console-groups
+
+```kafka-consumer-groups --bootstrap-server=localhost:9092 --group=goapp-group```
+
+- ```--describe```: detalhes
+
 ## kafka-console-producer
 
 ```kafka-console-producer --bootstrap-server=localhost:9092 --topic=teste```

@@ -183,3 +183,4 @@ Obs.: Se um grupo tiver mais consumidores do que partições alguns desses siste
 - O mundo ideal é ter um tópico com X partições e ter um consumer group con exatos X consumers
 - Se um consumer não ter informado o grupo, ele mesmo será considerado um grupo
 - Quando tenho um ou mais consumers groups acessando um tópico, todas as mensagens são lidas por todos os grupos. Apenas os membros dos grupos que não possuem acesso a todas as mensagens, a não ser que ele seja o próprio group
+- Quando um consumer pertencendo a grupo se conecta a um tópico com a opção auto.offset.reset=earliest ele irá ler todas as mensagens, mas os próximos membros que pertencerem ao mesmo grupo não irão. Caso outro grupo se conecte com essa opção ele também irá ler todas as mensagens
