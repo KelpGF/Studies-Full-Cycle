@@ -51,3 +51,24 @@ As Realm Roles são usadas para roles mais personalizadas do realm
 Com os grupos podemos adicionar vários users ao mesmo e definir quais são as roles do grupo. Todas as roles do grupo serão refletidas ao seus membros.
 
 Podemos pensar nos grupos como ACL (Access Control List)
+
+## Internacionalização
+
+O Keycloak já possui um suporte a várias linguas sendo configurável por Realm. Podemos adicionar várias linguas a um Realm e definir uma padrão
+
+O usuário pode selecionar a lingua no login ou na sua aba de informações pessoais
+
+Em alguns pontos vemos um padrão ${client_account}. Isso é como se fosse uma variável que o Keycloak suporta para realizar a tradução por lingua.
+
+Por exemplo, podemos cadastrar uma ${tomato} com o seu valor em pt-BR sendo Tomate. E assim podemos usar em todos os locais essa var que ele vai trocar o valor
+
+## Clients
+
+Lembrando do OAuth2, client é quem acessa os recurso no Resource Server em nome do usuário.
+
+Sempre que alguma aplicação quiser utilizar os recursos de autenticação do Keycloak isso deve ser feito via Client.
+
+Temos 3 Clients que já vêm no Keycloak que são aplicações visuais: account, account-console e security-admin-console.
+E eles utilizam os outros clients que já existem também para poder acessar os recursos internos do Keycloak.
+
+Podemos realizar várias configurações no Clients, como suas roles, os escopos, sessões ativas, etc.
