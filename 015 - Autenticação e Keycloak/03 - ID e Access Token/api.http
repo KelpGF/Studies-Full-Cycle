@@ -1,0 +1,18 @@
+### Gerando access token
+POST http://localhost:8080/realms/Kamabakka/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+username=guigui
+&password=123
+&grant_type=password
+&client_id=kama-bakka
+
+### Gerando access token e id token
+POST http://localhost:8080/realms/Kamabakka/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+username=guigui
+&password=123
+&grant_type=password
+&client_id=kama-bakka
+&scope=openid
