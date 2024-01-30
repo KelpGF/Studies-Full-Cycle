@@ -1,0 +1,22 @@
+@startuml authrozation code flow
+
+actor "Resource Owner" as RO
+participant "User Agent" as UA
+participant "Authorization Server" as AS
+participant "Client Application" as CA
+participant "Resource Server" as RS
+
+RO -> UA : Acessa a aplicação do cliente
+UA -> CA: Redireciona para a URL de autorização do Authorization Server
+CA -> AS: Requisita um autorização de acesso ao Resource Server
+AS -> RO: Exibe tela de login
+RO -> AS: Fornece as credenciais de autenticação
+AS -> RO: Exibe tela de consentimento de acesso ao Resource Server
+RO -> AS: Concede o consentimento
+AS -> CA: Retorna um código de autorização
+CA -> AS: Requisita um token de acesso, fornecendo o código de autorização
+AS -> CA: Retorna um token de acesso
+CA -> RS: Requisita um recurso protegido, fornecendo o token de acesso
+RS --> CA: Retorna o recurso protegido
+
+@enduml
