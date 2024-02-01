@@ -43,12 +43,15 @@ app.get('/callback', async (req, res) => {
 	res.send(result);
 });
 
-// login with nonce
+// login with nonce and CSRF
 app.get('/login-nonce', (req, res) => {
 	const nonceCode = crypto.randomBytes(16).toString('base64');
+	const stateCode = crypto.randomBytes(16).toString('base64');
 
 	// @ts-expect-error - type mismatch
 	req.session.nonce = nonceCode;
+	// @ts-expect-error - type mismatch
+	req.session.state = stateCode;
 	req.session.save();
 
 	const params = new URLSearchParams({
@@ -57,6 +60,7 @@ app.get('/login-nonce', (req, res) => {
 		response_type: 'code',
 		scope: 'openid',
 		nonce: nonceCode,
+		state: stateCode,
 	});
 
 	const url = 'http://localhost:8080/realms/Kamabakka/protocol/openid-connect/auth?' + params.toString();
@@ -66,6 +70,17 @@ app.get('/login-nonce', (req, res) => {
 	res.redirect(url);
 });
 app.get('/callback-once', async (req, res) => {
+	// @ts-expect-error - type mismatch
+	if (req.session.user) {
+		return res.redirect('/admin');
+	}
+
+	// @ts-expect-error - type mismatch
+  if (req.session.state !== req.query.state) {
+    // can redirect for login too
+		return res.status(401).json({ message: 'Unauthorized' });
+  }
+
 	const body = {
 		client_id: 'kama-bakka',
 		grant_type: 'authorization_code',
@@ -91,8 +106,7 @@ app.get('/callback-once', async (req, res) => {
 	const nonce = req.session.nonce;
 
 	if (payloadIdToken.nonce !== nonce || payloadAccessToken.nonce !== nonce || payloadRefreshToken.nonce !== nonce) {
-		res.status(401).json({ message: 'Unauthorized' });
-		return;
+		return res.status(401).json({ message: 'Unauthorized' });
 	}
 
 	// @ts-expect-error - type mismatch

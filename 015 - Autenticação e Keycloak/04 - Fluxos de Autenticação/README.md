@@ -57,8 +57,41 @@ app.get('/callback', async (req, res) => {
 })
 ```
 
-Esse code esta sujeito a um reply attack. Esse tipo ataque ocorre quando o atacante possui acesso sua rede e consegue capturar a chamada de callback. Da forma que foi escrito o código, o atacante pode realizar a chamada de callback novamente e gerar novos tokens, provendo acesso indevido para ele.
+Esse código esta sujeito a um reply attack. Esse tipo ataque ocorre quando o atacante possui acesso sua rede e consegue capturar a chamada de callback. Da forma que foi escrito o código, o atacante pode realizar a chamada de callback novamente e gerar novos tokens, provendo acesso indevido para ele.
 
 #### Solução - Nonce
 
 Nonce significa "number used once". Essa estratégia se baseia em gerar um valor, salvá-lo quando o login for chamado e informar para o provedor identidade. Assim, os tokens serão criados com esse valor e na rota callback será feita a validação desse nonce.
+
+```ts
+ const payloadAccessToken = jwt.decode(result.access_token) as any;
+ const payloadRefreshToken = jwt.decode(result.refresh_token) as any;
+ const payloadIdToken = jwt.decode(result.id_token) as any;
+
+ // @ts-expect-error - type mismatch
+ const nonce = req.session.nonce;
+
+ if (payloadIdToken.nonce !== nonce || payloadAccessToken.nonce !== nonce || payloadRefreshToken.nonce !== nonce) {
+  return res.status(401).json({ message: 'Unauthorized' });
+ }
+```
+
+Ao realizar o login, criamos o nonce e salvamos na sessão. Dessa forma, na rota callback, validamos se o nonce do token é igual ao nonce da sessão.
+
+Com isso, impedimos que um atacante consiga realizar um reply attack.
+
+### Ataques de Rede - CSRF Attack (Cross-Site Request Forgery)
+
+#### Situação
+
+Imagine que estamos autenticados em um site que posso realizar transferências bancárias. Utilizando meu navegador acesso um outro site, mas esse site é malicioso e fica fazendo chamadas POST para esse site que estou autenticado. Como meu usuário está logado, essas chamadas serão um sucesso caso sejam passados dados válidos.
+
+Acho que deu pra entender que isso é um problema: site malicioso fazendo requisições para sites que já estou autenticado.
+
+#### State Parameter
+
+Tem a ideia parecida com o nonce mas é utilizado para proteger contra CSRF. O state é um valor que também é gerado na hora do login e é passado para o provedor de identidade. Quando o provedor de identidade redireciona para a rota de callback, ele retorna esse valor. Assim, podemos validar se o valor retornado é igual ao valor que foi enviado.
+
+Quando autenticado, esse state é salvo nos formulários, normalmente em um campo hidden. Assim, quando o formulário for submetido, o state será enviado e validado.
+
+Com essa camada de segurança, impedimos que um site malicioso consiga realizar requisições para sites que já estamos autenticados.
