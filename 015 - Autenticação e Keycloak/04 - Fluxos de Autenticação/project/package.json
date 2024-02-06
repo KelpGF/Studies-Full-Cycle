@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:authorization-code": "nodemon --exec ts-node-esm ./modules/authorization-code/index.ts"
+    "start:authorization-code": "nodemon --exec ts-node-esm ./modules/authorization-code/index.ts",
+    "start:implicit": "cd ./modules/implicit-flow && npm run dev"
   },
+  "workspaces": [
+    "modules/*"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",

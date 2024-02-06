@@ -95,3 +95,16 @@ Tem a ideia parecida com o nonce mas é utilizado para proteger contra CSRF. O s
 Quando autenticado, esse state é salvo nos formulários, normalmente em um campo hidden. Assim, quando o formulário for submetido, o state será enviado e validado.
 
 Com essa camada de segurança, impedimos que um site malicioso consiga realizar requisições para sites que já estamos autenticados.
+
+## Fluxos de Autenticação - Implicit Flow
+
+- parecido com o auth code
+- para aplicações front-end
+- retorna os tokens diretamente para o cliente
+- não é recomendado, apenas para aplicações internas
+
+![implicit-flow](implicit-flow.png)
+
+O maior problema desse flow é a segurança. Como os tokens são retornados diretamente na URL, permitindo que qualquer pessoa que tenha/consiga acesso a rede consiga capturar esses tokens.
+
+E hoje em dia temos plataformas de monitoramento que salvam as rotas acessadas, então, alguém sem autorização pode ter acesso a esses tokens.
