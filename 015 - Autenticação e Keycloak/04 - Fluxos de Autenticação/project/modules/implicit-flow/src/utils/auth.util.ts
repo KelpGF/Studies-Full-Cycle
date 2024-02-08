@@ -78,5 +78,5 @@ export function makeLogoutUrl() {
   Cookies.remove("nonce");
   Cookies.remove("state");
 
-  return `http://localhost:8080/realms/fullcycle-realm/protocol/openid-connect/logout?${logoutParams.toString()}`;
+  return `http://localhost:8080/realms/Kamabakka/protocol/openid-connect/logout?${logoutParams.toString()}`;
 }
