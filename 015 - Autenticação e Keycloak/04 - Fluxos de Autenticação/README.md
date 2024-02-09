@@ -116,3 +116,13 @@ E hoje em dia temos plataformas de monitoramento que salvam as rotas acessadas, 
 Nesse recebemos ambos, o code e os tokens. Assim temos um etapa a menos (performance) e ainda podemos renovar a sessão (segurança).
 
 ![hybrid-flow](hybrid-flow.png)
+
+## Fluxos de Autenticação - Resource Owner Password Credentials (ROPC) ou Direct Grant
+
+É um fluxo que nós passamos o usuário e senha diretamente para o provedor de identidade, por meio de algum formulário. Não existe um redirecionamento para o Keycloak.
+
+Recomentado para ambientes confiáveis, como aplicações internas, ou que precisam de uma autenticação mais simples.
+
+Com esse fluxo não temos a autenticação de dois fatores, por exemplo. E também o single sign on e login por meios de redes sociais é complicado de fazer.
+
+![resource.owner-password-credentials](resource.owner-password-credentials.png)

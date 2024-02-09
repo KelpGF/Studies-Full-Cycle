@@ -6,7 +6,8 @@
   "scripts": {
     "start:authorization-code": "nodemon --exec ts-node-esm ./modules/authorization-code/index.ts",
     "start:implicit": "cd ./modules/implicit-flow && npm run dev",
-    "start:hybrid": "cd ./modules/hybrid-flow && npm run dev"
+    "start:hybrid": "cd ./modules/hybrid-flow && npm run dev",
+    "start:ropc": "nodemon --exec ts-node-esm ./modules/ropc/index.ts"
   },
   "workspaces": [
     "modules/*"
