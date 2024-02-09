@@ -17,3 +17,5 @@ All notes and practices from my journey at Full Cycle
 - 011 Arquitetura baseada em microsserviços
 - 012 EDA - Event Driven Architecture
 - 013 RabbitMQ
+- 014 Apache Kafka
+- 015 Autenticação e Keycloak
