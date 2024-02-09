@@ -108,3 +108,11 @@ Com essa camada de segurança, impedimos que um site malicioso consiga realizar 
 O maior problema desse flow é a segurança. Como os tokens são retornados diretamente na URL, permitindo que qualquer pessoa que tenha/consiga acesso a rede consiga capturar esses tokens.
 
 E hoje em dia temos plataformas de monitoramento que salvam as rotas acessadas, então, alguém sem autorização pode ter acesso a esses tokens.
+
+## Fluxos de Autenticação - Hybrid Flow
+
+- Semelhante ao Implicit Flow
+- = Implicit Flow + Authorization Code. No auth code rebemos o code para depois trocar por tokens. No implicit, recebemos os tokens diretamente.
+Nesse recebemos ambos, o code e os tokens. Assim temos um etapa a menos (performance) e ainda podemos renovar a sessão (segurança).
+
+![hybrid-flow](hybrid-flow.png)
