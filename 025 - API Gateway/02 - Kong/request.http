@@ -1,6 +1,7 @@
 POST http://localhost:80/api/bets HTTP/1.1
 Content-Type: application/json
 Host: kelps.com.br
+apiKey: XOztfyaYRFtHKEH9b1qmX3BqrJd38lAK
 
 {
   "email": "jonh@mail.com"

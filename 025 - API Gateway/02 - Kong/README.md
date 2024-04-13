@@ -79,3 +79,60 @@ Apenas criar o serviço não significa que ele está disponível para ser acessa
 ### Rotas
 
 "Caminho" de url que permite que um serviço seja acessado pelo Kong API Gateway. Ela é responsável por mapear uma requisição HTTP para um serviço.
+
+### Plugins (Police)
+
+Um pedaço de código que pode ser executado dentro de um ciclo de vida de uma requisição HTTP, tanto na fase de request como no response.
+
+![plugin-flow](plugin-flow.png)
+
+Podem ser configurados nas Rotas, Serviços, Consumers e Globalmente, atente-se a precedência das configurações.
+
+### Consumers
+
+Representa um consumidor que pode ser usuário ou um serviço, esse pode ser utilizado para aplicação de plugins de segurança.
+
+## Observabilidade
+
+### Monitoramento - Métricas
+
+Para coletar métricas do Kong, você pode usar o plugin Prometheus. Este plugin coleta métricas do Kong e as expõe em um endpoint HTTP.
+
+Para visualizar essas métricas, você pode usar o Grafana. O Grafana é uma ferramenta de visualização de métricas e permite que você crie dashboards personalizados.
+
+Seguimos o seguinte passo a passo:
+
+1. Subir o Grafana e o Prometheus com a configuração apontando para o Kong.
+2. Criar uma conexão com o Prometheus no Grafana.
+3. Adicionar o plugin Prometheus no Kong.
+4. Adicionar um dashboard no Grafana. Utilizei o [dashboard oficial](https://grafana.com/grafana/dashboards/7424-kong-official/) do Kong.
+5. Realizar requisições no Kong para gerar métricas.
+
+E pronto! Agora você pode visualizar as métricas do Kong no Grafana.
+
+### Logging
+
+Para Logging, precisamos das seguintes ferramentas
+
+- **Elasticsearch:** Banco de dados que armazena os logs.
+- **Kibana:** Interface gráfica para visualizar os logs.
+- **Fluent Bit:** Coletor de logs que envia os logs para o Elasticsearch.
+
+Seguimos o seguinte passo a passo:
+
+1. Subir o Elasticsearch, Kibana e Fluent Bit.
+2. Adicionar o plugin TCP Log no Kong, sendo o host o fluent-bit.
+3. Acessar o Kibana e criar um index pattern.
+4. Realizar requisições no Kong para gerar logs.
+5. Acessar o Kibana na área Discover e ver os logs.
+
+### Trace Distribuído
+
+Para Trace Distribuído, precisamos subir o Jaeger, que é uma ferramenta open source para monitoramento de aplicações distribuídas.
+
+Seguimos o seguinte passo a passo:
+
+1. Subir o Jaeger.
+2. Adicionar o plugin Zipkin no Kong, sendo o host a rota <http://jaeger:9411/api/v2/spans>.
+3. Realizar requisições no Kong para gerar traces.
+4. Acessar o Jaeger e ver os traces.
