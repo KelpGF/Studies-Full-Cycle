@@ -62,10 +62,35 @@ Referência: [Aula Full Cycle](https://plataforma.fullcycle.com.br/courses/3b8c4
 
 ## Anotações
 
-### Kibana
+### Desvendando o Kibana
 
 Para acessar o Kibana, acesse `http://localhost:5601`.
 
 - **Index Patterns**: É uma forma de você dizer para o Kibana quais são os índices que você quer visualizar. Você pode usar o padrão `*` para visualizar todos os índices.
 
 - **Analytics -> Discover**: Aqui você pode ver os dados que estão sendo enviados para o Elasticsearch.
+
+### Utilizando Beats
+
+Dentro do Kibana podemos ver como configurar os Beats para coletar dados no path /app/home#/tutorial_directory/metrics.
+
+#### Metricbeat
+
+É um Beat que coleta métricas do sistema operacional e serviços rodando no servidor.
+
+Para utilizar, precisamos configurar um arquivo yml informando os hosts e quais métricas queremos coletar.
+
+#### Heartbeat
+
+É um Beat que monitora a disponibilidade dos serviços. Com ele conseguimos verificar se um serviço está rodando ou não.
+
+Para utilizar, precisamos configurar um arquivo yml informando os hosts e quais serviços queremos monitorar.
+
+## APM (Application Performance Monitoring)
+
+APM é utilizado para coletar dados de uma aplicação e enviar para o Elasticsearch. Com ele conseguimos monitorar o desempenho de uma aplicação.
+
+Para utilizar, precisamos de um APM Server, que é um servidor intermediário entre a aplicação e o Elasticsearch e um agente que é instalado na aplicação.
+
+RUM (Real User Monitoring) - Ajuda na rastreabilidade de requisições entre o front e o back.
+Para utilizar, precisamos importar o elastic-rum no front e configurar o APM Server.
