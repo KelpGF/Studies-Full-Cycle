@@ -86,6 +86,12 @@ Para utilizar, precisamos configurar um arquivo yml informando os hosts e quais 
 
 Para utilizar, precisamos configurar um arquivo yml informando os hosts e quais serviços queremos monitorar.
 
+#### Filebeat
+
+É um Beat que coleta logs de arquivos e envia para o Elasticsearch. Ele monitora arquivos de log e sempre que um novo log é gerado, ele envia para o Elasticsearch.
+
+No projeto, configuramos o Filebeat para monitorar o arquivo de log do Nginx dentro do container do Nginx.
+
 ## APM (Application Performance Monitoring)
 
 APM é utilizado para coletar dados de uma aplicação e enviar para o Elasticsearch. Com ele conseguimos monitorar o desempenho de uma aplicação.
@@ -94,3 +100,15 @@ Para utilizar, precisamos de um APM Server, que é um servidor intermediário en
 
 RUM (Real User Monitoring) - Ajuda na rastreabilidade de requisições entre o front e o back.
 Para utilizar, precisamos importar o elastic-rum no front e configurar o APM Server.
+
+Lembrando que cada linguagem tem uma forma de configurar o APM.
+
+### Logs no APM
+
+Dentro da nossa aplicação, podemos utilizar o APM para enviar logs para o Elasticsearch. No projeto de exemplo, conseguimos configurar da seguinte forma:
+
+![apm-log](apm-log.png)
+
+Ao instalar o elastic apm temos acesso a um handler de log. Com ele conseguimos enviar logs para o APM Server.
+
+E nas configurações dos logs, conseguimos configurar qual handler será chamado de acordo com o formato do log.
