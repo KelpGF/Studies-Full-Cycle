@@ -7,7 +7,7 @@ Hoje em dia, com a complexidade dos sistemas, é necessário ter uma visão mais
 
 ## Observabilidade x Monitoramento
 
-Observabilidade e monitoramento são práticas que se complementam, mas que possuem objetivos diferentes. O monitoramento é uma prática que nos ajuda a entender o que está acontecendo em nossos sistemas, permitindo que possamos identificar problemas e corrigi-los de forma mais rápida. Já a observabilidade é uma prática que nos ajuda a entender o que está acontecendo em nossos sistemas, permitindo que possamos identificar problemas e corrigi-los de forma mais rápida.
+Observabilidade e monitoramento são práticas que se complementam, mas que possuem objetivos diferentes. A observabilidade é uma prática que nos ajuda a entender o que está acontecendo em nossos sistemas, permitindo que possamos identificar problemas e corrigi-los de forma mais rápida. Já o monitoramento avalia o funcionamento do sistema, se baseando em métricas para análise e identificação de anomalias.
 
 **Monitoramento:**
 
