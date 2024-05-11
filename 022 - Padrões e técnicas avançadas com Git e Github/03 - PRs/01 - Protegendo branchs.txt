@@ -1,0 +1,13 @@
+Branch principal (main/master...) é o espelho do que temos rodando em produção
+Branch base para o dia a dia (default branch): develop
+
+Protegendo branch
+Facilmente conseguimos entender que temos branchs essenciais que não podem ser manipuladas por todos.
+Por isso temos a opção de proteger branchs, conseguimos configurar muitas coisas, como:
+  - Quem pode fazer push nessa branch
+  - Os commits devem estar assinados
+  - Pull/Merge Request devem estar revisados antes de realizar o merge
+  - etc
+Temos também outras configurações, como permitir push force ou bloquear que a branch seja deletada
+
+Essas configurações tornam nosso repositório mais seguro, dando poder apenas para quem realmente deve ter

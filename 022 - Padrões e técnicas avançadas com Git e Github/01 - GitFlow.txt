@@ -1,0 +1,10 @@
+Normalmente temos uma branch main/master que é o espelho do código que está em produção.
+
+Para evitar que código incompletos sejam enviados para essa branch e acabe bagunçando nossa árvore de commit existem algumas metodologias que nos ajudam a organizar nossas branchs.
+Uma das mais conhecidas (se não for a mais) é o gitflow.
+(extension: https://github.com/petervanderdoes/gitflow-avh/wiki/Installation)
+
+Para mais detalhes: https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+
+O git flow é utilizado para organizar nosso repositório e melhorar a maneira que trabalhamos com o git.
+Nele temos algumas nomenclaturas de branchs que tornam tudo bem intuitivo e facilita entender em qual etapa a implementação realizada está

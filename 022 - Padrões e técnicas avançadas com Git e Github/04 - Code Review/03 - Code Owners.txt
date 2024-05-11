@@ -1,0 +1,27 @@
+Vamos tomar como exemplo uma equipe de 20 pessoas, sendo 8 delas reviews. Mas vamos focar em dois reviewers
+  - Kelvin
+  - Gomes
+
+O Kelvin é o responsável por todo o JavaScript e criou um algoritmo bem complexo
+O Gomes é o cara do GoLang
+
+Mas por alguns motivos e necessidades o Gomes precisou alterar o algoritmo complexo do Kelvin e depois abriu um PR.
+Não seria legal se o Kelvin fosse um dos reviewers dessas PR?
+
+É ai que entra o conceito de CODE OWNER (Dono do Código).
+Podemos definir que determinadas pessoas são os CODE OWNERS de alguns arquivos, diretórios ou extensões
+E também tornar obrigatório que um PR tenha que ter sido revisada por pelo menos 1 CODE OWNER
+
+E como configurar isso?
+Na pasta .github adicionamos o arquivo "CODEOWNERS"
+Exemplo
+```
+*.js @kelvin16
+.github @gomes02
+*.go @gomes02
+```
+Também podemos definir grupos como CODE OWNERS
+Depois é ir no repositório e habilitar a opção que requisita os reviews dos CODE OWNERS
+
+
+Os CODEOWNERS são importantes porque quando temos um time muito grande existem pontos que devem ser revisados pela pessoas certas

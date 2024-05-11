@@ -1,0 +1,14 @@
+Doc: https://docs.sonarsource.com/sonarqube/latest/
+
+Pontos Principais:
+  Rules
+    - Regras criadas para avaliar o seu código
+    - Podem ser categorizadas por linguagem, nível de impacto, etc
+
+  Quality Profiles
+    - São perfis que podemos criar por linguagem selecionando quais regras queremos utilizar
+    - As vezes há regras que queremos desconsiderar, então podemos criar um perfil e configurar como desejado
+
+  Quality Gates
+    - É o nosso "Portão de Qualidade", onde podemos configurar qual o percentual de qualidade necessário para o nosso código passar
+    - Também conseguimos criar vários portões e configurar como desejado

@@ -1,0 +1,12 @@
+O Sonar Cloud não difere muito do SonarQube. É este serviço mas já rodando na web, de forma gratuita para repositórios públicos e paga para privados
+
+O processo é quase o mesmo, tirando o fato de que você deve permitir o acesso aos repositórios que deseja utilizar o serviço
+
+Quando você criar um projeto é possível vincular a um repositório e ele lhe informará o código necessário para adicionar no seu workflow
+
+ATENÇÃO:
+  - Remover os tokens do sonar-project.properties. O Sonar Cloud pedirá para adicionar como uma Secret
+  - Com o Sonar Cloud o resultado do CI é assíncrono. Ou seja, o CI vai dar sucesso mas não significa que o código passou no Quality Gate
+    Caso você habilite os merge/pull request apenas se passar (status check), você deve adicionar nas regras o bot do Sonar Cloud nas regras
+
+O resto é beeeeem semelhante ao SonarQube

@@ -1,0 +1,17 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.5.6",
+    "jest": "^29.7.0",
+    "sonar-scanner": "^3.1.0"
+  }
+}

@@ -1,4 +1,7 @@
 **/db/
 **/node_modules
 **/dist/
+**/coverage/
+**/.scannerwork
 **/package-lock.json
+**/coverage.out
