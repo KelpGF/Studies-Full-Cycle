@@ -5,3 +5,5 @@
 **/.scannerwork
 **/package-lock.json
 **/coverage.out
+**/package-lock.json
+**/elasticsearch_data
