@@ -19,3 +19,7 @@ All notes and practices from my journey at Full Cycle
 - 013 RabbitMQ
 - 014 Apache Kafka
 - 015 Autenticação e Keycloak
+- 021 Padrões e técnicas avançadas com Git e Github
+- 022 Continuous Integration
+- 025 API Gateway
+- 027 Observabilidade
